@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Introduction to electronic notebooks in R Markdown | BIOL120 Excercise Guidebook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Introduction to electronic notebooks in R Markdown | BIOL120 Excercise Guidebook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Introduction to electronic notebooks in R Markdown | BIOL120 Excercise Guidebook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
+
+
+<meta name="date" content="2022-09-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="testing-the-software.html"/>
+
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Biology (BIOL120)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Quantitative Biology (BIOL120) Excercise Guidebook</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html"><i class="fa fa-check"></i><b>2</b> Structure of the Guidebook and FAQs</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#what-do-we-need-for-lab-sessions"><i class="fa fa-check"></i><b>2.1</b> What do we need for lab sessions?</a></li>
+<li class="chapter" data-level="2.2" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#why-are-we-using-these-programs"><i class="fa fa-check"></i><b>2.2</b> Why are we using these programs?</a></li>
+<li class="chapter" data-level="2.3" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#do-we-need-to-know-how-to-program"><i class="fa fa-check"></i><b>2.3</b> Do we need to know how to program?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>3</b> Software for class</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="software.html"><a href="software.html#how-to-install-r"><i class="fa fa-check"></i><b>3.1</b> How to install R?</a></li>
+<li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#how-to-install-rstudio"><i class="fa fa-check"></i><b>3.2</b> How to install RStudio?</a></li>
+<li class="chapter" data-level="3.3" data-path="software.html"><a href="software.html#how-to-install-atom"><i class="fa fa-check"></i><b>3.3</b> How to install Atom?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="testing-the-software.html"><a href="testing-the-software.html"><i class="fa fa-check"></i><b>4</b> Testing the software</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="testing-the-software.html"><a href="testing-the-software.html#testing-r-and-rstudio"><i class="fa fa-check"></i><b>4.1</b> Testing R and RStudio</a></li>
+<li class="chapter" data-level="4.2" data-path="testing-the-software.html"><a href="testing-the-software.html#testing-atom"><i class="fa fa-check"></i><b>4.2</b> Testing Atom</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>5</b> Introduction to electronic notebooks in R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rmark.html"><a href="rmark.html#markdown-formats"><i class="fa fa-check"></i><b>5.1</b> Markdown formats</a></li>
+<li class="chapter" data-level="5.2" data-path="rmark.html"><a href="rmark.html#basics-of-markdown"><i class="fa fa-check"></i><b>5.2</b> Basics of Markdown</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rmark.html"><a href="rmark.html#basic-syntax"><i class="fa fa-check"></i><b>5.2.1</b> Basic syntax</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rmark.html"><a href="rmark.html#lines-of-code"><i class="fa fa-check"></i><b>5.2.2</b> Lines of code</a></li>
+<li class="chapter" data-level="5.2.3" data-path="rmark.html"><a href="rmark.html#lists"><i class="fa fa-check"></i><b>5.2.3</b> Lists</a></li>
+<li class="chapter" data-level="5.2.4" data-path="rmark.html"><a href="rmark.html#horizontal-rules"><i class="fa fa-check"></i><b>5.2.4</b> Horizontal rules</a></li>
+<li class="chapter" data-level="5.2.5" data-path="rmark.html"><a href="rmark.html#links-figures-and-tables"><i class="fa fa-check"></i><b>5.2.5</b> Links, figures and tables</a></li>
+<li class="chapter" data-level="5.2.6" data-path="rmark.html"><a href="rmark.html#tables"><i class="fa fa-check"></i><b>5.2.6</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rmark.html"><a href="rmark.html#r-markdown-excerise"><i class="fa fa-check"></i><b>5.3</b> R Markdown Excerise:</a></li>
+<li class="chapter" data-level="5.4" data-path="rmark.html"><a href="rmark.html#additional-information-on-markdown"><i class="fa fa-check"></i><b>5.4</b> Additional information on Markdown</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL120 Excercise Guidebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rmark" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Introduction to electronic notebooks in R Markdown<a href="rmark.html#rmark" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objectives">
+<p>
+<strong>Objectives:</strong>
+</p>
+<ol style="list-style-type: decimal">
+<li>
+To create electronic notebooks for course
+</li>
+<li>
+To familiarize ourselves with the use of R markdown and its
+features
+</li>
+<li>
+To create our initial R markdown document
+</li>
+<li>
+To understand the importance of replicable and reproducible
+notebooks
+</li>
+</ol>
+</div>
+<p>The electronic lab notebooks we will use will in class will be created as <code>R Markdown documents</code>.</p>
+<p>Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.</p>
+<div id="markdown-formats" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Markdown formats<a href="rmark.html#markdown-formats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As mentioned above, Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</p>
+<p>We will use R Markdown as it will allow us to create documents that we can modify in different computers (as long as we have R and R Studio).</p>
+<p>We will call these documents <em>Electronic Lab Notebooks (ELS)</em>. These ELS’ will be used to write down what you have done in class, save the results and the commands and also will tell us where the files you are using will be at.</p>
+<p>But, before we go into the super complex part of it, lets learn the basics of R markdown.</p>
+<hr />
+</div>
+<div id="basics-of-markdown" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Basics of Markdown<a href="rmark.html#basics-of-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So, the idea to use the R markdown file as a E-notebook we need to understand what the syntax is.</p>
+<blockquote>
+<p>Syntax: a set of rules for or an analysis of the syntax of a language</p>
+</blockquote>
+<div id="basic-syntax" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Basic syntax<a href="rmark.html#basic-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the case of markdown, all the text that is not formatted in any way will be displayed in the most basic font.</p>
+<p>So you’ll see that all of these sentences are in simple format.</p>
+<p>In addition, if you surround words with certain elements, it can become a word in <strong>bold</strong> or in <em>italics</em>.</p>
+<p>In this case, when I add a <code>**</code> before and after the word I want to highlight, the word becomes a bold word. When I add a <code>**</code> before and after the word I want to highlight, the word becomes a word in italics.</p>
+<p>If you want to add a header, or a subtitle, start a sentence with <code>#</code>. One <code>#</code> means main header, two will be a subtitle, and so on.</p>
+</div>
+<div id="lines-of-code" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Lines of code<a href="rmark.html#lines-of-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Markdown allows you to create unformatted lines, or lines of code. In these lines you can add the code you are using for certain steps, or to illustrate examples.</p>
+<p>To create a code in-line, just add a `<code>(backtick)</code> between the line of code</p>
+<div id="example-of-inline-code" class="section level4 hasAnchor" number="5.2.2.1">
+<h4><span class="header-section-number">5.2.2.1</span> Example of inline code:<a href="rmark.html#example-of-inline-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Similarity searches were done using <code>blastn</code> with default parameters and an expected E-value of 10-5.</p>
+</div>
+<div id="example-of-code-blocks" class="section level4 hasAnchor" number="5.2.2.2">
+<h4><span class="header-section-number">5.2.2.2</span> Example of code blocks:<a href="rmark.html#example-of-code-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To create a code block, start a region with three `<code>(backticks)</code>. Add the code in the line after the backticks and then close with three additional backticks.</p>
+<pre><code>This is a code-block
+blastp -query q</code></pre>
+</div>
+</div>
+<div id="lists" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Lists<a href="rmark.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can create unordered or ordered lists in Markdown.
+To create <strong>unordered</strong> lists in markdown, start each element of the list with a <code>-</code> sign:</p>
+<p><strong>Code:</strong></p>
+<pre><code>- Bananas
+- Pijamas
+- Bandanas</code></pre>
+<p><strong>Result:</strong></p>
+<ul>
+<li>Bananas</li>
+<li>Pijamas</li>
+<li>Bandanas</li>
+</ul>
+<p>To create ordered lists, add a number with a period before each element. The numbers don’t have to be consecutive, which will allow Markdown to modify the list no problem <em>(Check the raw code before you run the Knitr command)</em>:</p>
+<p><strong>Code:</strong></p>
+<pre><code>1. Wake up
+1. Make the bed
+1. Lie down again</code></pre>
+<p><strong>Result:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Wake up</li>
+<li>Make the bed</li>
+<li>Lie down again</li>
+</ol>
+<p>You can also make nested lists! Nested lists can are done by creating list using <strong>4</strong> spaces:</p>
+<p><strong>Code:</strong></p>
+<pre><code>1. This week:
+    - Homework
+    - Breakfast
+    - Cats litter
+2. This weekend
+    - Nothing</code></pre>
+<p><strong>Result:</strong></p>
+<ol style="list-style-type: decimal">
+<li>This week:
+<ul>
+<li>Homework</li>
+<li>Breakfast</li>
+<li>Cats litter</li>
+</ul></li>
+<li>This weekend
+<ul>
+<li>Nothing</li>
+</ul></li>
+</ol>
+</div>
+<div id="horizontal-rules" class="section level3 hasAnchor" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Horizontal rules<a href="rmark.html#horizontal-rules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you want to separate sections by a horizontal rule, use three <code>*</code> in a row in an empty line:</p>
+<pre><code>***</code></pre>
+<hr />
+</div>
+<div id="links-figures-and-tables" class="section level3 hasAnchor" number="5.2.5">
+<h3><span class="header-section-number">5.2.5</span> Links, figures and tables<a href="rmark.html#links-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Finally, we can add links, figures and tables in the Markdown document</p>
+<div id="hyperlinks" class="section level4 hasAnchor" number="5.2.5.1">
+<h4><span class="header-section-number">5.2.5.1</span> Hyperlinks<a href="rmark.html#hyperlinks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To add a link in markdown, just use the <code>[link name](link address)</code> syntax, where you add the link of interest in the parenthesis and a generic name for the link between the square brackets.</p>
+<p>For example, if I want to link NCBI, then the code should be <code>[NCBI](ncbi.nlm.nih.gov/)</code>, and it will look like this: <a href="ncbi.nlm.nih.gov/">NCBI</a></p>
+</div>
+<div id="figures" class="section level4 hasAnchor" number="5.2.5.2">
+<h4><span class="header-section-number">5.2.5.2</span> Figures<a href="rmark.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To add a figure from the internet you use a similar syntax than what we used in the <em>links</em> section, but with a exclamation mark at the beginning of the syntax: <code>![Clark Logo](https://www.clarku.edu/wp-content/themes/clarku/assets/img/main-logo.svg)</code> results in</p>
+<div class="figure">
+<img src="https://www.clarku.edu/wp-content/themes/clarku/assets/img/main-logo.svg" alt="" />
+<p class="caption">Clark Logo</p>
+</div>
+<p>You can also add images that are not online. For this, you can just upload the image of interest into the folder where your Markdown file is and link it locally as such: <code>![Local Image of my cat](cat_img.JPG)</code> using the <code>Upload</code> button in the File Panel Viewer in your lower right.</p>
+</div>
+</div>
+<div id="tables" class="section level3 hasAnchor" number="5.2.6">
+<h3><span class="header-section-number">5.2.6</span> Tables<a href="rmark.html#tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Finally, lets learn how to add tables.</p>
+<p>Tables in markdown can be annoying, but gladly there are online elements that will help us with tables.</p>
+<p>However, lets start basic. A table can be created by having list of words and separating them with hyphens <code>-</code> (for the first row), and then separating each column with a pipe <code>|</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Header One</th>
+<th>Header Two</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cell [1,1]</td>
+<td>Cell [1,2]</td>
+</tr>
+<tr class="even">
+<td>Cell [2,1]</td>
+<td>Cell [2,2]</td>
+</tr>
+</tbody>
+</table>
+<p>So, you can imagine that creating a gigantic table is a mess. Imagine creating the table from the syllabus into Markdown?</p>
+<p>Do not worry, use this <a href="https://www.tablesgenerator.com/markdown_tables">amazing page</a> to copy and paste <strong>any</strong> Excel/CSV/Table and turn it into Markdown!</p>
+<p>Just copy and paste it from the page:</p>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Lecture</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Introduction to Quantitative Biology (Dresch and Tabima)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Biological Datasets and creating electronic notebooks (Tabima)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Introduction to the UNIX command line (Tabima)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Data management in the command line (Tabima)</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Extracting patterns and data using UNIX (Tabima)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Introduction to scripting in UNIX (Tabima)</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Creating pipelines for basic data analysis in UNIX (Tabima)</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Introduction to Matlab (Dresch)</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>m files and functions (Dresch)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Inputting/Exporting Data (Dresch)</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Data Visualization (Dresch)</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Simple Statistics (Dresch)</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>Data Fitting (Dresch)</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Group Project time</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>Final submission Group Project</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+<div id="r-markdown-excerise" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> R Markdown Excerise:<a href="rmark.html#r-markdown-excerise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="rmdquestion">
+<p>
+Create a Markdown page that describes yourself in a simple manner.
+Use as many element of syntax as possible, like <em>bold text</em>,
+<strong>italics</strong>, lists, tables and even add a picture of
+yourself. You can make it a very simple resume, a simple CV or just a
+small paragraph of you and your likes.
+</p>
+</div>
+<hr />
+</div>
+<div id="additional-information-on-markdown" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Additional information on Markdown<a href="rmark.html#additional-information-on-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown by GitHub</a></li>
+<li><a href="https://www.markdowntutorial.com/">Using online resources to learn Markdown</a></li>
+<li><a href="https://rmarkdown.rstudio.com/gallery.html">R markdown gallery of all the cool stuff we can do with Markdown</a></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="testing-the-software.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-intro_markdown.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

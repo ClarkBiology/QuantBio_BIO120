@@ -49,6 +49,12 @@ As I mentioned in the previous chapter,  we are going to use *R, RStudio* and th
 3. 
   - In Mac OS: Move the application to the Applications folder
   - In Windows: Execute the `AtomSetup.exe` file
+  
+## How to install MATLAB?
+
+1. Go to Clark's software webpage at [https://www.clarku.edu/offices/its/a-z-service-catalog/software-for-all/](https://www.clarku.edu/offices/its/a-z-service-catalog/software-for-all/)
+2. Click on the text under MATLAB "Download".
+3. You will be redirected to the mathworks website through Clark University.  After you click on `Sign in to get started`, you will need to follow the prompts to login using your Clark username.
 
 ***
 

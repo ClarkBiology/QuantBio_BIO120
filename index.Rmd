@@ -24,4 +24,8 @@ You will find here all the exercises for class, as well as a basic reference gui
 
 Professor Tabima Restrepo is always reachable at `jtabima@clarku.edu`. 
 
-Office hours are on *Wednesdays between 1PM and 3PM* at Larsy 223, or by email.
+His office hours are on *Wednesdays between 1PM and 3PM* in Lasry 223, or by email.
+
+Professor Dresch is always reachable at `jdresch@clarku.edu`. 
+
+Her office hours are on *Tuesdays and Fridays between 10:30 and 11:30 AM* in Lasry 111, or by email.

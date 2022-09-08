@@ -56,9 +56,7 @@ As I mentioned in the previous chapter,  we are going to use *R, RStudio* and th
 
 ## Testing R and RStudio
 
-1. Go to http://140.232.222.154:8787
-
-2. Log in using your Clark username *without* the `@clarku.edu` (e.g. my user would be `jtabima`) and the `BIOL123` password all in capitals
+1. Open your R studio after installation
 
 3. You should see a window like this:
 

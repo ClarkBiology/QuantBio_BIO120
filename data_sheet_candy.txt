@@ -1,0 +1,5 @@
+Flavor	Number
+Lime	12
+Lemon	13
+Banana	55
+Strawberries	23

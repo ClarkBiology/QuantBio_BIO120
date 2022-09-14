@@ -7,6 +7,7 @@ software
 how-to-install-r
 how-to-install-rstudio
 how-to-install-atom
+how-to-install-matlab
 testing-the-software
 testing-r-and-rstudio
 testing-atom
@@ -25,3 +26,9 @@ figures
 tables
 r-markdown-excerise
 additional-information-on-markdown
+creating-datasets-and-replicability
+creating-datasets
+asking-biological-questions-and-identifying-measurable-outcomes
+creating-a-clean-raw-dataset
+creating-basic-basic-plots-in-r
+comparisons-between-groups.

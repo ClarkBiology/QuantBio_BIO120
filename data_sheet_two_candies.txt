@@ -1,0 +1,9 @@
+Flavor	Number	Candy
+Lime	12	Skittles
+Lemon	13	Skittles
+Banana	55	Skittles
+Strawberries	23	Skittles
+Lime	5	Starburst
+Lemon	6	Starburst
+Banana	12	Starburst
+Strawberries	3	Starburst

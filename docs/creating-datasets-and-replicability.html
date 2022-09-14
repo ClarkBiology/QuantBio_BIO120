@@ -209,8 +209,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="creating-datasets-and-replicability" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Creating datasets and replicability<a href="creating-datasets-and-replicability.html#creating-datasets-and-replicability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Today’s laboratory will be focused in the essentials of building datasets.</p>
-<p>Datasets can be built with absolutely anything you can make an observation from and ask a question about.</p>
+<div class="objectives">
+<p>
+<strong>Objectives:</strong>
+</p>
+<ol style="list-style-type: decimal">
+<li>
+To use the scientific method for data analysis
+</li>
+<li>
+To generate research questions based on our observations
+</li>
+<li>
+To create data sets based on metrics of interest
+</li>
+<li>
+To open and use data sets in a computational environment
+</li>
+</ol>
+</div>
+<p>Today’s laboratory will be focused in the essentials of building data sets.</p>
+<p>Data sets can be built with absolutely anything you can make an observation from and ask a question about.</p>
 <p>Before we start, however, lets answer these questions:</p>
 <div class="rmdquestion">
 <h4 id="question-1">
@@ -506,6 +525,9 @@ Compare it to their digital data sheet. Is it identical?
 <li>Now, talk to the other group and start thinking of a way to measure the differences between the two data sets.</li>
 </ol>
 <div class="rmdinfo">
+<h4 id="asking-questions">
+Asking questions
+</h4>
 <p>
 For example: One group has M&amp;Ms and the other has Skittles. What
 are two features in common these two candies have? Color? Flavors?
@@ -554,6 +576,9 @@ notebook
 <li>Lets create a plot to compare the two different candies</li>
 </ol>
 <div class="rmdinfo">
+<h4 id="comparing-data-sets">
+Comparing data sets
+</h4>
 <p>
 When you want to compare between different sites/treatments/types of
 candies is important that the data frame has an extra column that tell
@@ -672,8 +697,8 @@ In this case, we can separate the flavors from each candy.
 </p>
 </div>
 <p>Modify the following code with your column names:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="creating-datasets-and-replicability.html#cb10-1" aria-hidden="true" tabindex="-1"></a>two_candies <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&#39;data_sheet_two_candies.txt&#39;</span>, <span class="at">header =</span> T)</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="creating-datasets-and-replicability.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="creating-datasets-and-replicability.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="creating-datasets-and-replicability.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/two_candy_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-13">

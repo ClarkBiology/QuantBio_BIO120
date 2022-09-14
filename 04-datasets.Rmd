@@ -1,8 +1,19 @@
 # Creating datasets and replicability
 
-Today's laboratory will be focused in the essentials of building datasets.
+```{block, type='objectives'}
 
-Datasets can be built with absolutely anything you can make an observation from and ask a question about.
+**Objectives:**
+
+1. To use the scientific method for data analysis
+2. To generate research questions based on our observations
+3. To create data sets based on metrics of interest
+4. To open and use data sets in a computational environment
+```
+
+
+Today's laboratory will be focused in the essentials of building data sets.
+
+Data sets can be built with absolutely anything you can make an observation from and ask a question about.
 
 Before we start, however, lets answer these questions:
 
@@ -205,6 +216,8 @@ Now, lets see how our data collection is compared to the other groups
 4. Now, talk to the other group and start thinking of a way to measure the differences between the two data sets.
 
 ```{block, type='rmdinfo'}
+#### Asking questions
+
 For example: One group has M&Ms and the other has Skittles. What are two features in common these two candies have? Color? Flavors?
 
 You can, for example, measure the number of colors for both Skittles and M&M's and compare them
@@ -231,6 +244,8 @@ You can, for example, measure the number of colors for both Skittles and M&M's a
 6. Lets create a plot to compare the two different candies
 
 ```{block, type='rmdinfo'}
+#### Comparing data sets
+
 When you want to compare between different sites/treatments/types of candies is important that the data frame has an extra column that tell you where these are from. 
 
 For example:
@@ -251,18 +266,19 @@ In this case, we can separate the flavors from each candy.
 
 Modify the following code with your column names:
 
-```{r, show=F}
+```{r, show=F, echo=FALSE}
 two_candies <- read.table('data_sheet_two_candies.txt', header = T)
 ```
 
 ```{r two_candy_plot}
-ggplot(data=two_candies, aes(x=Flavor, y=Number, fill=Candy)) + geom_bar(stat='identity', position="dodge")
+ggplot(data=two_candies, aes(x=Flavor, y=Number, fill=Candy)) +
+  geom_bar(stat='identity', position="dodge")
 ```
 
 ```{block, type='rmdquestion'}
 #### Question 13
-   
    - Can this graph help you answer your research question? How
    - What do your results show, based on the research question?
    - Compare the code for plotting the `two_candies` data set versus the code for the `my_data` data set. What changed? 
+   
 ```

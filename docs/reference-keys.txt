@@ -27,7 +27,7 @@ tables
 r-markdown-excerise
 additional-information-on-markdown
 creating-datasets-and-replicability
-creating-datasets
+creating-basic-datasets
 asking-biological-questions-and-identifying-measurable-outcomes
 creating-a-clean-raw-dataset
 creating-basic-basic-plots-in-r

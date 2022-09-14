@@ -15,7 +15,7 @@ Before we start, however, lets answer these questions:
 
 ```
 
-## Creating datasets
+## Creating basic datasets
 
 So, we have a bag of candy in front of us. 
 
@@ -23,7 +23,7 @@ Bags of candy have several different elements on it: The various flavors, the di
 
 The objective for today is to ask research questions and create a dataset that allows you to answer different questions based on your research focus (in this case, *your candy bag*)
 
-### Asking biological questions and identifying measurable outcomes
+## Asking biological questions and identifying measurable outcomes
 
 1. Create groups of two students
 2. Open the bag of candy and generate some observations about it. It can be about anything you find interesting or peaks your interest
@@ -75,7 +75,7 @@ Take a photo of the page of the notebook and add it here.
 
 ***
 
-### Creating a clean raw dataset
+## Creating a clean raw dataset
 
 1. Using the same dataset, organize your data in a simple data frame using [Google Sheets](https://www.google.com/sheets/about/) or [EtherCalc](https://ethercalc.net/)
 
@@ -119,7 +119,7 @@ my_data
 
 ***
 
-### Creating basic (basic) plots in R
+## Creating basic (basic) plots in R
 
 Now that you have your data set readable by a computer program, we can do some very basic visualization to make it easier to interpret.
 
@@ -179,7 +179,7 @@ ggplot(data=my_data, aes(x=Flavor, y=Number)) + geom_bar(stat='identity')
 
 ***
 
-###  Comparisons between groups.
+##  Comparisons between groups.
 
 Now, lets see how our data collection is compared to the other groups
 
@@ -256,7 +256,7 @@ two_candies <- read.table('data_sheet_two_candies.txt', header = T)
 ```
 
 ```{r two_candy_plot}
-ggplot(data=two_candies, aes(x=Flavor, y=Number, color=Candy)) + geom_bar(stat='identity')
+ggplot(data=two_candies, aes(x=Flavor, y=Number, fill=Candy)) + geom_bar(stat='identity', position="dodge")
 ```
 
 ```{block, type='rmdquestion'}

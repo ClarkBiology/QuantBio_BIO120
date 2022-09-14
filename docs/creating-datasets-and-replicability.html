@@ -181,13 +181,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html"><i class="fa fa-check"></i><b>6</b> Creating datasets and replicability</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#creating-datasets"><i class="fa fa-check"></i><b>6.1</b> Creating datasets</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#asking-biological-questions-and-identifying-measurable-outcomes"><i class="fa fa-check"></i><b>6.1.1</b> Asking biological questions and identifying measurable outcomes</a></li>
-<li class="chapter" data-level="6.1.2" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#creating-a-clean-raw-dataset"><i class="fa fa-check"></i><b>6.1.2</b> Creating a clean raw dataset</a></li>
-<li class="chapter" data-level="6.1.3" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#creating-basic-basic-plots-in-r"><i class="fa fa-check"></i><b>6.1.3</b> Creating basic (basic) plots in R</a></li>
-<li class="chapter" data-level="6.1.4" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#comparisons-between-groups."><i class="fa fa-check"></i><b>6.1.4</b> Comparisons between groups.</a></li>
-</ul></li>
+<li class="chapter" data-level="6.1" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#creating-basic-datasets"><i class="fa fa-check"></i><b>6.1</b> Creating basic datasets</a></li>
+<li class="chapter" data-level="6.2" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#asking-biological-questions-and-identifying-measurable-outcomes"><i class="fa fa-check"></i><b>6.2</b> Asking biological questions and identifying measurable outcomes</a></li>
+<li class="chapter" data-level="6.3" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#creating-a-clean-raw-dataset"><i class="fa fa-check"></i><b>6.3</b> Creating a clean raw dataset</a></li>
+<li class="chapter" data-level="6.4" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#creating-basic-basic-plots-in-r"><i class="fa fa-check"></i><b>6.4</b> Creating basic (basic) plots in R</a></li>
+<li class="chapter" data-level="6.5" data-path="creating-datasets-and-replicability.html"><a href="creating-datasets-and-replicability.html#comparisons-between-groups."><i class="fa fa-check"></i><b>6.5</b> Comparisons between groups.</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -231,13 +229,14 @@ hypothesis?
 </li>
 </ul>
 </div>
-<div id="creating-datasets" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Creating datasets<a href="creating-datasets-and-replicability.html#creating-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="creating-basic-datasets" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Creating basic datasets<a href="creating-datasets-and-replicability.html#creating-basic-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>So, we have a bag of candy in front of us.</p>
 <p>Bags of candy have several different elements on it: The various flavors, the diversity in colors. Some may have different shapes, ect.</p>
 <p>The objective for today is to ask research questions and create a dataset that allows you to answer different questions based on your research focus (in this case, <em>your candy bag</em>)</p>
-<div id="asking-biological-questions-and-identifying-measurable-outcomes" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Asking biological questions and identifying measurable outcomes<a href="creating-datasets-and-replicability.html#asking-biological-questions-and-identifying-measurable-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="asking-biological-questions-and-identifying-measurable-outcomes" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Asking biological questions and identifying measurable outcomes<a href="creating-datasets-and-replicability.html#asking-biological-questions-and-identifying-measurable-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Create groups of two students</li>
 <li>Open the bag of candy and generate some observations about it. It can be about anything you find interesting or peaks your interest</li>
@@ -321,8 +320,8 @@ Question 5
 </div>
 <hr />
 </div>
-<div id="creating-a-clean-raw-dataset" class="section level3 hasAnchor" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Creating a clean raw dataset<a href="creating-datasets-and-replicability.html#creating-a-clean-raw-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-a-clean-raw-dataset" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Creating a clean raw dataset<a href="creating-datasets-and-replicability.html#creating-a-clean-raw-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Using the same dataset, organize your data in a simple data frame using <a href="https://www.google.com/sheets/about/">Google Sheets</a> or <a href="https://ethercalc.net/">EtherCalc</a></p></li>
 <li><p>Copy your spreadsheet into <code>atom</code>, paste it and save it file into a folder in your desktop called <code>BIOL120</code> with a <code>txt</code> extension (something like <code>data_sheet_candy.txt</code>)</p></li>
@@ -385,8 +384,8 @@ explanation why
 </div>
 <hr />
 </div>
-<div id="creating-basic-basic-plots-in-r" class="section level3 hasAnchor" number="6.1.3">
-<h3><span class="header-section-number">6.1.3</span> Creating basic (basic) plots in R<a href="creating-datasets-and-replicability.html#creating-basic-basic-plots-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-basic-basic-plots-in-r" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Creating basic (basic) plots in R<a href="creating-datasets-and-replicability.html#creating-basic-basic-plots-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now that you have your data set readable by a computer program, we can do some very basic visualization to make it easier to interpret.</p>
 <p>To do so, we need to install one simple <code>R package</code> that will allow us to create plots. This package is called <a href="https://ggplot2.tidyverse.org/index.html"><code>ggplot</code></a>.</p>
 <div class="rmdinfo">
@@ -466,8 +465,8 @@ Is this an easier way of comparing your data? Explain why.
 </div>
 <hr />
 </div>
-<div id="comparisons-between-groups." class="section level3 hasAnchor" number="6.1.4">
-<h3><span class="header-section-number">6.1.4</span> Comparisons between groups.<a href="creating-datasets-and-replicability.html#comparisons-between-groups." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="comparisons-between-groups." class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Comparisons between groups.<a href="creating-datasets-and-replicability.html#comparisons-between-groups." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now, lets see how our data collection is compared to the other groups</p>
 <ol style="list-style-type: decimal">
 <li>Get together with another group</li>
@@ -674,7 +673,7 @@ In this case, we can separate the flavors from each candy.
 </div>
 <p>Modify the following code with your column names:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="creating-datasets-and-replicability.html#cb10-1" aria-hidden="true" tabindex="-1"></a>two_candies <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&#39;data_sheet_two_candies.txt&#39;</span>, <span class="at">header =</span> T)</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="creating-datasets-and-replicability.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">color=</span>Candy)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="creating-datasets-and-replicability.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/two_candy_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-13">
@@ -695,7 +694,6 @@ changed?
 </ul>
 </div>
 
-</div>
 </div>
 </div>
             </section>

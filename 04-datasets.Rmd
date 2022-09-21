@@ -109,11 +109,50 @@ If you need to use a space, use an underscore (`_`) or separate the names using 
 my_data <- read.table('data_sheet_candy.txt', header = T)
 ```
 
+
 > i.e. If my file is called `dataset.txt`, then I change the code to `read.table('dataset.txt')`
+
+```{block, type='rmdinfo'}
+
+#### Executable Code Chunks
+
+Executable code chunks are sections in your R markdown that allow you to **execute** or run code inside your file! That means you can do a lot of cool stuff within those chunks, like read datasets, create tables, and plot figures.
+
+Executable code chunks look like this:
+
+<pre><code>```{coding language goes here}
+code goes here
+```</code></pre>
+
+That means we can use `bash`, `R` and even `python` (as long as you have installed the correct packages) inside your R markdown document.
+
+An example using `bash` to get the time:
+
+<pre><code>```{bash}
+date
+```</code></pre>
+
+```{bash, echo=F}
+date
+```
+
+```{block, type='rmdinfo'}
+
+You can also use `R` as in here:
+
+<pre><code>```{r}
+(my_data <- read.table('data_sheet_candy.txt', header = T))
+```</code></pre>
+
+```{r, echo = F}
+(my_data <- read.table('data_sheet_candy.txt', header = T))
+```
+
+
 
 5. Check your file loaded by using the code `View(my_data)` or also adding this into your notebook and `kniting` the document:
 
-```{r df_view}
+```{r, echo=T}
 my_data
 ```
 
@@ -146,22 +185,41 @@ Some packages will help you plot, some others will allow you to read data into R
 To use a package the first thing you have to do is **Install it**.
 After the package is installed, you just need to load it into the library.
 
-For example, to install `ggplot`, do the following code just once:
+
+##### Installing a package
+
+For example, to install `ggplot2`, write the following code just once in the **CONSOLE** (aka. The window in the lower left corner of your R studio)
 
 `install.packages('ggplot2')`
 
-After the installation is successfull, and from then on until you reinstall `R` or you change your computer, you can load `ggplot` into `R` just by doing the following:
+![Installing a package](img/ggplot_install.png)
 
-`library(ggplot)`
+If you check the console, you'll see that the code will say 
 
-The command `library` loads the package into your `R` environment, and now yo ucan use any of its functions!
+`DONE: ggplot2`
+
+That means that your package has been installed.
+
+##### Loading a package
+
+Now, we need to load the package to get the functions to work. 
+
+To load the package, in your `R markdown` add this in code block
+
+\```{r}
+library(ggplot2)
+\```
+
+![loading the ggplot library](img/ggplot_load.png)
+
+The command `library` loads the package into your `R` environment, and now you can use any of its functions!
 
 To learn more about packages in `R`, read the following [link](https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html)
 
 ```
 
 
-1. Load the `ggplot` package (make sure you have installed it first)
+1. Load the `ggplot2` package (make sure you have installed it first)
 
 2. Make sure your data frame is still loaded into `R`.
 
@@ -204,7 +262,7 @@ Now, lets see how our data collection is compared to the other groups
    - Did they data collection help them answer this question?
 ```
 
-3. Import their data set into your `R` environment. That means to ask them for their original, hand written data sheet and re-digitize it using `Google Sheets` or `EtherCalc/
+3. Import their data set into your `R` environment. That means to ask them for their original, hand written data sheet and re-digitize it using `Google Sheets` or `EtherCalc`
 
 ```{block, type='rmdquestion'}
 #### Question 10

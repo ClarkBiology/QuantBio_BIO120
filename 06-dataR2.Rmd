@@ -208,7 +208,7 @@ read.table(file = "Lab_5/data_table.txt", sep = "\t", header = T)
 ```
 ```{block, type='rmdquestion'}
 #### Question 4
-   - Download the table from [here]() and read it into `R`. Add the code.
+   - Download the table from [here](https://raw.githubusercontent.com/Tabima/QuantBio_BIO120/main/Lab_5/data_table.txt) and read it into `R`. Add the code.
    - What do the options `sep` and `header` mean? (Remember to use `?read.table` to help you when you have no idea what a function does)
    - What happens if I remove the `sep` and `header` options?
    - What are the classes and lengths of each column? Add the code
@@ -232,7 +232,7 @@ To read CSV you can use the `read.csv` function
 
 ```{block, type='rmdquestion'}
 #### Question 5
-   - Download the table from [here]() and read it into `R` using the `read.csv` function. Read the help and add the code and an explanation of the code syntax
+   - Download the table from [here](https://raw.githubusercontent.com/Tabima/QuantBio_BIO120/main/Lab_5/data_table.csv) and read it into `R` using the `read.csv` function. Read the help and add the code and an explanation of the code syntax
    - Is this table any different from the table in question 4?
 ```
 
@@ -247,7 +247,7 @@ Well, we can also read those files using the `read.xlsx` command from the packag
 ```{block, type='rmdquestion'}
 #### Question 6
    - Check your [datasets](#datasets) chapter and based on this info, install the `readxl` package in your R session
-   - Download the excel spreadsheet from [here]()
+   - Download the excel spreadsheet from [here](https://raw.githubusercontent.com/Tabima/QuantBio_BIO120/main/Lab_5/data_table.xlsx)
    - Using the `read.xlsx` command, read the `cats` spreadsheet into one object and the `dogs` spreadsheet in a different one. Both (Check your spreadsheet in excel or google sheets before hand)
     - Is this table any different from the table in questions 4 and 5?
 ```

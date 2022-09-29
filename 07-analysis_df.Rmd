@@ -8,7 +8,7 @@ We can extract, process and analyze all sorts of information in a data frame. We
 
 We will be analysing the amazing dataset complied by Collins, Gilley and Udry (2022) that tackles the question of **Why do some of the candies have the same color but smell different?**.
 
-To proceed, we will read in the data table included [here]().
+To proceed, we will read in the data table included [here](https://raw.githubusercontent.com/Tabima/QuantBio_BIO120/main/Lab_6/Collins_Gilley_Udry_2022).
 
 ```{block, type='rmdquestion'}
 #### Question 1

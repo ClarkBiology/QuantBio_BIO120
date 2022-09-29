@@ -4,9 +4,11 @@
 
 **Objectives:**
 
-1. To understand what an object is
-2. To identify vectors
-3. To learn how to differentiate types of vectors
+1. To understand what a data frame is
+2. To identify and extract rows and columns
+3. To create new data frames based on vectors
+4. To combine different data frames
+5. To learn how to read different data frame types
 ```
 
 There are objects that will have rows and columns, such as **data frames** and **matrices**. These are two-dimensional objects that we will use the blanket term **Tables**.

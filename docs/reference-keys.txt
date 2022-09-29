@@ -48,3 +48,7 @@ reading-in-data-tables
 reading-text-delimited-files-.txt-or-.tsv
 reading-comma-separated-value-files-.csv
 reading-excel-files-.xlsx
+sumarizing-and-subsetting-data-frames
+reading-in-the-dataframe
+summarizing-data-and-removing-data
+summarizing-data

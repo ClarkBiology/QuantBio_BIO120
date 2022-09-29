@@ -1,0 +1,122 @@
+# Sumarizing and subsetting data frames
+
+There are many cases in which a data frame is comprised by all sorts of different data types.
+
+We can extract, process and analyze all sorts of information in a data frame. We wil llearn how to do this using the basic `R` commands
+
+## Reading in the dataframe
+
+We will be analysing the amazing dataset complied by Collins, Gilley and Udry (2022) that tackles the question of **Why do some of the candies have the same color but smell different?**.
+
+To proceed, we will read in the data table included [here]().
+
+```{block, type='rmdquestion'}
+#### Question 1
+  - Download the data frame and load it into `R` into an object called `candy_table`
+  - What are the classes of each column of data?
+```
+
+```{block unknown files, type='rmdinfo'}
+#### Files without an extension
+
+In some cases, you will find that some of the files won't have an extension (meaning there is no info after the name of the file of the type of the file, this being either `.txt`, `.csv` and others). 
+
+In this case our recommendation is to open the files directly in `Rstudio`, `Atom` or any other word processor and checking what type of file that is. 
+
+In the case of today's file, you can easily see its a table delimited file.
+```
+
+```{R loading table, echo=F}
+(candy_table <- read.table('Lab_6/Collins_Gilley_Udry_2022', sep = "\t", header = T))
+```
+
+## Summarizing data and removing data
+
+Now that we have the `candy_table` data set, the next step is to determine which elements of it do we want to analyse. 
+For example, we can create a summary of the total number of colors, the number of samples for each color, the types of candy, ect.
+
+### Summarizing data
+
+Lets say we want to know what is the total number of colors. Sure, you can count them, but you can also let `R` count them for you.
+
+First, you need to know how many **unique** colors do we have in our column. To do so, use the `unique` function:
+
+```{r color number}
+unique(candy_table$color)
+```
+
+Simple. We see that **`r unique(candy_table$color)`** are our colors. We can count them by hand, or we can ask `R` to count them for us:
+
+```{r color number length}
+length(unique(candy_table$color))
+```
+
+***
+
+```{block nested functions, type='rmdinfo'}
+
+#### Nested functions
+
+The above example shows an example of a nested function. That means that we have one function inside of a different function.
+
+The way that works is that the first function is the one that goes inside, and the second one outside. 
+
+In the `length(unique(object))` case, then think it like this:
+
+1. Give the the unique colors of candy
+2. **And then** give the the total number of step 1
+
+This can get really complex very fast. So there are two options in case you don't like this:
+
+##### Creating intermediate objects for each step:
+
+You can create and intermediate object:
+
+`unique_object <- unique(object)`
+
+and then 
+
+`length(unique_object)`
+
+and the result will be the same
+
+##### Using the %>% operator
+
+The `%>%` operator is a really cool function that can be found in the `tidyverse` package. It pretty much means `and then`. 
+
+For example, we can do the same as above like this:
+
+`unique(object) %>% length`
+
+and get the same result.
+
+However, we won't focus on the tidyverse in this class.
+```
+
+***
+
+```{block, type='rmdquestion'}
+#### Question 2
+  - Summarize all the columns and add both the code and the results
+  - Which column has the highest amount of categories?
+```
+
+Finally, we can also summarize the number of samples of a category using the command `table`. 
+If we want to know the number of candies that are of each color we can do it like this:
+
+```{r summary example}
+table(candy_table$color)
+```
+
+Easy! If you want to order them, then just use the `sort` function in the `table`:
+
+```{r srting summary example}
+sort(table(candy_table$color))
+```
+
+```{block, type='rmdquestion'}
+#### Question 3
+  - For each column, what is the most abundant and less abundant category? Add the code
+  - How can you organize your results of `sort` in a decreasing order (meaning from larger to smaller)? Add the code
+```
+

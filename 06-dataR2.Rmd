@@ -250,7 +250,7 @@ Well, we can also read those files using the `read.xlsx` command from the packag
 #### Question 6
    - Check your [datasets](#datasets) chapter and based on this info, install the `readxl` package in your R session
    - Download the excel spreadsheet from [here](https://raw.githubusercontent.com/Tabima/QuantBio_BIO120/main/Lab_5/data_table.xlsx)
-   - Using the `read.xlsx` command, read the `cats` spreadsheet into one object and the `dogs` spreadsheet in a different one. Both (Check your spreadsheet in excel or google sheets before hand)
+   - Using the `read_xlsx` command, read the `cats` spreadsheet into one object and the `dogs` spreadsheet in a different one. Both (Check your spreadsheet in excel or google sheets before hand)
     - Is this table any different from the table in questions 4 and 5?
 ```
 

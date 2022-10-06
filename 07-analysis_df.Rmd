@@ -193,13 +193,13 @@ colnames(skit.ct) <- c("Flavor", "Skittle")
 ```
 
 ```{r datacolor, echo=F}
-starburst.ct <-  data.frame(table(subset(ct.no_scent, type == "starburst")$flavor))
+starburst.ct <-  data.frame(table(subset(ct.no_scent, type == "starburst")$scent.category))
 colnames(starburst.ct) <- c("Flavor", "Starburst")
 
-mm.ct <-  data.frame(table(subset(ct.no_scent, type == "m&m")$flavor))
+mm.ct <-  data.frame(table(subset(ct.no_scent, type == "m&m")$scent.category))
 colnames(mm.ct) <- c("Flavor", "M&M")
 
-pean.ct <-  data.frame(table(subset(ct.no_scent, type == "peanut m&m")$flavor))
+pean.ct <-  data.frame(table(subset(ct.no_scent, type == "peanut m&m")$scent.category))
 colnames(pean.ct) <- c("Flavor", "Peanut M&M")
 ```
 

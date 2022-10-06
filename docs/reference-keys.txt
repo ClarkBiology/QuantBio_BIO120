@@ -50,5 +50,6 @@ reading-comma-separated-value-files-.csv
 reading-excel-files-.xlsx
 sumarizing-and-subsetting-data-frames
 reading-in-the-dataframe
-summarizing-data-and-removing-data
+summarizing-and-subsetting-data
 summarizing-data
+summarizing-data-1

@@ -429,7 +429,7 @@ An example using <code>bash</code> to get the time:
 date
 ```</code></pre>
 </div>
-<pre><code>## Wed Oct  5 23:23:33 EDT 2022</code></pre>
+<pre><code>## Wed Oct  5 23:29:14 EDT 2022</code></pre>
 <div class="rmdinfo">
 <p>
 You can also use <code>R</code> as in here:
@@ -573,10 +573,8 @@ the code and a justification
 </ol>
 <p>If this is the case, you can create a simple <strong>bar plot</strong>. A bar plot summarizes all the information for each <strong>category</strong> (i.e. The element you are using to qualify the data into different sets) in the <strong>x-axis</strong> and creates bars in the <strong>y-axis</strong> where the height represents the number of data points for said category.</p>
 <p>To create the plot, modify and execute the following code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-<pre><code>## Warning: replacing previous import &#39;lifecycle::last_warnings&#39; by &#39;rlang::last_warnings&#39; when loading &#39;tibble&#39;</code></pre>
-<pre><code>## Warning: replacing previous import &#39;lifecycle::last_warnings&#39; by &#39;rlang::last_warnings&#39; when loading &#39;pillar&#39;</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="datasets.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="datasets.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/bar_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-8">
@@ -803,8 +801,8 @@ In this case, we can separate the flavors from each candy.
 </p>
 </div>
 <p>Modify the following code with your column names:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="datasets.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="datasets.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="datasets.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="datasets.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/two_candy_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-13">

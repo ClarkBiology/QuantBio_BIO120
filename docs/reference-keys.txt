@@ -53,3 +53,11 @@ reading-in-the-dataframe
 summarizing-and-subsetting-data
 summarizing-data
 summarizing-data-1
+plots
+using-ggplot2-to-plot-in-r
+different-types-of-plots
+histogram
+barplots
+scatterplots
+boxplots-violin-plots-and-distributions
+more-resources-on-ggplot2

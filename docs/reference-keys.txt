@@ -61,3 +61,10 @@ barplots
 scatterplots
 boxplots-violin-plots-and-distributions
 more-resources-on-ggplot2
+using-matlab-as-a-powerful-calculator
+matlab-basics-for-calculation
+early-words-of-caution
+dealing-with-vectorsmatrices
+defining-a-vectormatrix
+accessing-elements-adding-and-subtracting
+multiplying-two-vectorsmatrices

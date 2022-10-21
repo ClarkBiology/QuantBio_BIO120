@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
 
 
-<meta name="date" content="2022-10-17" />
+<meta name="date" content="2022-10-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -231,6 +231,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="plots.html"><a href="plots.html#more-resources-on-ggplot2"><i class="fa fa-check"></i><b>10.3</b> More resources on <code>ggplot2</code></a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html"><i class="fa fa-check"></i><b>11</b> Using MATLAB as a Powerful Calculator</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#matlab-basics-for-calculation"><i class="fa fa-check"></i><b>11.1</b> MATLAB Basics for calculation:</a></li>
+<li class="chapter" data-level="11.2" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#early-words-of-caution"><i class="fa fa-check"></i><b>11.2</b> Early words of caution:</a></li>
+<li class="chapter" data-level="11.3" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#dealing-with-vectorsmatrices"><i class="fa fa-check"></i><b>11.3</b> Dealing with vectors/matrices:</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#defining-a-vectormatrix"><i class="fa fa-check"></i><b>11.3.1</b> Defining a vector/matrix:</a></li>
+<li class="chapter" data-level="11.3.2" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#accessing-elements-adding-and-subtracting"><i class="fa fa-check"></i><b>11.3.2</b> Accessing Elements, Adding, and Subtracting</a></li>
+<li class="chapter" data-level="11.3.3" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#multiplying-two-vectorsmatrices"><i class="fa fa-check"></i><b>11.3.3</b> Multiplying two vectors/matrices:</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -287,8 +298,7 @@ What are the main steps of the scientific method?
 How do you define a research question?
 </li>
 <li>
-What is the difference between a research question and a
-hypothesis?
+What is the difference between a research question and a hypothesis?
 </li>
 </ul>
 </div>
@@ -309,8 +319,7 @@ hypothesis?
 Question 2
 </h4>
 <p>
-Create at least three observations from tour research object and add
-them here:
+Create at least three observations from tour research object and add them here:
 </p>
 <ul>
 <li>
@@ -394,15 +403,10 @@ Question 5
 WARNING:
 </h4>
 <p>
-Do <strong>NOT</strong> save any of your files with a space or with
-weird characters (such as <code>?&gt;&lt;,/’;:<span></span>=+-</code>).
+Do <strong>NOT</strong> save any of your files with a space or with weird characters (such as <code>?&gt;&lt;,/’;:<span></span>=+-</code>).
 </p>
 <p>
-If you need to use a space, use an underscore (<code>_</code>) or
-separate the names using <code>camel case</code> (i.e. Instead of
-<code>data sheet candy.txt</code> use either
-<code>data_sheet_candy.txt</code> or
-<code>dataSheetCandy.txt</code>)
+If you need to use a space, use an underscore (<code>_</code>) or separate the names using <code>camel case</code> (i.e. Instead of <code>data sheet candy.txt</code> use either <code>data_sheet_candy.txt</code> or <code>dataSheetCandy.txt</code>)
 </p>
 </div>
 <ol start="3" style="list-style-type: decimal">
@@ -418,10 +422,7 @@ separate the names using <code>camel case</code> (i.e. Instead of
 Executable Code Chunks
 </h4>
 <p>
-Executable code chunks are sections in your R markdown that allow you
-to <strong>execute</strong> or run code inside your file! That means you
-can do a lot of cool stuff within those chunks, like read datasets,
-create tables, and plot figures.
+Executable code chunks are sections in your R markdown that allow you to <strong>execute</strong> or run code inside your file! That means you can do a lot of cool stuff within those chunks, like read datasets, create tables, and plot figures.
 </p>
 <p>
 Executable code chunks look like this:
@@ -430,9 +431,7 @@ Executable code chunks look like this:
 code goes here
 ```</code></pre>
 <p>
-That means we can use <code>bash</code>, <code>R</code> and even
-<code>python</code> (as long as you have installed the correct packages)
-inside your R markdown document.
+That means we can use <code>bash</code>, <code>R</code> and even <code>python</code> (as long as you have installed the correct packages) inside your R markdown document.
 </p>
 <p>
 An example using <code>bash</code> to get the time:
@@ -441,7 +440,7 @@ An example using <code>bash</code> to get the time:
 date
 ```</code></pre>
 </div>
-<pre><code>## Mon Oct 17 17:41:33 EDT 2022</code></pre>
+<pre><code>## Fri Oct 21 09:49:35 EDT 2022</code></pre>
 <div class="rmdinfo">
 <p>
 You can also use <code>R</code> as in here:
@@ -482,8 +481,7 @@ What are the names of your columns?
 What do each of you columns represent?
 </li>
 <li>
-Write if your results are able to test your hypothesis and give an
-explanation why
+Write if your results are able to test your hypothesis and give an explanation why
 </li>
 </ul>
 </div>
@@ -498,25 +496,19 @@ explanation why
 R Packages
 </h4>
 <p>
-An R package are a collection of code, data, functions and other
-elements that allow you to extend the usage of <code>R</code>.
+An R package are a collection of code, data, functions and other elements that allow you to extend the usage of <code>R</code>.
 </p>
 <p>
-Some packages will help you plot, some others will allow you to read
-data into R in a better and faster way.
+Some packages will help you plot, some others will allow you to read data into R in a better and faster way.
 </p>
 <p>
-To use a package the first thing you have to do is <strong>Install
-it</strong>. After the package is installed, you just need to load it
-into the library.
+To use a package the first thing you have to do is <strong>Install it</strong>. After the package is installed, you just need to load it into the library.
 </p>
 <h5 id="installing-a-package">
 Installing a package
 </h5>
 <p>
-For example, to install <code>ggplot2</code>, write the following
-code just once in the <strong>CONSOLE</strong> (aka. The window in the
-lower left corner of your R studio)
+For example, to install <code>ggplot2</code>, write the following code just once in the <strong>CONSOLE</strong> (aka. The window in the lower left corner of your R studio)
 </p>
 <p>
 <code>install.packages(‘ggplot2’)</code>
@@ -543,8 +535,7 @@ Loading a package
 Now, we need to load the package to get the functions to work.
 </p>
 <p>
-To load the package, in your <code>R markdown</code> add this in code
-block
+To load the package, in your <code>R markdown</code> add this in code block
 </p>
 <p>
 <code>{r} library(ggplot2)</code>
@@ -556,13 +547,10 @@ loading the ggplot library
 </p>
 </div>
 <p>
-The command <code>library</code> loads the package into your
-<code>R</code> environment, and now you can use any of its
-functions!
+The command <code>library</code> loads the package into your <code>R</code> environment, and now you can use any of its functions!
 </p>
 <p>
-To learn more about packages in <code>R</code>, read the following <a
-href="https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html">link</a>
+To learn more about packages in <code>R</code>, read the following <a href="https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html">link</a>
 </p>
 </div>
 <ol style="list-style-type: decimal">
@@ -575,8 +563,7 @@ Question 7
 </h4>
 <ul>
 <li>
-How would you check that the data frame is still loaded in R? Write
-the code and a justification
+How would you check that the data frame is still loaded in R? Write the code and a justification
 </li>
 </ul>
 </div>
@@ -585,8 +572,9 @@ the code and a justification
 </ol>
 <p>If this is the case, you can create a simple <strong>bar plot</strong>. A bar plot summarizes all the information for each <strong>category</strong> (i.e. The element you are using to qualify the data into different sets) in the <strong>x-axis</strong> and creates bars in the <strong>y-axis</strong> where the height represents the number of data points for said category.</p>
 <p>To create the plot, modify and execute the following code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="datasets.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.2</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="datasets.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/bar_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-8">
@@ -629,8 +617,7 @@ Question 10
 </h4>
 <ul>
 <li>
-Load the data sheet into <code>R</code> and show it in your Markdown
-notebook
+Load the data sheet into <code>R</code> and show it in your Markdown notebook
 </li>
 <li>
 Compare it to their digital data sheet. Is it identical?
@@ -645,12 +632,10 @@ Compare it to their digital data sheet. Is it identical?
 Asking questions
 </h4>
 <p>
-For example: One group has M&amp;Ms and the other has Skittles. What
-are two features in common these two candies have? Color? Flavors?
+For example: One group has M&amp;Ms and the other has Skittles. What are two features in common these two candies have? Color? Flavors?
 </p>
 <p>
-You can, for example, measure the number of colors for both Skittles
-and M&amp;M’s and compare them
+You can, for example, measure the number of colors for both Skittles and M&amp;M’s and compare them
 </p>
 </div>
 <div class="rmdquestion">
@@ -683,8 +668,7 @@ Question 12
 </h4>
 <ul>
 <li>
-Load the data sheet into <code>R</code> and show it in your Markdown
-notebook
+Load the data sheet into <code>R</code> and show it in your Markdown notebook
 </li>
 </ul>
 </div>
@@ -696,9 +680,7 @@ notebook
 Comparing data sets
 </h4>
 <p>
-When you want to compare between different sites/treatments/types of
-candies is important that the data frame has an extra column that tell
-you where these are from.
+When you want to compare between different sites/treatments/types of candies is important that the data frame has an extra column that tell you where these are from.
 </p>
 <p>
 For example:
@@ -813,8 +795,8 @@ In this case, we can separate the flavors from each candy.
 </p>
 </div>
 <p>Modify the following code with your column names:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="datasets.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="datasets.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="datasets.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="datasets.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/two_candy_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-13">
@@ -828,9 +810,7 @@ Can this graph help you answer your research question? How
 What do your results show, based on the research question?
 </li>
 <li>
-Compare the code for plotting the <code>two_candies</code> data set
-versus the code for the <code>my_data</code> data set. What
-changed?
+Compare the code for plotting the <code>two_candies</code> data set versus the code for the <code>my_data</code> data set. What changed?
 </li>
 </ul>
 </div>
@@ -897,6 +877,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

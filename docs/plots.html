@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Plotting data | BIOL120 Excercise Guidebook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Plotting data | BIOL120 Excercise Guidebook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Plotting data | BIOL120 Excercise Guidebook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
+
+
+<meta name="date" content="2022-10-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sumarizing-and-subsetting-data-frames.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quantitative Biology (BIOL120)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Quantitative Biology (BIOL120) Excercise Guidebook</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html"><i class="fa fa-check"></i><b>2</b> Structure of the Guidebook and FAQs</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#what-do-we-need-for-lab-sessions"><i class="fa fa-check"></i><b>2.1</b> What do we need for lab sessions?</a></li>
+<li class="chapter" data-level="2.2" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#why-are-we-using-these-programs"><i class="fa fa-check"></i><b>2.2</b> Why are we using these programs?</a></li>
+<li class="chapter" data-level="2.3" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#do-we-need-to-know-how-to-program"><i class="fa fa-check"></i><b>2.3</b> Do we need to know how to program?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>3</b> Software for class</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="software.html"><a href="software.html#how-to-install-r"><i class="fa fa-check"></i><b>3.1</b> How to install R?</a></li>
+<li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#how-to-install-rstudio"><i class="fa fa-check"></i><b>3.2</b> How to install RStudio?</a></li>
+<li class="chapter" data-level="3.3" data-path="software.html"><a href="software.html#how-to-install-atom"><i class="fa fa-check"></i><b>3.3</b> How to install Atom?</a></li>
+<li class="chapter" data-level="3.4" data-path="software.html"><a href="software.html#how-to-install-matlab"><i class="fa fa-check"></i><b>3.4</b> How to install MATLAB?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="testing-the-software.html"><a href="testing-the-software.html"><i class="fa fa-check"></i><b>4</b> Testing the software</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="testing-the-software.html"><a href="testing-the-software.html#testing-r-and-rstudio"><i class="fa fa-check"></i><b>4.1</b> Testing R and RStudio</a></li>
+<li class="chapter" data-level="4.2" data-path="testing-the-software.html"><a href="testing-the-software.html#testing-atom"><i class="fa fa-check"></i><b>4.2</b> Testing Atom</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>5</b> Introduction to electronic notebooks in R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rmark.html"><a href="rmark.html#markdown-formats"><i class="fa fa-check"></i><b>5.1</b> Markdown formats</a></li>
+<li class="chapter" data-level="5.2" data-path="rmark.html"><a href="rmark.html#basics-of-markdown"><i class="fa fa-check"></i><b>5.2</b> Basics of Markdown</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rmark.html"><a href="rmark.html#basic-syntax"><i class="fa fa-check"></i><b>5.2.1</b> Basic syntax</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rmark.html"><a href="rmark.html#lines-of-code"><i class="fa fa-check"></i><b>5.2.2</b> Lines of code</a></li>
+<li class="chapter" data-level="5.2.3" data-path="rmark.html"><a href="rmark.html#lists"><i class="fa fa-check"></i><b>5.2.3</b> Lists</a></li>
+<li class="chapter" data-level="5.2.4" data-path="rmark.html"><a href="rmark.html#horizontal-rules"><i class="fa fa-check"></i><b>5.2.4</b> Horizontal rules</a></li>
+<li class="chapter" data-level="5.2.5" data-path="rmark.html"><a href="rmark.html#links-figures-and-tables"><i class="fa fa-check"></i><b>5.2.5</b> Links, figures and tables</a></li>
+<li class="chapter" data-level="5.2.6" data-path="rmark.html"><a href="rmark.html#tables"><i class="fa fa-check"></i><b>5.2.6</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rmark.html"><a href="rmark.html#r-markdown-excerise"><i class="fa fa-check"></i><b>5.3</b> R Markdown Excerise:</a></li>
+<li class="chapter" data-level="5.4" data-path="rmark.html"><a href="rmark.html#additional-information-on-markdown"><i class="fa fa-check"></i><b>5.4</b> Additional information on Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>6</b> Creating datasets and replicability</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="datasets.html"><a href="datasets.html#creating-basic-datasets"><i class="fa fa-check"></i><b>6.1</b> Creating basic datasets</a></li>
+<li class="chapter" data-level="6.2" data-path="datasets.html"><a href="datasets.html#asking-biological-questions-and-identifying-measurable-outcomes"><i class="fa fa-check"></i><b>6.2</b> Asking biological questions and identifying measurable outcomes</a></li>
+<li class="chapter" data-level="6.3" data-path="datasets.html"><a href="datasets.html#creating-a-clean-raw-dataset"><i class="fa fa-check"></i><b>6.3</b> Creating a clean raw dataset</a></li>
+<li class="chapter" data-level="6.4" data-path="datasets.html"><a href="datasets.html#creating-basic-basic-plots-in-r"><i class="fa fa-check"></i><b>6.4</b> Creating basic (basic) plots in R</a></li>
+<li class="chapter" data-level="6.5" data-path="datasets.html"><a href="datasets.html#comparisons-between-groups."><i class="fa fa-check"></i><b>6.5</b> Comparisons between groups.</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>7</b> Basic R (1): Vectors</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="vectors.html"><a href="vectors.html#basic-data-structures-in-r"><i class="fa fa-check"></i><b>7.1</b> Basic data structures in R</a></li>
+<li class="chapter" data-level="7.2" data-path="vectors.html"><a href="vectors.html#unidimensional-objects-vectors"><i class="fa fa-check"></i><b>7.2</b> Unidimensional objects: Vectors</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="vectors.html"><a href="vectors.html#classes-of-vectors"><i class="fa fa-check"></i><b>7.2.1</b> Classes of vectors</a></li>
+<li class="chapter" data-level="7.2.2" data-path="vectors.html"><a href="vectors.html#expanding-vectors"><i class="fa fa-check"></i><b>7.2.2</b> Expanding vectors</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html"><i class="fa fa-check"></i><b>8</b> Basic R (2) : Data frames</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#creating-tables-using-vectors"><i class="fa fa-check"></i><b>8.1</b> Creating tables using vectors</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#accessing-specific-rows-and-columns"><i class="fa fa-check"></i><b>8.1.1</b> Accessing specific rows and columns</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#data-frames-versus-matrices"><i class="fa fa-check"></i><b>8.2</b> Data frames versus matrices</a></li>
+<li class="chapter" data-level="8.3" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#combining-different-two-dimensional-data-structures"><i class="fa fa-check"></i><b>8.3</b> Combining different two-dimensional data structures</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#combining-by-rows"><i class="fa fa-check"></i><b>8.3.1</b> Combining by rows</a></li>
+<li class="chapter" data-level="8.3.2" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#combining-by-columns"><i class="fa fa-check"></i><b>8.3.2</b> Combining by columns</a></li>
+<li class="chapter" data-level="8.3.3" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#reading-in-data-tables"><i class="fa fa-check"></i><b>8.3.3</b> Reading in data tables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html"><i class="fa fa-check"></i><b>9</b> Sumarizing and subsetting data frames</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#reading-in-the-dataframe"><i class="fa fa-check"></i><b>9.1</b> Reading in the dataframe</a></li>
+<li class="chapter" data-level="9.2" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-and-subsetting-data"><i class="fa fa-check"></i><b>9.2</b> Summarizing and subsetting data</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-data"><i class="fa fa-check"></i><b>9.2.1</b> Summarizing data</a></li>
+<li class="chapter" data-level="9.2.2" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-data-1"><i class="fa fa-check"></i><b>9.2.2</b> Summarizing data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>10</b> Plotting data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="plots.html"><a href="plots.html#using-ggplot2-to-plot-in-r"><i class="fa fa-check"></i><b>10.1</b> Using <code>ggplot2</code> to plot in <code>R</code></a></li>
+<li class="chapter" data-level="10.2" data-path="plots.html"><a href="plots.html#different-types-of-plots"><i class="fa fa-check"></i><b>10.2</b> Different types of plots</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="plots.html"><a href="plots.html#histogram"><i class="fa fa-check"></i><b>10.2.1</b> Histogram</a></li>
+<li class="chapter" data-level="10.2.2" data-path="plots.html"><a href="plots.html#barplots"><i class="fa fa-check"></i><b>10.2.2</b> Barplots</a></li>
+<li class="chapter" data-level="10.2.3" data-path="plots.html"><a href="plots.html#scatterplots"><i class="fa fa-check"></i><b>10.2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="10.2.4" data-path="plots.html"><a href="plots.html#boxplots-violin-plots-and-distributions"><i class="fa fa-check"></i><b>10.2.4</b> Boxplots, violin plots and distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="plots.html"><a href="plots.html#more-resources-on-ggplot2"><i class="fa fa-check"></i><b>10.3</b> More resources on <code>ggplot2</code></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL120 Excercise Guidebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="plots" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Plotting data<a href="plots.html#plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>One of the clearest ways to present results or visualizing is by plotting it. This allows you to create a visual representation of it and come to conclusions about the patterns that you can see.</p>
+<p>However, to plot data we need to understand two main things: Types of plots and how to plot them.</p>
+<p>This chapter focuses on the use of the <code>ggplot2</code> package to plot different types of data.</p>
+<div id="using-ggplot2-to-plot-in-r" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Using <code>ggplot2</code> to plot in <code>R</code><a href="plots.html#using-ggplot2-to-plot-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The most commonly used package to plot data in <code>R</code> is <code>ggplot2</code>. This package uses a very simple syntax to plot:</p>
+<div class="figure">
+<img src="img/ggplot_explain.png" alt="" />
+<p class="caption">ggplot syntax</p>
+</div>
+<p>So, when you are making a data frame you want to plot, make sure that all the variables in your data you want to add are in different columns.</p>
+</div>
+<div id="different-types-of-plots" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Different types of plots<a href="plots.html#different-types-of-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are going to test a set of different plots using one of <code>R</code>’s most used data sets: <a href="https://allisonhorst.github.io/palmerpenguins/"><code>penguins</code></a>! To install it (in case you want to test it) do <code>install.packages("palmerpenguins")</code> and load the library:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="plots.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb95-2"><a href="plots.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb95-3"><a href="plots.html#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code></pre></div>
+<p>Give yourself some time to see what the data is about.</p>
+<div id="histogram" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Histogram<a href="plots.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A histogram is a representation of the <strong>distribution of frequency (number of times) a continuous value</strong> exists in our data set.</p>
+<p>Histograms are represented as bars. In the X-axis we have the continuous values and in the Y-axis the frequency of each value. In addition, the bars are also binned (divided into contiguous, equally spaced intervals).</p>
+<p>So, if we want to make a histogram of the <code>flipper_length_mm</code> of the penguins, we can do it by include, then, the value at the <code>x=</code> variable and to include a <code>geom_bar()</code> option at the end. This <code>geom_bar</code> option tells <code>ggplot</code> that our plot is based on bars.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="plots.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_count).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
+<p>The plot, then, shows us that there are two main peaks of abundance of the flipper length: one around 190mm and another around 219.</p>
+<p>We can also add colors to separate between species, for example:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="plots.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">fill=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_count).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p>What we see, then, is that there are actually three peaks. One per species!</p>
+</div>
+<div id="barplots" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Barplots<a href="plots.html#barplots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Bar plots are <strong>representations of a continuous variable across discrete variables</strong>. This means we need a Y-axis that has continuous data and an X-axis that contains discrete data.</p>
+<p>A good example of this would be the number of penguins per species per island. We have to do some transformations of the data first:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="plots.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb100-2"><a href="plots.html#cb100-2" aria-hidden="true" tabindex="-1"></a>penguin.island <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">count</span>(species, island)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="plots.html#cb101-1" aria-hidden="true" tabindex="-1"></a>penguin.island</span></code></pre></div>
+<pre><code>## [38;5;246m# A tibble: 5 x 3[39m
+##   species   island        n
+##   [3m[38;5;246m&lt;fct&gt;[39m[23m     [3m[38;5;246m&lt;fct&gt;[39m[23m     [3m[38;5;246m&lt;int&gt;[39m[23m
+## [38;5;250m1[39m Adelie    Biscoe       44
+## [38;5;250m2[39m Adelie    Dream        56
+## [38;5;250m3[39m Adelie    Torgersen    52
+## [38;5;250m4[39m Chinstrap Dream        68
+## [38;5;250m5[39m Gentoo    Biscoe      124</code></pre>
+<p>And now, we create the plot using the n (number of penguins) in the y-axis and islands in the x-axis:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="plots.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguin.island, <span class="fu">aes</span>(<span class="at">x=</span>island, <span class="at">y=</span>n)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p>The <code>stat="identity"</code> flags allows for the use of a continuous variable in the y-axis.</p>
+<p>We are still missing data, right? What happens if we want to see the species of penguins per island? Add a <code>fill=species</code> flag inside of the <code>aes</code>:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="plots.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguin.island, <span class="fu">aes</span>(<span class="at">x=</span>island, <span class="at">y=</span>n, <span class="at">fill=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="672" />
+Now we can see that the Adelie species exists in all islands! This plot is called a <strong>stacked bar chart</strong>, because it stacks the different categories of each x rank in top of each other.</p>
+<p>There is a different type of bar chart that sets all the categories in the x-axis instead of on top of each other. To get this, add the flag <code>position="dodge"</code> into the <code>geom_bar</code> option:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="plots.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguin.island, <span class="fu">aes</span>(<span class="at">x=</span>island, <span class="at">y=</span>n, <span class="at">fill=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-81-1.png" width="672" />
+In some cases, these charts are much easier to interpret as they compare the values directly between categories.</p>
+</div>
+<div id="scatterplots" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Scatterplots<a href="plots.html#scatterplots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another super common type of plot are the scatter plots. Scatter plots represent <strong>continuous variables versus continuous variables</strong>. These plots are used for when we want to look at correlations between variables.</p>
+<p>For example, do we see that beak depth increases with beak length?</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="plots.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>bill_depth_mm, <span class="at">y=</span>bill_length_mm)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p>So, we can see that each axis has continuous values. This plot its a bit hard to read, and that is because we don’t really see a trend at all. Maybe if we color the points based on species the information will become clearer:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="plots.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>bill_depth_mm, <span class="at">y=</span>bill_length_mm, <span class="at">color=</span>species)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p>Much better! Now we can see a positive trend in the relation between bill depth and beak length per species, meaning that as one of these gets larger the other one also gets larger.</p>
+<p>More formal and statistical tests for correlation between discrete variables are seen in depth in biostatistics or other statistics courses, but with these plots you can expand your hypothesis and look for hints of correlations.</p>
+</div>
+<div id="boxplots-violin-plots-and-distributions" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> Boxplots, violin plots and distributions<a href="plots.html#boxplots-violin-plots-and-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are plots that combine histograms and categorical variables by <strong>illustrating the distribution of the continuous variable across different categorical variables</strong>:</p>
+<p>These are called violin plots. If we want to see the distribution of <code>flipper_length_mm</code> per species, we can see it like this:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="plots.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>flipper_length_mm, <span class="at">color=</span>species)) <span class="sc">+</span> <span class="fu">geom_violin</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_ydensity).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p>These plots are constructed by the abundance of data points at each of the y-axis values, so we can add points to the plot:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="plots.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>flipper_length_mm, <span class="at">color=</span>species)) <span class="sc">+</span> <span class="fu">geom_violin</span>() <span class="sc">+</span> <span class="fu">geom_jitter</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_ydensity).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p>So, if you see the regions that have the widest area are the ones with the most points. That’s how distributions are made!</p>
+<p>These distributions, then, also provide you with the median and other statistically important elements that we will not focus on. You can see this simplification of the distribution you can use the <code>geom_boxplot</code> option:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="plots.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>flipper_length_mm, <span class="at">color=</span>species)) <span class="sc">+</span> <span class="fu">geom_violin</span>() <span class="sc">+</span> <span class="fu">geom_jitter</span>() <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_ydensity).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_boxplot).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" />
+The thick middle line in the box plot is the median, the upper and lower boxes represent the first and third quartiles (the 25th and 75th percentiles) of the data, and the error bars are the roughly 95% confidence interval for comparing medians.</p>
+<hr />
+</div>
+</div>
+<div id="more-resources-on-ggplot2" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> More resources on <code>ggplot2</code><a href="plots.html#more-resources-on-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>ggplot2</code> package is super extensive and has modifications and options to make whatever plot you’d like to make.</p>
+<p>Here are some great resources:</p>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/index.html" class="uri">https://ggplot2.tidyverse.org/index.html</a></li>
+<li>The <a href="https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf"><code>ggplot2</code> official cheatsheet</a></li>
+<li>A phenomenal <a href="http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization">practical guide to ggplot2</a></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sumarizing-and-subsetting-data-frames.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-plotting.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-# Sumarizing and subsetting data frames
+# Sumarizing and subsetting data frames {}
 
 There are many cases in which a data frame is comprised by all sorts of different data types.
 

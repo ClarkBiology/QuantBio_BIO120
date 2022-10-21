@@ -243,7 +243,7 @@ To read CSV you can use the `read.csv` function
 
 We talked in class how Excel files are not necessarily the best but in most cases they are super important to store information, specially for people that are not well versed in computational stuff.
 
-Well, we can also read those files using the `read.xlsx` command from the package `readxl`
+Well, we can also read those files using the `read_xlsx` command from the package `readxl`
 
 
 ```{block, type='rmdquestion'}

@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
 
 
-<meta name="date" content="2022-10-06" />
+<meta name="date" content="2022-10-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -38,7 +38,7 @@ set in the _output.yml file.</p>" />
   
 <link rel="prev" href="vectors.html"/>
 <link rel="next" href="sumarizing-and-subsetting-data-frames.html"/>
-<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -218,6 +218,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.1" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-data"><i class="fa fa-check"></i><b>9.2.1</b> Summarizing data</a></li>
 <li class="chapter" data-level="9.2.2" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-data-1"><i class="fa fa-check"></i><b>9.2.2</b> Summarizing data</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>10</b> Plotting data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="plots.html"><a href="plots.html#using-ggplot2-to-plot-in-r"><i class="fa fa-check"></i><b>10.1</b> Using <code>ggplot2</code> to plot in <code>R</code></a></li>
+<li class="chapter" data-level="10.2" data-path="plots.html"><a href="plots.html#different-types-of-plots"><i class="fa fa-check"></i><b>10.2</b> Different types of plots</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="plots.html"><a href="plots.html#histogram"><i class="fa fa-check"></i><b>10.2.1</b> Histogram</a></li>
+<li class="chapter" data-level="10.2.2" data-path="plots.html"><a href="plots.html#barplots"><i class="fa fa-check"></i><b>10.2.2</b> Barplots</a></li>
+<li class="chapter" data-level="10.2.3" data-path="plots.html"><a href="plots.html#scatterplots"><i class="fa fa-check"></i><b>10.2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="10.2.4" data-path="plots.html"><a href="plots.html#boxplots-violin-plots-and-distributions"><i class="fa fa-check"></i><b>10.2.4</b> Boxplots, violin plots and distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="plots.html"><a href="plots.html#more-resources-on-ggplot2"><i class="fa fa-check"></i><b>10.3</b> More resources on <code>ggplot2</code></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -538,7 +550,7 @@ Is this table any different from the table in question 4?
 <div id="reading-excel-files-.xlsx" class="section level4 hasAnchor" number="8.3.3.3">
 <h4><span class="header-section-number">8.3.3.3</span> Reading Excel files (.xlsx)<a href="basic-r-2-data-frames.html#reading-excel-files-.xlsx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We talked in class how Excel files are not necessarily the best but in most cases they are super important to store information, specially for people that are not well versed in computational stuff.</p>
-<p>Well, we can also read those files using the <code>read.xlsx</code> command from the package <code>readxl</code></p>
+<p>Well, we can also read those files using the <code>read_xlsx</code> command from the package <code>readxl</code></p>
 <div class="rmdquestion">
 <h4 id="question-6">
 Question 6

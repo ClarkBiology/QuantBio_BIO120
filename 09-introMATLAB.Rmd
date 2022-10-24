@@ -12,7 +12,7 @@ To get started, open MATLAB and make sure you are working in the **Command Windo
 
 * We can add (`+`), subtract(`-`), multiply (`*`), and divide(`/`) any two numbers 
 * All of our favorite functions are in MATLAB:
-  + **The squre root function**:
+  + **The square root function**:
   
     i.e. To calculate $\sqrt{44944}$, just type `sqrt(44944)`
   + **The exponential function**:
@@ -159,8 +159,7 @@ $$\begin{bmatrix}
 ```{block, type='rmdquestion'}
 #### Question 3
   - Using your vectors from Question 2, create a new vector, $z$, by adding $v$ and $w$.  What happens if you try to add $v$ and $u$?
-  - Create a new vector, $y$, with each entry equal to the cube of the corresponding entry in $z$. 
-  - What is the 22nd entry of $y$?
+  - Using MATLAB, determine the 22nd entry of $z$?
   - Given the following matrices,$A$ and $B$, compute $A+B$ and $B-A$.
   ```
   $$A = \begin{bmatrix} 
@@ -200,8 +199,11 @@ $$\begin{bmatrix}
 
 ```{block, type='rmdquestion'}
 #### Question 4
-  - Using the same matrices, $A$ and $B$ that you used in Question 3, create two new matrices, $C$ and $D$.  
-    $C$ should be the matrix obtained by multiplying $A$ and $B$ using `matrix multiplication`, while $D$ should be the matrix obtained by `element-wise multiplication`.
+  - Using the vector $z$ from Question 3, create a new vector, $y$, with each entry equal to the cube of the corresponding entry in $z$. 
+  - Using MATLAB, determine the 22nd entry of $y$?
+  - Using the matrices $A$ and $B$ from Question 3, create two new matrices, $C$ and $D$.  
+    $C$ should be the matrix obtained using `matrix multiplication`.    
+    $D$ should be the matrix obtained using `element-wise multiplication`.
   - Using MATLAB, determine the $(2,3)$ entry of $C$ and the $(2,3)$ entry of $D$.
   - Consider the matrix below, $F$.  Why is it impossible to multiple $A$ by $F$ element-wise?  
   - Again consider the matrix $F$.  Can you multiply $A$ times $F$ using matrix multiplication (in that order)?  What about $F$ times $A$?  

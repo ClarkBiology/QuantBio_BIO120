@@ -68,9 +68,10 @@ dealing-with-vectorsmatrices
 defining-a-vectormatrix
 accessing-elements-adding-and-subtracting
 multiplying-two-vectorsmatrices
-m-files-and-functions
+m-files-functions-and-simple-plotting-tools
 m-files
 functions
+plotting-function-output-model-predictions
 url-your-book-url-like-httpsbookdown.orgyihuibookdown
 question-1
 question-2
@@ -96,6 +97,3 @@ question-1-1
 question-2-1
 question-3-1
 question-4-1
-question-3-2
-plotting-function-output-model-predictions
-m-files-functions-and-simple-plotting-tools

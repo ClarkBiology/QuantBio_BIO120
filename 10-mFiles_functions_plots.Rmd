@@ -1,4 +1,4 @@
-# m files, functions, and simple plotting tools
+# m files, functions, and Simple Plotting Tools
 
 
 ## m files:

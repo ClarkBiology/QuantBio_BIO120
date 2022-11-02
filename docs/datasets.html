@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
 
 
-<meta name="date" content="2022-10-24" />
+<meta name="date" content="2022-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -242,6 +242,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3.3" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#multiplying-two-vectorsmatrices"><i class="fa fa-check"></i><b>11.3.3</b> Multiplying two vectors/matrices:</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="m-files-and-functions.html"><a href="m-files-and-functions.html"><i class="fa fa-check"></i><b>12</b> m files and functions</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="m-files-and-functions.html"><a href="m-files-and-functions.html#m-files"><i class="fa fa-check"></i><b>12.1</b> m files:</a></li>
+<li class="chapter" data-level="12.2" data-path="m-files-and-functions.html"><a href="m-files-and-functions.html#functions"><i class="fa fa-check"></i><b>12.2</b> functions:</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -440,7 +445,7 @@ An example using <code>bash</code> to get the time:
 date
 ```</code></pre>
 </div>
-<pre><code>## Mon Oct 24 10:01:48 EDT 2022</code></pre>
+<pre><code>## Thu Oct 27 22:15:49 EDT 2022</code></pre>
 <div class="rmdinfo">
 <p>
 You can also use <code>R</code> as in here:
@@ -572,9 +577,8 @@ How would you check that the data frame is still loaded in R? Write the code and
 </ol>
 <p>If this is the case, you can create a simple <strong>bar plot</strong>. A bar plot summarizes all the information for each <strong>category</strong> (i.e. The element you are using to qualify the data into different sets) in the <strong>x-axis</strong> and creates bars in the <strong>y-axis</strong> where the height represents the number of data points for said category.</p>
 <p>To create the plot, modify and execute the following code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.2</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="datasets.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="datasets.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/bar_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-8">
@@ -795,8 +799,8 @@ In this case, we can separate the flavors from each candy.
 </p>
 </div>
 <p>Modify the following code with your column names:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="datasets.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="datasets.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="datasets.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="datasets.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/two_candy_plot-1.png" width="672" /></p>
 <div class="rmdquestion">
 <h4 id="question-13">

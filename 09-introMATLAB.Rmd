@@ -6,7 +6,7 @@ MATLAB can do basic arithmetic, including trigonometry and linear algebra. Read 
 If you ever need additional help, recall the MathWorks help site: [here](http://www.mathworks.com/help/matlab/).
 
 To get started, open MATLAB and make sure you are working in the **Command Window**:
-![unchanged image](MATLAB_open.png)
+![MATLAB](MATLAB_open.png)
 
 ## MATLAB Basics for calculation:
 

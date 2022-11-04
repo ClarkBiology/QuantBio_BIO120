@@ -1,7 +1,7 @@
 # m files, functions, and Simple Plotting Tools
 
 
-## m files:
+## m files
 
 * Creating an m file
 
@@ -40,7 +40,7 @@
   Go back to Chapter 11.  Create an m file to help you answer Questions 2 and 3.  Make sure to include comments.
 ```
 
-## functions:
+## functions
 
 * Creating a function
   + `New` --$>$ `Script`
@@ -63,7 +63,7 @@
   ![fun1execute](fun1_run.png)
     ```{block, type='rmdquestion'}
 #### Question 2
-  - Write a MATLAB function that converts Celcius to Farenheit, according to the function $F\left(C\right) = \cfrac{9}{5}C+32$
+  - Write a MATLAB function that converts Celcius to Farenheit, according to the function $F = \cfrac{9}{5}C+32$
   - What is the `independent variable` and what is the `dependent variable`?
   - Run your function to convert the following temperatures (given in $^{\circ}$C) to $^{\circ}$F.
   
@@ -95,7 +95,7 @@ Lets think about modeling drug dosage.  If the recommended adult dosage for a dr
 ```  
   
   
-## Plotting function output / model predictions:
+## Plotting function output / model predictions
 
 * Scatter Plots
 
@@ -139,7 +139,7 @@ Lets think about modeling drug dosage.  If the recommended adult dosage for a dr
   
     ```{block, type='rmdquestion'}
 #### Question 4
-Using either a scatter plot or line plot to visualize your results from Question 3.
+Using either a scatter plot or line plot, visualize your results from Question 3.
 
 Make sure your plot has your axes labeled (with units) and includes a Title.
 ```  

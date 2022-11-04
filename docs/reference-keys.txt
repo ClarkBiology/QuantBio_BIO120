@@ -72,3 +72,8 @@ m-files-functions-and-simple-plotting-tools
 m-files
 functions
 plotting-function-output-model-predictions
+model-fitting-a.k.a.-parameter-estimation
+importing-numerical-data
+creating-a-model-function
+creating-an-objective-error-function
+running-fminsearch

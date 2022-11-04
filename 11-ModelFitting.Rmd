@@ -1,0 +1,41 @@
+# Model Fitting (A.K.A. parameter estimation)
+
+
+## Importing Numerical Data
+
+* Using dlmread
+
+  + The data must be in a delimited format (i.e. a matrix of values, with entries separated by spaces, tabs, or commas).
+  + The data file must be in your `Current Folder`.
+  + When using `dlmread()`, the filename needs to be in single quotation marks.
+  + Save your data to a new variable when you read it into MATLAB (i.e. `D = dlmread('mydata.txt')`).
+  
+    Example:
+    
+    First we make sure the data file is in our `Current Folder`, use `dlmread()` to read it and save it to a new variable, D.  
+    Note: We can then check that our data is indeed contained in the matrix D.
+    
+    ![](import_GT.png)
+    
+    If we want to visualize our dataset before moving on to model fitting, we can use the `plot()` command.
+    
+    Note: In this example, the first column of data contains the independent variable (\% AP) and the second column of data contains the dependent variable (normalized GT mRNA concentration).
+    ![](GT_figure.png)
+  
+  
+  
+  ```{block, type='rmdquestion'}
+#### Question 1
+  Download the *dicty* growth data generated in the Larochelle Lab from the course moodle.
+  
+  Save this file in your `Current Folder`.
+  
+  Use the `dlmread()` command to read in the data and save it as a matrix (you can call this matrix whatever you want - i.e. I used D in the example above).
+```
+
+
+## Creating a Model Function
+
+## Creating an Objective / Error Function
+
+## Running fminsearch()

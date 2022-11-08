@@ -55,7 +55,7 @@ Looking at your data, you now want to create a mathematical model to fit to your
 #### Question 2
   Create a model in MATLAB that you will use for the *dicty* growth data.  
   
-  Note: You will want to create a single MATLAB function to use on both data sets.  The model \underline{parameters} are what should change the shape of your curve. In the last section, we will learn how to fit the correct parameter values in order to obtain one set of parameter values for the AX4 cells and another set for the DnmA KO cells.
+  Note: You will want to create a single MATLAB function to use on both data sets.  The model parameters are what should change the shape of your curve. In the last section, we will learn how to fit the correct parameter values in order to obtain one set of parameter values for the AX4 cells and another set for the DnmA KO cells.
   
   After creating your model function, answer each of the 4 questions above.
 ```

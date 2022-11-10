@@ -33,9 +33,11 @@
   Use the `dlmread()` command to read in the data and save it as a matrix (you can call this matrix whatever you want - i.e. I used D in the example above).
   
   Use a scatter plot to visualize the data.  
-  - Note: The first column is time (in hours), the second column is the corresponding population of AX4 cells (in cells/mL), and the third column is the corresponding population of DnmA Knock Out cells (in cells/mL).
-  
-  * Hint: To visualize both populations, scatter one, then `hold on` and scatter the other.
+  * The first column is time (in hours), the second column is the corresponding population of AX4 cells (in cells/mL), and the third column is the corresponding population of DnmA Knock Out cells (in cells/mL).   
+      Hint: To visualize both populations on the same figure, scatter one, then   
+      `hold on` and scatter the other.      
+  * Include a title and don't forget to label your axes.    
+  * You can also add a legend using the drop down menu: `Insert -> Legend`.
 ```
 
 
@@ -62,4 +64,31 @@ Looking at your data, you now want to create a mathematical model to fit to your
 
 ## Creating an Objective / Error Function
 
+For Model Fitting, we need an Objective Function (which we will minimize).  The most popular Objective Function is the Error Function calculated by taking the Sum of Square Errors (SSE):
+$$SSE = \sum_{i=1}^n \left(y_i - m_i\right)^2$$
+Luckily, MATLAB has a function that sums square terms of a vector for us, `sumsqr()`.
+
+Examples:
+
+1)  
+
+![](sumsqr1.png)
+        Note: $1^2+2^2+3^2+4^2 = 30$  
+      
+2)  
+
+![](sumsqr2.png)
+        Note: $\left(1-1.4\right)^2+\left(2-1.7\right)^2+\left(3-2.9\right)^2+\left(4-4.2\right)^2 = 0.3$
+        
+        
+```{block, type='rmdquestion'}
+#### Question 3
+  Create an objective function in the following way: 
+  
+  + The input should be the model parameter(s) and the experimental data (as two vectors, values for the dependent variable and independent variable).
+  + The function should run the model with the parameter(s) given and vector of dependent variable values.
+  + The function should then calculate the SSE between the model output and the experimental data.
+  + The output should be the SSE value.
+```
+        
 ## Running fminsearch()

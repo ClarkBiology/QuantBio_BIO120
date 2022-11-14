@@ -80,15 +80,90 @@ Examples:
 ![](sumsqr2.png)
         Note: $\left(1-1.4\right)^2+\left(2-1.7\right)^2+\left(3-2.9\right)^2+\left(4-4.2\right)^2 = 0.3$
         
+To create an Objective Function, the function needs to take the model parameter(s) and experimental data as input.  The output should always be a *single number*, the SSE.
+
+Example:
+
+Lets assume we have some experimental data of the position of a frog as it jumps.  We upload the data in to MATLAB and use a scatter plot to visualize.
+![](frog_jump.png)
+Just looking at the data's shape, we suggest using a quadratic model to fit this data.  (This also fits what we have learned about projectile motion in Intro Physics.)
+
+Next, we write the model function:
+![](funpar.png)
+Now we need to write our Objective Function to calculate the error between the model and experimental data.  The Objective Function should take as input: our parameter(s) as a *single vector* and our experimental data.  It should output a *single value*, the SSE.
+![](quad_error.png)
+Before moving on, we should run the Objective Function (with any parameter values we choose for now) just to make sure it runs and outputs a single number with no errors.
+![](try_SSE.png)
         
 ```{block, type='rmdquestion'}
 #### Question 3
   Create an objective function in the following way: 
   
-  + The input should be the model parameter(s) and the experimental data (as two vectors, values for the dependent variable and independent variable).
-  + The function should run the model with the parameter(s) given and vector of dependent variable values.
+  + The input should be the model parameter(s) as a single vector and the experimental data (as two vectors, values for the dependent variable and independent variable).
+  + The function should run the model you created in Question 2 with the parameter(s) given and vector of dependent variable values.
   + The function should then calculate the SSE between the model output and the experimental data.
   + The output should be the SSE value.
 ```
         
-## Running fminsearch()
+## Fitting your Model to your Data
+
+We have experimental data, a mathematical model, and an objective funciton: now what?
+
+Now we need to find the parameter values that minimize that objective function.
+
+There are many ways to do this.  In this section we will learn how to implement a local method of parameter estimation in MATLAB.  Local methods take an initial guess for the parameter values and search nearby using techniques from Calculus or Geometry.  In MATLAB, the most common function to use is `fminsearch()`.  This function uses the Nelder-Mead simplex algorithm, but you don't have to worry about that for this course.  Just focus on how to run it.
+
+### Running fminsearch()
+
+The `fminsearch()` function has many different options available when running it.  Since our Objective function takes multiple inputs and we only want to fit the parameter value(s), will run it using the following commands / syntax:
+
+`[x,fval] = fminsearch(@(p)function_name(p,t,y...),p_0);`
+
+Notes:    
+
+* `p_0` is your initial guess for the parameter value(s).  This needs to be a vector and parameters need to be given in the SAME order as they are input into your function (i.e. the same as `p`)
+    
+* `x` is a vector of parameter values that best fit your data
+    
+* `fval` is the SSE between your data and the model when `x` is used for the parameters in your model
+  
+Example:
+![](run_fminsearch.png)
+
+```{block, type='rmdquestion'}
+#### Question 4
+  Run `fminsearch()` using the *dicty* growth data from Question 1 and your Objective Function from Question 3 to find the parameter values. 
+
+Note:
+
+  + You will have to do this TWICE since we have two data sets, the AX4 cells and the DnmA KO cells.
+  + The growth data is different for these two data sets, so you should get two DIFFERENT sets of parameters.
+  + Although this can all be done in the Command Window, you will want to use an mfile so you can edit, add comments, and save your commands.
+```
+
+### Visualizing the Best Fit
+
+Once you have the optimal parameter values, you will want to see how good your fit looks with your data.  You will do this in 3 steps:
+
+1) `scatter()` the experimental data (independent vs. dependent variables).  Don't forget to `hold on` to the figure.
+2) Run the model with the parameter values that gave you the best fit.  You can either use the vector of independent variable values from your experimental data or create your own vector (just make sure it includes a range of independent variable values that include those given in your data set).
+3) `plot()` the model results and label your figure.
+
+Example:
+![](visualize_fit.png)
+![](modelFit.png)
+
+```{block, type='rmdquestion'}
+#### Question 5
+  Create a visualization for your model fits to the *dicty* growth data.
+  
+  You can do this either:
+  
+  1) using two figures, one for the AX4 cells and one for the DnmA KO cells.  
+  
+  OR
+  
+  2) using a single figure with both sets of experimental data and both model fits.  
+  
+  Make sure to include axes labels and a Legend!
+```

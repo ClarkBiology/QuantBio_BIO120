@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
 
 
-<meta name="date" content="2022-11-10" />
+<meta name="date" content="2022-11-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -253,7 +253,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#importing-numerical-data"><i class="fa fa-check"></i><b>13.1</b> Importing Numerical Data</a></li>
 <li class="chapter" data-level="13.2" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#creating-a-model-function"><i class="fa fa-check"></i><b>13.2</b> Creating a Model Function</a></li>
 <li class="chapter" data-level="13.3" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#creating-an-objective-error-function"><i class="fa fa-check"></i><b>13.3</b> Creating an Objective / Error Function</a></li>
-<li class="chapter" data-level="13.4" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#running-fminsearch"><i class="fa fa-check"></i><b>13.4</b> Running fminsearch()</a></li>
+<li class="chapter" data-level="13.4" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#fitting-your-model-to-your-data"><i class="fa fa-check"></i><b>13.4</b> Fitting your Model to your Data</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#running-fminsearch"><i class="fa fa-check"></i><b>13.4.1</b> Running fminsearch()</a></li>
+<li class="chapter" data-level="13.4.2" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#visualizing-the-best-fit"><i class="fa fa-check"></i><b>13.4.2</b> Visualizing the Best Fit</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -360,6 +364,17 @@ Note: <span class="math inline">\(1^2+2^2+3^2+4^2 = 30\)</span></p>
 </ol>
 <p><img src="sumsqr2.png" />
 Note: <span class="math inline">\(\left(1-1.4\right)^2+\left(2-1.7\right)^2+\left(3-2.9\right)^2+\left(4-4.2\right)^2 = 0.3\)</span></p>
+<p>To create an Objective Function, the function needs to take the model parameter(s) and experimental data as input. The output should always be a <em>single number</em>, the SSE.</p>
+<p>Example:</p>
+<p>Lets assume we have some experimental data of the position of a frog as it jumps. We upload the data in to MATLAB and use a scatter plot to visualize.
+<img src="frog_jump.png" />
+Just looking at the data’s shape, we suggest using a quadratic model to fit this data. (This also fits what we have learned about projectile motion in Intro Physics.)</p>
+<p>Next, we write the model function:
+<img src="funpar.png" />
+Now we need to write our Objective Function to calculate the error between the model and experimental data. The Objective Function should take as input: our parameter(s) as a <em>single vector</em> and our experimental data. It should output a <em>single value</em>, the SSE.
+<img src="quad_error.png" />
+Before moving on, we should run the Objective Function (with any parameter values we choose for now) just to make sure it runs and outputs a single number with no errors.
+<img src="try_SSE.png" /></p>
 <div class="rmdquestion">
 <h4 id="question-3">
 Question 3
@@ -369,10 +384,10 @@ Create an objective function in the following way:
 </p>
 <ul>
 <li>
-The input should be the model parameter(s) and the experimental data (as two vectors, values for the dependent variable and independent variable).
+The input should be the model parameter(s) as a single vector and the experimental data (as two vectors, values for the dependent variable and independent variable).
 </li>
 <li>
-The function should run the model with the parameter(s) given and vector of dependent variable values.
+The function should run the model you created in Question 2 with the parameter(s) given and vector of dependent variable values.
 </li>
 <li>
 The function should then calculate the SSE between the model output and the experimental data.
@@ -383,9 +398,86 @@ The output should be the SSE value.
 </ul>
 </div>
 </div>
-<div id="running-fminsearch" class="section level2 hasAnchor" number="13.4">
-<h2><span class="header-section-number">13.4</span> Running fminsearch()<a href="model-fitting-a.k.a.-parameter-estimation.html#running-fminsearch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="fitting-your-model-to-your-data" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> Fitting your Model to your Data<a href="model-fitting-a.k.a.-parameter-estimation.html#fitting-your-model-to-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have experimental data, a mathematical model, and an objective funciton: now what?</p>
+<p>Now we need to find the parameter values that minimize that objective function.</p>
+<p>There are many ways to do this. In this section we will learn how to implement a local method of parameter estimation in MATLAB. Local methods take an initial guess for the parameter values and search nearby using techniques from Calculus or Geometry. In MATLAB, the most common function to use is <code>fminsearch()</code>. This function uses the Nelder-Mead simplex algorithm, but you don’t have to worry about that for this course. Just focus on how to run it.</p>
+<div id="running-fminsearch" class="section level3 hasAnchor" number="13.4.1">
+<h3><span class="header-section-number">13.4.1</span> Running fminsearch()<a href="model-fitting-a.k.a.-parameter-estimation.html#running-fminsearch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>fminsearch()</code> function has many different options available when running it. Since our Objective function takes multiple inputs and we only want to fit the parameter value(s), will run it using the following commands / syntax:</p>
+<p><code>[x,fval] = fminsearch(@(p)function_name(p,t,y...),p_0);</code></p>
+<p>Notes:</p>
+<ul>
+<li><p><code>p_0</code> is your initial guess for the parameter value(s). This needs to be a vector and parameters need to be given in the SAME order as they are input into your function (i.e. the same as <code>p</code>)</p></li>
+<li><p><code>x</code> is a vector of parameter values that best fit your data</p></li>
+<li><p><code>fval</code> is the SSE between your data and the model when <code>x</code> is used for the parameters in your model</p></li>
+</ul>
+<p>Example:
+<img src="run_fminsearch.png" /></p>
+<div class="rmdquestion">
+<h4 id="question-4">
+Question 4
+</h4>
+<p>
+Run <code>fminsearch()</code> using the <em>dicty</em> growth data from Question 1 and your Objective Function from Question 3 to find the parameter values.
+</p>
+<p>
+Note:
+</p>
+<ul>
+<li>
+You will have to do this TWICE since we have two data sets, the AX4 cells and the DnmA KO cells.
+</li>
+<li>
+The growth data is different for these two data sets, so you should get two DIFFERENT sets of parameters.
+</li>
+<li>
+Although this can all be done in the Command Window, you will want to use an mfile so you can edit, add comments, and save your commands.
+</li>
+</ul>
+</div>
+</div>
+<div id="visualizing-the-best-fit" class="section level3 hasAnchor" number="13.4.2">
+<h3><span class="header-section-number">13.4.2</span> Visualizing the Best Fit<a href="model-fitting-a.k.a.-parameter-estimation.html#visualizing-the-best-fit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once you have the optimal parameter values, you will want to see how good your fit looks with your data. You will do this in 3 steps:</p>
+<ol style="list-style-type: decimal">
+<li><code>scatter()</code> the experimental data (independent vs. dependent variables). Don’t forget to <code>hold on</code> to the figure.</li>
+<li>Run the model with the parameter values that gave you the best fit. You can either use the vector of independent variable values from your experimental data or create your own vector (just make sure it includes a range of independent variable values that include those given in your data set).</li>
+<li><code>plot()</code> the model results and label your figure.</li>
+</ol>
+<p>Example:
+<img src="visualize_fit.png" />
+<img src="modelFit.png" /></p>
+<div class="rmdquestion">
+<h4 id="question-5">
+Question 5
+</h4>
+<p>
+Create a visualization for your model fits to the <em>dicty</em> growth data.
+</p>
+<p>
+You can do this either:
+</p>
+<ol style="list-style-type: decimal">
+<li>
+using two figures, one for the AX4 cells and one for the DnmA KO cells.
+</li>
+</ol>
+<p>
+OR
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li>
+using a single figure with both sets of experimental data and both model fits.
+</li>
+</ol>
+<p>
+Make sure to include axes labels and a Legend!
+</p>
+</div>
 
+</div>
 </div>
 </div>
             </section>

@@ -76,4 +76,6 @@ model-fitting-a.k.a.-parameter-estimation
 importing-numerical-data
 creating-a-model-function
 creating-an-objective-error-function
+fitting-your-model-to-your-data
 running-fminsearch
+visualizing-the-best-fit

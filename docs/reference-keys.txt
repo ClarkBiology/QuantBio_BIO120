@@ -79,3 +79,7 @@ creating-an-objective-error-function
 fitting-your-model-to-your-data
 running-fminsearch
 visualizing-the-best-fit
+investigating-a-numerical-data-set
+extracting-and-combining-subsets-of-data
+simple-summary-statistics
+writing-saving-numerical-data

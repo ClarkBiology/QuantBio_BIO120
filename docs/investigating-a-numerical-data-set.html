@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Creating datasets and replicability | BIOL120 Excercise Guidebook</title>
+  <title>Chapter 14 Investigating a Numerical Data Set | BIOL120 Excercise Guidebook</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Creating datasets and replicability | BIOL120 Excercise Guidebook" />
+  <meta property="og:title" content="Chapter 14 Investigating a Numerical Data Set | BIOL120 Excercise Guidebook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Creating datasets and replicability | BIOL120 Excercise Guidebook" />
+  <meta name="twitter:title" content="Chapter 14 Investigating a Numerical Data Set | BIOL120 Excercise Guidebook" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="rmark.html"/>
-<link rel="next" href="vectors.html"/>
+<link rel="prev" href="model-fitting-a.k.a.-parameter-estimation.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -285,556 +285,119 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="datasets" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Creating datasets and replicability<a href="datasets.html#datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="objectives">
-<p>
-<strong>Objectives:</strong>
-</p>
-<ol style="list-style-type: decimal">
-<li>
-To use the scientific method for data analysis
-</li>
-<li>
-To generate research questions based on our observations
-</li>
-<li>
-To create data sets based on metrics of interest
-</li>
-<li>
-To open and use data sets in a computational environment
-</li>
-</ol>
-</div>
-<p>Today’s laboratory will be focused in the essentials of building data sets.</p>
-<p>Data sets can be built with absolutely anything you can make an observation from and ask a question about.</p>
-<p>Before we start, however, lets answer these questions:</p>
+<div id="investigating-a-numerical-data-set" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Investigating a Numerical Data Set<a href="investigating-a-numerical-data-set.html#investigating-a-numerical-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Large data sets are saved in many different formats. The BDTNP data has been organized into separate files for each mRNA species. In each file, the columns correspond to different timepoints in development (70, 80, 90, 100, 110, and 120 minutes). The rows correspond to the 52 nuclei in the middle of the embryo (50% Dorsal-Ventral) from 10 - 90% Anterior-Posterior. Each value is the average normalized mRNA concentration.</p>
+<div id="extracting-and-combining-subsets-of-data" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Extracting (and Combining) Subsets of Data<a href="investigating-a-numerical-data-set.html#extracting-and-combining-subsets-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When dealing with data in this format (i.e. a matrix), remember:</p>
+<ul>
+<li>If I have a matrix, <code>M</code>, and I want to extract a single columnm (for example, column 2), I can use the command:</li>
+</ul>
+<p><code>M(:,2)</code></p>
+<ul>
+<li>If I want to extract a single row (for example, row 26), I can use the command:</li>
+</ul>
+<p><code>M(26,:)</code></p>
+<ul>
+<li>This also means I can combine subsets of my data.
+<ul>
+<li>Example:
+If I want eve mRNA and ftz mRNA at 100 minutes (i.e. timepoint 5) into development in a new matrix, M, I type:<br />
+<img src="subset.png" width="600" /></li>
+</ul></li>
+</ul>
 <div class="rmdquestion">
 <h4 id="question-1">
 Question 1
 </h4>
-<ul>
+<p>
+Download the data files (there are 8 total mRNA data files) and the BDTNP.m file from the course moodle.
+</p>
+<ol style="list-style-type: lower-alpha">
 <li>
-What are the main steps of the scientific method?
+<p>
+Plot at least one mRNA concentration at all 6 timepoints (using <code>hold on</code> after you plot the data from the first timepoint).
+</p>
 </li>
 <li>
-How do you define a research question?
+<p>
+Plot all 8 mRNA concentrations at a single timepoint. (Hint: Make sure you use a timepoint that you have data for all 8 mRNAs for).
+</p>
 </li>
-<li>
-What is the difference between a research question and a hypothesis?
-</li>
-</ul>
-</div>
-<div id="creating-basic-datasets" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Creating basic datasets<a href="datasets.html#creating-basic-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>So, we have a bag of candy in front of us.</p>
-<p>Bags of candy have several different elements on it: The various flavors, the diversity in colors. Some may have different shapes, ect.</p>
-<p>The objective for today is to ask research questions and create a dataset that allows you to answer different questions based on your research focus (in this case, <em>your candy bag</em>)</p>
-</div>
-<div id="asking-biological-questions-and-identifying-measurable-outcomes" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Asking biological questions and identifying measurable outcomes<a href="datasets.html#asking-biological-questions-and-identifying-measurable-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Create groups of two students</li>
-<li>Open the bag of candy and generate some observations about it. It can be about anything you find interesting or peaks your interest</li>
 </ol>
+<p>
+For both figures, make sure to include axes labels and a legend.
+</p>
+</div>
+</div>
+<div id="simple-summary-statistics" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Simple Summary Statistics<a href="investigating-a-numerical-data-set.html#simple-summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Using min(), max(), mean(), median(), or mode() on a matrix of data returns a vector containing the minimum, maximum, mean, median, or mode respectively of each COLUMN. <br />
+Example: <br />
+<img src="simplestats.png" width="800" /></p></li>
+<li><p>If you want the min, max, mean, median, or mode of each ROW, there are two ways of doing this:<br /></p>
+<ol style="list-style-type: decimal">
+<li>Use the same commands on the <em>transpose</em> of the matrix (i.e. M’)<br />
+Example:<br />
+<code>min(M')</code><br />
+OR<br /></li>
+<li>You can call the same commands across the second dimension <br />
+Example for min or max:<br />
+<code>min(M,[],2)</code><br />
+Example for mean, median or mode: <br />
+<code>mean(M,2)</code></li>
+</ol></li>
+<li><p>To visualize the spread of data, one often uses a box plot. To do this in MATLAB, use the <code>boxplot()</code> command.<br />
+When using <code>boxplot()</code> with a matrix of data, each box summarizes a column of data, the central mark indicates the median, and the bottom and top edges of the box indicate the 25th and 75th percentiles, respectively. The whiskers extend to the most extreme data points not considered outliers, and the outliers are plotted individually using the ‘+’ marker symbol.<br />
+Example: <br />
+<img src="boxplot.png" /></p></li>
+</ul>
 <div class="rmdquestion">
 <h4 id="question-2">
 Question 2
 </h4>
+<ol style="list-style-type: lower-alpha">
+<li>
 <p>
-Create at least three observations from tour research object and add them here:
+Scatter the 6 timepoints vs. the maximum mRNA concentration across all nuclei (Note: time should be the independent variable and maximum mRNA concentration should be the dependent variable). You can do this for a single mRNA or show the data from multiple mRNA on a single figure (just remember to use the command <code>hold on</code> after your first scatter command)
 </p>
-<ul>
-<li>
 </li>
 <li>
+<p>
+Create a box plot for one of the mRNA concentrations. What observation(s) can you make from your figure? (Hint: Possible observations could include a general trend as time increases or a change in the spread of the data from one timepoint to another).
+</p>
 </li>
-<li>
-</li>
-</ul>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li>Choose one observation and create a research question and a hypothesis for it</li>
 </ol>
+<p>
+For both figures, make sure to include axes labels. If you have more than one mRNA on a single figure, make sure to include a legend also.
+</p>
+</div>
+</div>
+<div id="writing-saving-numerical-data" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Writing / Saving Numerical Data<a href="investigating-a-numerical-data-set.html#writing-saving-numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Any numerical data you have in a matrix, <code>M</code>, can be written to a tab-delimited file (i.e. one you can open with Notepad, Atom, or Excel) with one easy line of code: <br />
+<code>dlmwrite('mydata_name.txt',M)</code></li>
+</ul>
+<p>Note: Your file will be saved in your <code>Current Folder</code>.</p>
 <div class="rmdquestion">
 <h4 id="question-3">
 Question 3
 </h4>
-<ul>
+<ol style="list-style-type: lower-alpha">
 <li>
-<strong>Research Question</strong>:
-<ul>
-<li>
-</li>
-</ul>
+<p>
+Take the data you plotted in Question 1 b), organize it in a matrix, and save it as a .txt file using <code>dlmwrite()</code>.
+</p>
 </li>
 <li>
-<strong>Hypothesis</strong>
-<ul>
-<li>
+<p>
+Take the data you plotted in Question 2 a), organize it in a matrix, and save it as a .txt file using <code>dlmwrite()</code>.
+</p>
 </li>
-</ul>
-</li>
-</ul>
-</div>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Using a <strong>physical notebook</strong>, have a list of <strong>variables</strong> you think would be directly measurable to test your hypothesis</p></li>
-<li><p>Measure the variables and write down the results in the same physical notebook.</p></li>
 </ol>
-<div class="rmdquestion">
-<h4 id="question-4">
-Question 4
-</h4>
-<p>
-Take a photo of the page of the notebook and add it here.
-</p>
-</div>
-<ol start="6" style="list-style-type: decimal">
-<li>Did your results answer your research question? How about your hypothesis?</li>
-</ol>
-<div class="rmdquestion">
-<h4 id="question-5">
-Question 5
-</h4>
-<ul>
-<li>
-<strong>Research Question</strong>:
-<ul>
-<li>
-</li>
-</ul>
-</li>
-<li>
-<strong>Hypothesis</strong>
-<ul>
-<li>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<hr />
-</div>
-<div id="creating-a-clean-raw-dataset" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Creating a clean raw dataset<a href="datasets.html#creating-a-clean-raw-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li><p>Using the same dataset, organize your data in a simple data frame using <a href="https://www.google.com/sheets/about/">Google Sheets</a> or <a href="https://ethercalc.net/">EtherCalc</a></p></li>
-<li><p>Copy your spreadsheet into <code>atom</code>, paste it and save it file into a folder in your desktop called <code>BIOL120</code> with a <code>txt</code> extension (something like <code>data_sheet_candy.txt</code>)</p></li>
-</ol>
-<div class="rmdwarning">
-<h4 id="warning">
-WARNING:
-</h4>
-<p>
-Do <strong>NOT</strong> save any of your files with a space or with weird characters (such as <code>?&gt;&lt;,/’;:<span></span>=+-</code>).
-</p>
-<p>
-If you need to use a space, use an underscore (<code>_</code>) or separate the names using <code>camel case</code> (i.e. Instead of <code>data sheet candy.txt</code> use either <code>data_sheet_candy.txt</code> or <code>dataSheetCandy.txt</code>)
-</p>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li><p>In your <code>R studio</code>, go to the <code>Session</code> menu in the toolbar, select <code>Set Working Directory</code> and select your <code>BIOL120</code> folder</p></li>
-<li><p>Run the following code <strong>after changing the name of the .csv file into what you named it</strong></p></li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="datasets.html#cb6-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&#39;data_sheet_candy.txt&#39;</span>, <span class="at">header =</span> T)</span></code></pre></div>
-<blockquote>
-<p>i.e. If my file is called <code>dataset.txt</code>, then I change the code to <code>read.table('dataset.txt')</code></p>
-</blockquote>
-<div class="rmdinfo">
-<h4 id="executable-code-chunks">
-Executable Code Chunks
-</h4>
-<p>
-Executable code chunks are sections in your R markdown that allow you to <strong>execute</strong> or run code inside your file! That means you can do a lot of cool stuff within those chunks, like read datasets, create tables, and plot figures.
-</p>
-<p>
-Executable code chunks look like this:
-</p>
-<pre><code>```{coding language goes here}
-code goes here
-```</code></pre>
-<p>
-That means we can use <code>bash</code>, <code>R</code> and even <code>python</code> (as long as you have installed the correct packages) inside your R markdown document.
-</p>
-<p>
-An example using <code>bash</code> to get the time:
-</p>
-<pre><code>```{bash}
-date
-```</code></pre>
-</div>
-<pre><code>## Mon Nov 21 21:02:58 EST 2022</code></pre>
-<div class="rmdinfo">
-<p>
-You can also use <code>R</code> as in here:
-</p>
-<pre><code>```{r}
-(my_data <- read.table('data_sheet_candy.txt', header = T))
-```</code></pre>
-</div>
-<pre><code>##         Flavor Number
-## 1         Lime     12
-## 2        Lemon     13
-## 3       Banana     55
-## 4 Strawberries     23</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Check your file loaded by using the code <code>View(my_data)</code> or also adding this into your notebook and <code>kniting</code> the document:</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="datasets.html#cb9-1" aria-hidden="true" tabindex="-1"></a>my_data</span></code></pre></div>
-<pre><code>##         Flavor Number
-## 1         Lime     12
-## 2        Lemon     13
-## 3       Banana     55
-## 4 Strawberries     23</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li>In your R markdown notebook do the following:</li>
-</ol>
-<div class="rmdquestion">
-<h4 id="question-6">
-Question 6
-</h4>
-<ul>
-<li>
-Add the code to read and visualize the data frame
-</li>
-<li>
-What are the names of your columns?
-</li>
-<li>
-What do each of you columns represent?
-</li>
-<li>
-Write if your results are able to test your hypothesis and give an explanation why
-</li>
-</ul>
-</div>
-<hr />
-</div>
-<div id="creating-basic-basic-plots-in-r" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Creating basic (basic) plots in R<a href="datasets.html#creating-basic-basic-plots-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now that you have your data set readable by a computer program, we can do some very basic visualization to make it easier to interpret.</p>
-<p>To do so, we need to install one simple <code>R package</code> that will allow us to create plots. This package is called <a href="https://ggplot2.tidyverse.org/index.html"><code>ggplot</code></a>.</p>
-<div class="rmdinfo">
-<h4 id="r-packages">
-R Packages
-</h4>
-<p>
-An R package are a collection of code, data, functions and other elements that allow you to extend the usage of <code>R</code>.
-</p>
-<p>
-Some packages will help you plot, some others will allow you to read data into R in a better and faster way.
-</p>
-<p>
-To use a package the first thing you have to do is <strong>Install it</strong>. After the package is installed, you just need to load it into the library.
-</p>
-<h5 id="installing-a-package">
-Installing a package
-</h5>
-<p>
-For example, to install <code>ggplot2</code>, write the following code just once in the <strong>CONSOLE</strong> (aka. The window in the lower left corner of your R studio)
-</p>
-<p>
-<code>install.packages(‘ggplot2’)</code>
-</p>
-<div class="figure">
-<img src="img/ggplot_install.png" alt="" />
-<p class="caption">
-Installing a package
-</p>
-</div>
-<p>
-If you check the console, you’ll see that the code will say
-</p>
-<p>
-<code>DONE: ggplot2</code>
-</p>
-<p>
-That means that your package has been installed.
-</p>
-<h5 id="loading-a-package">
-Loading a package
-</h5>
-<p>
-Now, we need to load the package to get the functions to work.
-</p>
-<p>
-To load the package, in your <code>R markdown</code> add this in code block
-</p>
-<p>
-<code>{r} library(ggplot2)</code>
-</p>
-<div class="figure">
-<img src="img/ggplot_load.png" alt="" />
-<p class="caption">
-loading the ggplot library
-</p>
-</div>
-<p>
-The command <code>library</code> loads the package into your <code>R</code> environment, and now you can use any of its functions!
-</p>
-<p>
-To learn more about packages in <code>R</code>, read the following <a href="https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html">link</a>
-</p>
-</div>
-<ol style="list-style-type: decimal">
-<li><p>Load the <code>ggplot2</code> package (make sure you have installed it first)</p></li>
-<li><p>Make sure your data frame is still loaded into <code>R</code>.</p></li>
-</ol>
-<div class="rmdquestion">
-<h4 id="question-7">
-Question 7
-</h4>
-<ul>
-<li>
-How would you check that the data frame is still loaded in R? Write the code and a justification
-</li>
-</ul>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li>Now, lets do a basic plot. Chances are that your data set has a set of columns with the colors/flavors/shapes in one column and the number of said elements in a second column.</li>
-</ol>
-<p>If this is the case, you can create a simple <strong>bar plot</strong>. A bar plot summarizes all the information for each <strong>category</strong> (i.e. The element you are using to qualify the data into different sets) in the <strong>x-axis</strong> and creates bars in the <strong>y-axis</strong> where the height represents the number of data points for said category.</p>
-<p>To create the plot, modify and execute the following code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="datasets.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-2"><a href="datasets.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>my_data, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/bar_plot-1.png" width="672" /></p>
-<div class="rmdquestion">
-<h4 id="question-8">
-Question 8
-</h4>
-<ul>
-<li>
-Is this an easier way of comparing your data? Explain why.
-</li>
-</ul>
-</div>
-<hr />
-</div>
-<div id="comparisons-between-groups." class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Comparisons between groups.<a href="datasets.html#comparisons-between-groups." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now, lets see how our data collection is compared to the other groups</p>
-<ol style="list-style-type: decimal">
-<li>Get together with another group</li>
-<li>Compare your two data collections and answer the following:</li>
-</ol>
-<div class="rmdquestion">
-<h4 id="question-9">
-Question 9
-</h4>
-<ul>
-<li>
-What was the question the other group asked?
-</li>
-<li>
-Did they data collection help them answer this question?
-</li>
-</ul>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li>Import their data set into your <code>R</code> environment. That means to ask them for their original, hand written data sheet and re-digitize it using <code>Google Sheets</code> or <code>EtherCalc</code></li>
-</ol>
-<div class="rmdquestion">
-<h4 id="question-10">
-Question 10
-</h4>
-<ul>
-<li>
-Load the data sheet into <code>R</code> and show it in your Markdown notebook
-</li>
-<li>
-Compare it to their digital data sheet. Is it identical?
-</li>
-</ul>
-</div>
-<ol start="4" style="list-style-type: decimal">
-<li>Now, talk to the other group and start thinking of a way to measure the differences between the two data sets.</li>
-</ol>
-<div class="rmdinfo">
-<h4 id="asking-questions">
-Asking questions
-</h4>
-<p>
-For example: One group has M&amp;Ms and the other has Skittles. What are two features in common these two candies have? Color? Flavors?
-</p>
-<p>
-You can, for example, measure the number of colors for both Skittles and M&amp;M’s and compare them
-</p>
-</div>
-<div class="rmdquestion">
-<h4 id="question-11">
-Question 11
-</h4>
-<ul>
-<li>
-<strong>Research Question</strong>:
-<ul>
-<li>
-</li>
-</ul>
-</li>
-<li>
-<strong>Hypothesis</strong>
-<ul>
-<li>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<ol start="5" style="list-style-type: decimal">
-<li>Create a <strong>digital data frame</strong> with these two comparison and add them to <code>R</code></li>
-</ol>
-<div class="rmdquestion">
-<h4 id="question-12">
-Question 12
-</h4>
-<ul>
-<li>
-Load the data sheet into <code>R</code> and show it in your Markdown notebook
-</li>
-</ul>
-</div>
-<ol start="6" style="list-style-type: decimal">
-<li>Lets create a plot to compare the two different candies</li>
-</ol>
-<div class="rmdinfo">
-<h4 id="comparing-data-sets">
-Comparing data sets
-</h4>
-<p>
-When you want to compare between different sites/treatments/types of candies is important that the data frame has an extra column that tell you where these are from.
-</p>
-<p>
-For example:
-</p>
-<table>
-<thead>
-<tr class="header">
-<th>
-Flavor
-</th>
-<th>
-Number
-</th>
-<th>
-Candy
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>
-Lime
-</td>
-<td>
-12
-</td>
-<td>
-Skittles
-</td>
-</tr>
-<tr class="even">
-<td>
-Lemon
-</td>
-<td>
-13
-</td>
-<td>
-Skittles
-</td>
-</tr>
-<tr class="odd">
-<td>
-Banana
-</td>
-<td>
-55
-</td>
-<td>
-Skittles
-</td>
-</tr>
-<tr class="even">
-<td>
-Strawberries
-</td>
-<td>
-23
-</td>
-<td>
-Skittles
-</td>
-</tr>
-<tr class="odd">
-<td>
-Lime
-</td>
-<td>
-5
-</td>
-<td>
-Starburst
-</td>
-</tr>
-<tr class="even">
-<td>
-Lemon
-</td>
-<td>
-0
-</td>
-<td>
-Starburst
-</td>
-</tr>
-<tr class="odd">
-<td>
-Banana
-</td>
-<td>
-12
-</td>
-<td>
-Starburst
-</td>
-</tr>
-<tr class="even">
-<td>
-Strawberries
-</td>
-<td>
-3
-</td>
-<td>
-Starburst
-</td>
-</tr>
-</tbody>
-</table>
-<p>
-In this case, we can separate the flavors from each candy.
-</p>
-</div>
-<p>Modify the following code with your column names:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="datasets.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>two_candies, <span class="fu">aes</span>(<span class="at">x=</span>Flavor, <span class="at">y=</span>Number, <span class="at">fill=</span>Candy)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="datasets.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&#39;identity&#39;</span>, <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/two_candy_plot-1.png" width="672" /></p>
-<div class="rmdquestion">
-<h4 id="question-13">
-Question 13
-</h4>
-<ul>
-<li>
-Can this graph help you answer your research question? How
-</li>
-<li>
-What do your results show, based on the research question?
-</li>
-<li>
-Compare the code for plotting the <code>two_candies</code> data set versus the code for the <code>my_data</code> data set. What changed?
-</li>
-</ul>
 </div>
 
 </div>
@@ -844,8 +407,8 @@ Compare the code for plotting the <code>two_candies</code> data set versus the c
           </div>
         </div>
       </div>
-<a href="rmark.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vectors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="model-fitting-a.k.a.-parameter-estimation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -876,7 +439,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-datasets.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/12-SummarizingData.Rmd",
 "text": "Edit"
 },
 "history": {

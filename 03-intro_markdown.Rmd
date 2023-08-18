@@ -5,26 +5,25 @@
 **Objectives:**
 
 1. To create electronic notebooks for course
-2. To familiarize ourselves with the use of R markdown and its features
-3. To create our initial R markdown document
+2. To familiarize ourselves with the use of MATLAB livescripting and its features
+3. To create our initial livescript document
 4. To understand the importance of replicable and reproducible notebooks
 ```
 
-The electronic lab notebooks we will use will in class will be created as `R Markdown documents`. 
+The electronic lab notebooks we will use will in class will be created as `MATLAB livescript documents`. 
 
-Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Livescripting with MATLAB allows us to create widely usable documents that will include any code we might write as well as its outputs. For more information about livescripting follow the link below:
+<https://www.mathworks.com/help/matlab/matlab_prog/what-is-a-live-script-or-function.html>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+When you finish compiling a livescript, you can export it as an accessible document format such as .docx, .html or LATEX. 
 
 ## Markdown formats
 
-As mentioned above, Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. 
-
-We will use R Markdown as it will allow us to create documents that we can modify in different computers (as long as we have R and R Studio).
+We will use livescripting in MATLAB as it will allow us to create documents that we can modify in different computers (as long as we have MATLAB installed).
 
 We will call these documents *Electronic Lab Notebooks (ELS)*. These ELS' will be used to write down what you have done in class, save the results and the commands and also will tell us  where the files you are using will be at.
 
-But, before we go into the super complex part of it, lets learn the basics of R markdown.
+But, before we go into the super complex part of it, lets learn the basics of livescripting with MATLAB.
 
 ***
 

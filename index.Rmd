@@ -16,7 +16,7 @@ github-repo: rstudio/bookdown-demo
 
 # Quantitative Biology (BIOL120) Excercise Guidebook {#intro}
 
-Welcome to *Quantitative Biology*! This document here will be your **excercise guidebook**, or what some will call the **Laboratory notebook**. 
+Welcome to *Quantitative Biology*! This document here will be your **exercise guidebook**, or what some will call the **Laboratory notebook**. 
 
 You will find here all the exercises for class, as well as a basic reference guide for basics of coding and all the resources we will use for the course
 

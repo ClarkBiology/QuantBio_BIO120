@@ -1,46 +1,45 @@
-# Software for class {#software}
+# Setting up software and working folders {#software}
 
 ```{block, type='objectives'}
 
 **Objectives:**
 
-1. To familiarize ourselves with the main software used in class
-2. To install programs used for basic quantitative biology
-3. To perform basic tests of functionality of these programs
+1. To familiarize ourselves with our computer's file system
+
+2. To set up working folders for organizing important files (data, scripts, etc...)
+
+3. To familiarize ourselves with the main software used in class
+
+4. To install programs used for basic quantitative biology
+
+5. To perform basic tests of functionality of these programs
 ```
 
-As I mentioned in the previous chapter,  we are going to use *R, RStudio* and the basic *UNIX command line* for our exercises, as well as  *atom*, a basic text editor that's widely used in programming to view and edit files.
 
-## How to install R?
+## How to set up working folders?
 
-1. Open an internet browser and go to [www.r-project.org](www.r-project.org)
+Wether you have a computer that runs MacOS or Windows, your will use a files system for navigating, creating, moving and deleting fils and folders (*Finder* for MacOS and *Explorer* for Windows). These are used to navigate through your locally stored files (on your computers hard drive or attached storage media)
 
-2. Click the "download R" link in the middle of the page.
+Getting to know your way around your file system is like where you plates/silverware/cookware are in your kitchen. You need to know where things are stored, how to retrieve them when neeed and where you can put them for future use.
 
-![Downloading R](Lab0/R_down.png)
+**Take a moment to browse your computer's file system. Look for downloads, documents, etc...**
 
-3. Select a CRAN location (a mirror site) and click the corresponding link.  
+Before we get started installing and using software it's important for you to create a `working folder`. That is, a folder in which you will store important files that we will use during our lab sessions.
 
-![Downloading R](Lab0/CRAN.png)
+**Create a folder labled Biol 120 and make sure you can navigate to it when necessary**
 
-4. Click on the "Download R for" your operating system link at the top of the page.
+*Alternatively, this folder can be located in your OneDrive folder or Google Drive for remote access*
 
-![Links for R](Lab0/R_link.png)
-        
-5. 
-  - For Windows users: Click on the "install R for the first time" link at the top of the page. Run the `.exe` file and follow the installation instructions.  
-  - For MacOS X users: Click on the "R-4.0.2.pkg" link to download the install package. Run the `.pkg` file and follow the installation instructions.  
+## Software for the class 
 
-## How to install RStudio?
+As was mentioned in the previous chapter,  we are going to use *MATLAB* for our exercises, as well as  *atom*, a basic text editor that's widely used in programming to view and edit files.
 
-1. Go to [www.rstudio.com](www.rstudio.com) and click on the "Download" link.
+## How to install MATLAB?
 
-![Links for R](Lab0/Rstudio_down.png)
-2. Click on "Download RStudio Desktop (FREE)" in the lower part of the page.
+1. Go to Clark's software webpage at [https://www.clarku.edu/offices/its/a-z-service-catalog/software-for-all/](https://www.clarku.edu/offices/its/a-z-service-catalog/software-for-all/)
+2. Click on the text under MATLAB "Download".
+3. You will be redirected to the mathworks website through Clark University.  After you click on `Sign in to get started`, you will need to follow the prompts to login using your Clark username.
 
-![Links for R](Lab0/Rstudio_button.png)
-
-3. Click on the version recommended for your system. save the .exe/.dmg file on your computer, double-click it to open, and then drag and drop it to your applications folder.
 
 ## How to install Atom?
 
@@ -50,38 +49,42 @@ As I mentioned in the previous chapter,  we are going to use *R, RStudio* and th
   - In Mac OS: Move the application to the Applications folder
   - In Windows: Execute the `AtomSetup.exe` file
   
-## How to install MATLAB?
 
-1. Go to Clark's software webpage at [https://www.clarku.edu/offices/its/a-z-service-catalog/software-for-all/](https://www.clarku.edu/offices/its/a-z-service-catalog/software-for-all/)
-2. Click on the text under MATLAB "Download".
-3. You will be redirected to the mathworks website through Clark University.  After you click on `Sign in to get started`, you will need to follow the prompts to login using your Clark username.
 
 ***
 
 # Testing the software
 
-## Testing R and RStudio
+## Testing MATLAB
 
-1. Open your R studio after installation
+1. Launch MATLAB after installation
 
 3. You should see a window like this:
 
-![RStudio panels](Lab0/R_panels.png)
+![Matlab Panels](Lab0/MatlabScreen.png)
 
-You should have three panes open (or probably four). The one in the left that says `R version XXX` is your *console*. Most of the code goes there, both input and output. 
+You should have two panes open. 
 
-On the upper right you have the *environment/history* pane. The environment stores and shows you all the files being used by the current R session that are saved in your RAM. We will rarely use the environment in this course, but its still an important feature to know how much memory is being used, how many files are loaded and if our objects are actually being used by R. The history panel will show you all the previously used code.
+The one on the left has two tabs that read `Current Folder` and `Workspace`. `Current Folder` refers to the folder in which you are currently working. `Workspace` is where you will find the variables and data structures that you will create and import into matlab as we work. 
 
-Finally, the lower right has the *Files, Plots, Packages, Help, and Viewer panes*. These panes show exactly that: The files in the folder you are in, the plots generated by R, the R packages that will be loaded, and the help for the different R packages. The Viewer panel is a special feature that is used by some packages, we will use it later.
+On the right you have the *Command Window* pane. This is where you can enter single commands to be run by MATLAB (we will get into these in later labs).
 
-4. Now, you will see the menu in the top. Click on the `new file` element and lets do our first R notebook.
+Above these two panels, is the file directory you are currently working in. Use the `Browse to folder` button to navigate to the Biol 120 working folder you created earler.
 
-5. Click on `new file`, and then `R notebook`
+Much of our documentation and code building will be done with MATLAB live scripts. In the top left corner of the window, you should find the `New Live Script` button. Pressing this button will create a new set of panels.
 
-![RStudio panels](Lab0/New_file.png)
 
-We will talk on class about R notebooks and why they are important for our course!
+![LiveScript Panels](Lab0/LiveScriptPanel.png)
 
+In the newly created `Live Editor` panel, you will see you are working on a new untitled livescript `untitled.mlx`. 
+
+Your `Live Editor` panel will be split into to panes. 
+
+On the left is the portion that is editable by you. In a future lab session, you will see how we can add text, images and executable code into this pane.
+
+The right pane is where any outputs of our code will be rendered (this will include graphs)
+
+**That's it for Matlab. Go ahead and exit out**
 
 ## Testing Atom
 

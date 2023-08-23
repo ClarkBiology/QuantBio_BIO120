@@ -1,6 +1,6 @@
 --- 
-title: "BIOL120 Excercise Guidebook"
-author: "Professors Jackie Dresch and Javier F. Tabima Restrepo"
+title: "BIOL120 Excercise Guidebook Fall '23"
+author: "Professors Jackie Dresch and Nareg Djabrayan"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -16,15 +16,15 @@ github-repo: rstudio/bookdown-demo
 
 # Quantitative Biology (BIOL120) Excercise Guidebook {#intro}
 
-Welcome to *Quantitative Biology*! This document here will be your **excercise guidebook**, or what some will call the **Laboratory notebook**. 
+Welcome to *Quantitative Biology*! This document here will be your **exercise guidebook**, or what some will call the **Laboratory notebook**. 
 
 You will find here all the exercises for class, as well as a basic reference guide for basics of coding and all the resources we will use for the course
 
 ## Additional information about the professor {-}
 
-Professor Tabima Restrepo is always reachable at `jtabima@clarku.edu`. 
+Professor Nareg Djabrayan is always reachable at `ndjabrayan@clarku.edu`. 
 
-His office hours are on *Wednesdays between 1PM and 3PM* in Lasry 223, or by email.
+His office hours are on *Wednesdays between 1PM and 3PM* in Lasry 354, or by email.
 
 Professor Dresch is always reachable at `jdresch@clarku.edu`. 
 

@@ -1,6 +1,6 @@
 # Structure of the Guidebook and FAQs 
 
-## What do we need for lab sessions? Jackie Test 2
+## What do we need for lab sessions?
 
 For our labs we are going to use online resources such as Google Docs and Sheets as well as software such as *MATLAB*.  We will also use *atom*, a basic text editor that's widely used in programming to view and edit files.
 

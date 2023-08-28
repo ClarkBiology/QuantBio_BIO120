@@ -132,3 +132,6 @@ code
 livscript-exercise
 additional-information-on-livescripting
 livescript-exercise
+digitizing-your-data
+creating-basic-plots-in-matlab
+question-14

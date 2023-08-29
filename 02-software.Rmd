@@ -18,9 +18,9 @@
 
 ## How to set up working folders?
 
-Wether you have a computer that runs MacOS or Windows, your will use a files system for navigating, creating, moving and deleting fils and folders (*Finder* for MacOS and *Explorer* for Windows). These are used to navigate through your locally stored files (on your computers hard drive or attached storage media)
+Whether you have a computer that runs MacOS or Windows, your will use a files system for navigating, creating, moving and deleting files and folders (*Finder* for MacOS and *Explorer* for Windows). These are used to navigate through your locally stored files (on your computers hard drive or attached storage media)
 
-Getting to know your way around your file system is like where you plates/silverware/cookware are in your kitchen. You need to know where things are stored, how to retrieve them when neeed and where you can put them for future use.
+Getting to know your way around your file system is like where you plates/silverware/cookware are in your kitchen. You need to know where things are stored, how to retrieve them when need and where you can put them for future use.
 
 **Take a moment to browse your computer's file system. Look for downloads, documents, etc...**
 

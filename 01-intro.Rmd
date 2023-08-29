@@ -2,8 +2,7 @@
 
 ## What do we need for lab sessions? Who? what?
 
-For our labs we are going to use online resources such as Google Docs and Sheets as well as software such as *MATLAB*.  We will also use *atom*, a basic text editor that's widely used in programming to view and edit files.
-
+For our labs we are going to use online resources such as Google Docs and Sheets as well as software such as *MATLAB*.  
 
 ## Why are we using these programs?
 
@@ -11,7 +10,6 @@ While most of our stuff will be executed online, getting to know how to use thes
 
 We will use `MATLAB` to build our electronic notebooks, analyze and visualize data. `MATLAB` will also give us the opportunity to learn some programming skills and get introduced to powerful methods for understanding biological systems.
 
-`Atom` will help us read files we wouldn't be able to read otherwise. As we go forward with class we will see some examples of these files.
 
 ## Do we need to know how to program?
 

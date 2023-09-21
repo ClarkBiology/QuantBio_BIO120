@@ -137,3 +137,10 @@ creating-basic-plots-in-matlab
 question-14
 what-do-we-need-for-lab-sessions-who-what
 what-do-we-need-for-lab-sessions-jackie-test-2
+basic-data-structures-in-matlab
+row-vectors
+column-vectors
+two-dimensional-objects
+matrices
+make-a-table
+graph-it

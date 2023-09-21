@@ -307,6 +307,8 @@ legend(TwoCandy.Properties.VariableNames(2:3));
 You may have noticed some extra arguments in the code for creating a grouped bar graph. We will go into more details about these in next week's discussions.
 ***
 
+
+```{block, type='rmdquestion'}
 #### Question 14
    - Can this graph help you answer your research question? How?
    - What do your results show, based on the research question?

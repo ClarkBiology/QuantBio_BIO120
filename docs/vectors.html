@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Basic R (1): Vectors | BIOL120 Excercise Guidebook</title>
+  <title>Chapter 6 Datasets Pt2 : Working with Vectors and Matrices in Matlab | BIOL120 Excercise Guidebook Fall ’23</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Basic R (1): Vectors | BIOL120 Excercise Guidebook" />
+  <meta property="og:title" content="Chapter 6 Datasets Pt2 : Working with Vectors and Matrices in Matlab | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,17 +19,17 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Basic R (1): Vectors | BIOL120 Excercise Guidebook" />
+  <meta name="twitter:title" content="Chapter 6 Datasets Pt2 : Working with Vectors and Matrices in Matlab | BIOL120 Excercise Guidebook Fall ’23" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   
 
-<meta name="author" content="Professors Jackie Dresch and Javier F. Tabima Restrepo" />
+<meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2022-11-21" />
+<meta name="date" content="2023-09-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="datasets.html"/>
-<link rel="next" href="basic-r-2-data-frames.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -60,71 +60,11 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -142,128 +82,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Quantitative Biology (BIOL120) Excercise Guidebook</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html"><i class="fa fa-check"></i><b>2</b> Structure of the Guidebook and FAQs</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#what-do-we-need-for-lab-sessions"><i class="fa fa-check"></i><b>2.1</b> What do we need for lab sessions?</a></li>
+<li class="chapter" data-level="2.1" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#what-do-we-need-for-lab-sessions-who-what"><i class="fa fa-check"></i><b>2.1</b> What do we need for lab sessions? Who? what?</a></li>
 <li class="chapter" data-level="2.2" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#why-are-we-using-these-programs"><i class="fa fa-check"></i><b>2.2</b> Why are we using these programs?</a></li>
 <li class="chapter" data-level="2.3" data-path="structure-of-the-guidebook-and-faqs.html"><a href="structure-of-the-guidebook-and-faqs.html#do-we-need-to-know-how-to-program"><i class="fa fa-check"></i><b>2.3</b> Do we need to know how to program?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>3</b> Software for class</a>
+<li class="chapter" data-level="3" data-path="software.html"><a href="software.html"><i class="fa fa-check"></i><b>3</b> Setting up software and working folders</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="software.html"><a href="software.html#how-to-install-r"><i class="fa fa-check"></i><b>3.1</b> How to install R?</a></li>
-<li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#how-to-install-rstudio"><i class="fa fa-check"></i><b>3.2</b> How to install RStudio?</a></li>
-<li class="chapter" data-level="3.3" data-path="software.html"><a href="software.html#how-to-install-atom"><i class="fa fa-check"></i><b>3.3</b> How to install Atom?</a></li>
-<li class="chapter" data-level="3.4" data-path="software.html"><a href="software.html#how-to-install-matlab"><i class="fa fa-check"></i><b>3.4</b> How to install MATLAB?</a></li>
+<li class="chapter" data-level="3.1" data-path="software.html"><a href="software.html#how-to-set-up-working-folders"><i class="fa fa-check"></i><b>3.1</b> How to set up working folders?</a></li>
+<li class="chapter" data-level="3.2" data-path="software.html"><a href="software.html#software-for-the-class"><i class="fa fa-check"></i><b>3.2</b> Software for the class</a></li>
+<li class="chapter" data-level="3.3" data-path="software.html"><a href="software.html#how-to-install-matlab"><i class="fa fa-check"></i><b>3.3</b> How to install MATLAB?</a></li>
+<li class="chapter" data-level="3.4" data-path="software.html"><a href="software.html#testing-matlab"><i class="fa fa-check"></i><b>3.4</b> Testing MATLAB</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="testing-the-software.html"><a href="testing-the-software.html"><i class="fa fa-check"></i><b>4</b> Testing the software</a>
+<li class="chapter" data-level="4" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>4</b> Introduction to electronic notebooks with MATLAB Livescripts</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="testing-the-software.html"><a href="testing-the-software.html#testing-r-and-rstudio"><i class="fa fa-check"></i><b>4.1</b> Testing R and RStudio</a></li>
-<li class="chapter" data-level="4.2" data-path="testing-the-software.html"><a href="testing-the-software.html#testing-atom"><i class="fa fa-check"></i><b>4.2</b> Testing Atom</a></li>
+<li class="chapter" data-level="4.1" data-path="rmark.html"><a href="rmark.html#livescript-as-an-electronic-notebook"><i class="fa fa-check"></i><b>4.1</b> Livescript as an Electronic Notebook</a></li>
+<li class="chapter" data-level="4.2" data-path="rmark.html"><a href="rmark.html#basics-of-livescripting"><i class="fa fa-check"></i><b>4.2</b> Basics of Livescripting</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="rmark.html"><a href="rmark.html#editing-text"><i class="fa fa-check"></i><b>4.2.1</b> Editing Text</a></li>
+<li class="chapter" data-level="4.2.2" data-path="rmark.html"><a href="rmark.html#inserting-figures-hyperlinks-and-equations"><i class="fa fa-check"></i><b>4.2.2</b> Inserting Figures, Hyperlinks and Equations</a></li>
+<li class="chapter" data-level="4.2.3" data-path="rmark.html"><a href="rmark.html#code"><i class="fa fa-check"></i><b>4.2.3</b> CODE!</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="rmark.html"><a href="rmark.html"><i class="fa fa-check"></i><b>5</b> Introduction to electronic notebooks in R Markdown</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="rmark.html"><a href="rmark.html#markdown-formats"><i class="fa fa-check"></i><b>5.1</b> Markdown formats</a></li>
-<li class="chapter" data-level="5.2" data-path="rmark.html"><a href="rmark.html#basics-of-markdown"><i class="fa fa-check"></i><b>5.2</b> Basics of Markdown</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="rmark.html"><a href="rmark.html#basic-syntax"><i class="fa fa-check"></i><b>5.2.1</b> Basic syntax</a></li>
-<li class="chapter" data-level="5.2.2" data-path="rmark.html"><a href="rmark.html#lines-of-code"><i class="fa fa-check"></i><b>5.2.2</b> Lines of code</a></li>
-<li class="chapter" data-level="5.2.3" data-path="rmark.html"><a href="rmark.html#lists"><i class="fa fa-check"></i><b>5.2.3</b> Lists</a></li>
-<li class="chapter" data-level="5.2.4" data-path="rmark.html"><a href="rmark.html#horizontal-rules"><i class="fa fa-check"></i><b>5.2.4</b> Horizontal rules</a></li>
-<li class="chapter" data-level="5.2.5" data-path="rmark.html"><a href="rmark.html#links-figures-and-tables"><i class="fa fa-check"></i><b>5.2.5</b> Links, figures and tables</a></li>
-<li class="chapter" data-level="5.2.6" data-path="rmark.html"><a href="rmark.html#tables"><i class="fa fa-check"></i><b>5.2.6</b> Tables</a></li>
+<li class="chapter" data-level="4.3" data-path="rmark.html"><a href="rmark.html#livescript-exercise"><i class="fa fa-check"></i><b>4.3</b> LiveScript Exercise:</a></li>
+<li class="chapter" data-level="4.4" data-path="rmark.html"><a href="rmark.html#additional-information-on-livescripting"><i class="fa fa-check"></i><b>4.4</b> Additional information on LiveScripting</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="rmark.html"><a href="rmark.html#r-markdown-excerise"><i class="fa fa-check"></i><b>5.3</b> R Markdown Excerise:</a></li>
-<li class="chapter" data-level="5.4" data-path="rmark.html"><a href="rmark.html#additional-information-on-markdown"><i class="fa fa-check"></i><b>5.4</b> Additional information on Markdown</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>6</b> Creating datasets and replicability</a>
+<li class="chapter" data-level="5" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>5</b> Creating datasets and replicability</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="datasets.html"><a href="datasets.html#creating-basic-datasets"><i class="fa fa-check"></i><b>6.1</b> Creating basic datasets</a></li>
-<li class="chapter" data-level="6.2" data-path="datasets.html"><a href="datasets.html#asking-biological-questions-and-identifying-measurable-outcomes"><i class="fa fa-check"></i><b>6.2</b> Asking biological questions and identifying measurable outcomes</a></li>
-<li class="chapter" data-level="6.3" data-path="datasets.html"><a href="datasets.html#creating-a-clean-raw-dataset"><i class="fa fa-check"></i><b>6.3</b> Creating a clean raw dataset</a></li>
-<li class="chapter" data-level="6.4" data-path="datasets.html"><a href="datasets.html#creating-basic-basic-plots-in-r"><i class="fa fa-check"></i><b>6.4</b> Creating basic (basic) plots in R</a></li>
-<li class="chapter" data-level="6.5" data-path="datasets.html"><a href="datasets.html#comparisons-between-groups."><i class="fa fa-check"></i><b>6.5</b> Comparisons between groups.</a></li>
+<li class="chapter" data-level="5.1" data-path="datasets.html"><a href="datasets.html#creating-basic-datasets"><i class="fa fa-check"></i><b>5.1</b> Creating basic datasets</a></li>
+<li class="chapter" data-level="5.2" data-path="datasets.html"><a href="datasets.html#asking-biological-questions-and-identifying-measurable-outcomes"><i class="fa fa-check"></i><b>5.2</b> Asking biological questions and identifying measurable outcomes</a></li>
+<li class="chapter" data-level="5.3" data-path="datasets.html"><a href="datasets.html#digitizing-your-data"><i class="fa fa-check"></i><b>5.3</b> Digitizing your data</a></li>
+<li class="chapter" data-level="5.4" data-path="datasets.html"><a href="datasets.html#creating-basic-plots-in-matlab"><i class="fa fa-check"></i><b>5.4</b> Creating basic plots in MATLAB</a></li>
+<li class="chapter" data-level="5.5" data-path="datasets.html"><a href="datasets.html#comparisons-between-groups."><i class="fa fa-check"></i><b>5.5</b> Comparisons between groups.</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>7</b> Basic R (1): Vectors</a>
+<li class="chapter" data-level="6" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>6</b> Datasets Pt2 : Working with Vectors and Matrices in Matlab</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="vectors.html"><a href="vectors.html#basic-data-structures-in-r"><i class="fa fa-check"></i><b>7.1</b> Basic data structures in R</a></li>
-<li class="chapter" data-level="7.2" data-path="vectors.html"><a href="vectors.html#unidimensional-objects-vectors"><i class="fa fa-check"></i><b>7.2</b> Unidimensional objects: Vectors</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="vectors.html"><a href="vectors.html#classes-of-vectors"><i class="fa fa-check"></i><b>7.2.1</b> Classes of vectors</a></li>
-<li class="chapter" data-level="7.2.2" data-path="vectors.html"><a href="vectors.html#expanding-vectors"><i class="fa fa-check"></i><b>7.2.2</b> Expanding vectors</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html"><i class="fa fa-check"></i><b>8</b> Basic R (2) : Data frames</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#creating-tables-using-vectors"><i class="fa fa-check"></i><b>8.1</b> Creating tables using vectors</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#accessing-specific-rows-and-columns"><i class="fa fa-check"></i><b>8.1.1</b> Accessing specific rows and columns</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#data-frames-versus-matrices"><i class="fa fa-check"></i><b>8.2</b> Data frames versus matrices</a></li>
-<li class="chapter" data-level="8.3" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#combining-different-two-dimensional-data-structures"><i class="fa fa-check"></i><b>8.3</b> Combining different two-dimensional data structures</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#combining-by-rows"><i class="fa fa-check"></i><b>8.3.1</b> Combining by rows</a></li>
-<li class="chapter" data-level="8.3.2" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#combining-by-columns"><i class="fa fa-check"></i><b>8.3.2</b> Combining by columns</a></li>
-<li class="chapter" data-level="8.3.3" data-path="basic-r-2-data-frames.html"><a href="basic-r-2-data-frames.html#reading-in-data-tables"><i class="fa fa-check"></i><b>8.3.3</b> Reading in data tables</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html"><i class="fa fa-check"></i><b>9</b> Sumarizing and subsetting data frames</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#reading-in-the-dataframe"><i class="fa fa-check"></i><b>9.1</b> Reading in the dataframe</a></li>
-<li class="chapter" data-level="9.2" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-and-subsetting-data"><i class="fa fa-check"></i><b>9.2</b> Summarizing and subsetting data</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-data"><i class="fa fa-check"></i><b>9.2.1</b> Summarizing data</a></li>
-<li class="chapter" data-level="9.2.2" data-path="sumarizing-and-subsetting-data-frames.html"><a href="sumarizing-and-subsetting-data-frames.html#summarizing-data-1"><i class="fa fa-check"></i><b>9.2.2</b> Summarizing data</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>10</b> Plotting data</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="plots.html"><a href="plots.html#using-ggplot2-to-plot-in-r"><i class="fa fa-check"></i><b>10.1</b> Using <code>ggplot2</code> to plot in <code>R</code></a></li>
-<li class="chapter" data-level="10.2" data-path="plots.html"><a href="plots.html#different-types-of-plots"><i class="fa fa-check"></i><b>10.2</b> Different types of plots</a>
-<ul>
-<li class="chapter" data-level="10.2.1" data-path="plots.html"><a href="plots.html#histogram"><i class="fa fa-check"></i><b>10.2.1</b> Histogram</a></li>
-<li class="chapter" data-level="10.2.2" data-path="plots.html"><a href="plots.html#barplots"><i class="fa fa-check"></i><b>10.2.2</b> Barplots</a></li>
-<li class="chapter" data-level="10.2.3" data-path="plots.html"><a href="plots.html#scatterplots"><i class="fa fa-check"></i><b>10.2.3</b> Scatterplots</a></li>
-<li class="chapter" data-level="10.2.4" data-path="plots.html"><a href="plots.html#boxplots-violin-plots-and-distributions"><i class="fa fa-check"></i><b>10.2.4</b> Boxplots, violin plots and distributions</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="plots.html"><a href="plots.html#more-resources-on-ggplot2"><i class="fa fa-check"></i><b>10.3</b> More resources on <code>ggplot2</code></a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html"><i class="fa fa-check"></i><b>11</b> Using MATLAB as a Powerful Calculator</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#matlab-basics-for-calculation"><i class="fa fa-check"></i><b>11.1</b> MATLAB Basics for calculation:</a></li>
-<li class="chapter" data-level="11.2" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#early-words-of-caution"><i class="fa fa-check"></i><b>11.2</b> Early words of caution:</a></li>
-<li class="chapter" data-level="11.3" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#dealing-with-vectorsmatrices"><i class="fa fa-check"></i><b>11.3</b> Dealing with vectors/matrices:</a>
-<ul>
-<li class="chapter" data-level="11.3.1" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#defining-a-vectormatrix"><i class="fa fa-check"></i><b>11.3.1</b> Defining a vector/matrix:</a></li>
-<li class="chapter" data-level="11.3.2" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#accessing-elements-adding-and-subtracting"><i class="fa fa-check"></i><b>11.3.2</b> Accessing Elements, Adding, and Subtracting</a></li>
-<li class="chapter" data-level="11.3.3" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#multiplying-two-vectorsmatrices"><i class="fa fa-check"></i><b>11.3.3</b> Multiplying two vectors/matrices:</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="m-files-functions-and-simple-plotting-tools.html"><a href="m-files-functions-and-simple-plotting-tools.html"><i class="fa fa-check"></i><b>12</b> m files, functions, and Simple Plotting Tools</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="m-files-functions-and-simple-plotting-tools.html"><a href="m-files-functions-and-simple-plotting-tools.html#m-files"><i class="fa fa-check"></i><b>12.1</b> m files</a></li>
-<li class="chapter" data-level="12.2" data-path="m-files-functions-and-simple-plotting-tools.html"><a href="m-files-functions-and-simple-plotting-tools.html#functions"><i class="fa fa-check"></i><b>12.2</b> functions</a></li>
-<li class="chapter" data-level="12.3" data-path="m-files-functions-and-simple-plotting-tools.html"><a href="m-files-functions-and-simple-plotting-tools.html#plotting-function-output-model-predictions"><i class="fa fa-check"></i><b>12.3</b> Plotting function output / model predictions</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html"><i class="fa fa-check"></i><b>13</b> Model Fitting (A.K.A. parameter estimation)</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#importing-numerical-data"><i class="fa fa-check"></i><b>13.1</b> Importing Numerical Data</a></li>
-<li class="chapter" data-level="13.2" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#creating-a-model-function"><i class="fa fa-check"></i><b>13.2</b> Creating a Model Function</a></li>
-<li class="chapter" data-level="13.3" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#creating-an-objective-error-function"><i class="fa fa-check"></i><b>13.3</b> Creating an Objective / Error Function</a></li>
-<li class="chapter" data-level="13.4" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#fitting-your-model-to-your-data"><i class="fa fa-check"></i><b>13.4</b> Fitting your Model to your Data</a>
-<ul>
-<li class="chapter" data-level="13.4.1" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#running-fminsearch"><i class="fa fa-check"></i><b>13.4.1</b> Running fminsearch()</a></li>
-<li class="chapter" data-level="13.4.2" data-path="model-fitting-a.k.a.-parameter-estimation.html"><a href="model-fitting-a.k.a.-parameter-estimation.html#visualizing-the-best-fit"><i class="fa fa-check"></i><b>13.4.2</b> Visualizing the Best Fit</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="investigating-a-numerical-data-set.html"><a href="investigating-a-numerical-data-set.html"><i class="fa fa-check"></i><b>14</b> Investigating a Numerical Data Set</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="investigating-a-numerical-data-set.html"><a href="investigating-a-numerical-data-set.html#extracting-and-combining-subsets-of-data"><i class="fa fa-check"></i><b>14.1</b> Extracting (and Combining) Subsets of Data</a></li>
-<li class="chapter" data-level="14.2" data-path="investigating-a-numerical-data-set.html"><a href="investigating-a-numerical-data-set.html#simple-summary-statistics"><i class="fa fa-check"></i><b>14.2</b> Simple Summary Statistics</a></li>
-<li class="chapter" data-level="14.3" data-path="investigating-a-numerical-data-set.html"><a href="investigating-a-numerical-data-set.html#writing-saving-numerical-data"><i class="fa fa-check"></i><b>14.3</b> Writing / Saving Numerical Data</a></li>
+<li class="chapter" data-level="6.1" data-path="vectors.html"><a href="vectors.html#basic-data-structures-in-matlab"><i class="fa fa-check"></i><b>6.1</b> Basic data structures in Matlab</a></li>
+<li class="chapter" data-level="6.2" data-path="vectors.html"><a href="vectors.html#row-vectors"><i class="fa fa-check"></i><b>6.2</b> Row Vectors</a></li>
+<li class="chapter" data-level="6.3" data-path="vectors.html"><a href="vectors.html#column-vectors"><i class="fa fa-check"></i><b>6.3</b> Column Vectors</a></li>
+<li class="chapter" data-level="6.4" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>6.4</b> Matrices</a></li>
+<li class="chapter" data-level="6.5" data-path="vectors.html"><a href="vectors.html#make-a-table"><i class="fa fa-check"></i><b>6.5</b> Make a table</a></li>
+<li class="chapter" data-level="6.6" data-path="vectors.html"><a href="vectors.html#graph-it"><i class="fa fa-check"></i><b>6.6</b> Graph it!</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -277,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL120 Excercise Guidebook</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BIOL120 Excercise Guidebook Fall ’23</a>
           </h1>
         </div>
 
@@ -285,8 +148,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vectors" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Basic R (1): Vectors<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="vectors" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Datasets Pt2 : Working with Vectors and Matrices in Matlab<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="rmdwarning">
+<p>
+<strong>For today’s activity, reunite with your original partners and
+go through the steps below. After you have completed the tasks and can
+work with vectors, matrices and tables, finish the comparison of two
+groups’ datasets</strong>
+</p>
+</div>
 <div class="objectives">
 <p>
 <strong>Objectives:</strong>
@@ -303,175 +174,151 @@ To learn how to differentiate types of vectors
 </li>
 </ol>
 </div>
-<p>This chapter will focus on how to start using <code>R</code> for biological data sets and quantitative analysis.</p>
-<p>As we have seen in class, <code>R</code> is incredibly powerful for data analysis. But to be able to use it correctly we will have to understand the different types of data structures in R.</p>
-<div id="basic-data-structures-in-r" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Basic data structures in R<a href="vectors.html#basic-data-structures-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A basic data structure is an n-dimensional object that will store information. Examples of data structures R can handle are vectors, matrices, arrays, data frames and lists.</p>
-<p>Data structures in R can be classified according to the number of dimensions:</p>
+<p>This chapter will focus on how to start using <code>Matlab</code> for biological data sets and quantitative analysis.</p>
+<p>As we have seen in class, <code>Matlab</code> is incredibly powerful for data analysis. But to be able to use it correctly we will have to understand the different types of data structures in Matlab.</p>
+<div id="basic-data-structures-in-matlab" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Basic data structures in Matlab<a href="vectors.html#basic-data-structures-in-matlab" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A basic data structure is an n-dimensional object that will store information. Examples of data structures Matlab can handle are vectors, matrices, arrays, and tables.</p>
+<p>Data structures in Matlab can be classified according to the number of dimensions:</p>
 <ol style="list-style-type: decimal">
 <li>Uni-dimensional data structures such as <strong>vectors</strong></li>
-<li>Two-dimensional data structures such as <strong>data frames</strong> or <strong>matrices</strong></li>
-<li>N-dimensional data structures such as <strong>lists</strong> (Dont worry about lists for class)</li>
+<li>Two-dimensional data structures such as <strong>tables</strong> or <strong>matrices</strong></li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="vectors.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One dimensional objects</span></span>
-<span id="cb13-2"><a href="vectors.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] 1 2 3 4 5</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="vectors.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>,<span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="vectors.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Two dimensional objects</span></span>
-<span id="cb17-2"><a href="vectors.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>,<span class="st">&quot;E&quot;</span>))</span></code></pre></div>
-<pre><code>##   c.1..2..3..4..5. c..A....B....C....D....E..
-## 1                1                          A
-## 2                2                          B
-## 3                3                          C
-## 4                4                          D
-## 5                5                          E</code></pre>
-<div class="rmdinfo">
-<h3 id="objects">
-Objects
-</h3>
-<p>
-<code>R</code>is able to store any type of variable into an <strong>object</strong>. To create and object what you have to do is place the name of your object followed by <code>&lt;-</code>, then followed by what you want to store there.
-</p>
-<p>
-For example, if we want to store the set of numbers in the previous example in an object called <code>numbers</code> we will do the following:
-</p>
-</div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="vectors.html#cb19-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
-<div class="rmdinfo">
-<p>
-You will see in your Environment pane (upper right) that a new object, called <code>numbers</code> is there:
-</p>
-<p>
-<img src="Lab_5/number_environment.png" />
-</p>
-<p>
-That means your object has been created.
-</p>
-<p>
-To check that your object exists, then just write the name of your object in either the <code>R</code> console or your R markdown <code>R</code> chunk block and execute it (hit the play button ion your chunk)
-</p>
-</div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="vectors.html#cb20-1" aria-hidden="true" tabindex="-1"></a>numbers</span></code></pre></div>
-<pre><code>## [1] 1 2 3 4 5</code></pre>
+<hr />
+<p>In matlab, a <strong>Vector</strong> is a type of <strong>Array</strong> with one row or one column. It is the most basic way to store a series of values for one variable. By definition <strong>Vectors</strong> are <strong>one dimensional</strong>.</p>
+<p>You can create two types of vectors.</p>
+<p>A <strong>Row Vector</strong> will have all of its values in one single row.</p>
+<p>A <strong>Column Vector</strong> will have all of its values in a single column.</p>
+<p>A <strong>Matrix</strong> is an <strong>Array</strong> with two dimensions or, multiple <strong>Rows</strong> and <strong>Columns</strong></p>
+<p>In principle, Arrays can have any number of <strong>dimensions</strong> as you will see in later exercises.</p>
 <hr />
 </div>
-<div id="unidimensional-objects-vectors" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Unidimensional objects: Vectors<a href="vectors.html#unidimensional-objects-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It has only one dimension, like a table that only has either columns or rows. So, a “list” of infinite objects in only one direction.</p>
-<p>This one-dimension object is called a <strong>vector</strong>, vectors look like this:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="vectors.html#cb22-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb22-2"><a href="vectors.html#cb22-2" aria-hidden="true" tabindex="-1"></a>letters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>)</span></code></pre></div>
-<p>To initiate a vector object, use the <code>c()</code> style. This will invoke a vector that will be filled with the content separated by commas.</p>
-<p>so, when we call them in R, they look like this:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="vectors.html#cb23-1" aria-hidden="true" tabindex="-1"></a>numbers</span></code></pre></div>
-<pre><code>## [1] 1 2 3 4 5</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="vectors.html#cb25-1" aria-hidden="true" tabindex="-1"></a>letters</span></code></pre></div>
-<pre><code>## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;</code></pre>
-<p>Note that there is no info about rows or columns. That means you are working with vectors.</p>
-<div class="rmdinfo">
-<h3 id="r-functions">
-R Functions
-</h3>
+<div id="row-vectors" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Row Vectors<a href="vectors.html#row-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Try the code below to create row vectors</strong></p>
+<pre><code># Define a Row vector
+
+A Row vector can be defined in two ways. 
+First, you can enter specific values by defining a variable as a vector and inputting the values in between brackets like so:
+
+row = [1 5 10 12 18];
+
+OR
+
+row = [1, 5, 10, 12, 18];
+</code></pre>
+<p><strong>Try the code below to create a data range</strong></p>
+<pre><code>You can to define a range of values, with a simple command
+
+numbers = [1:2:11];</code></pre>
+<p><strong>The number two in the middle defines an interval of two and will create a row vector starting from 1 and containing every second number until 11.</strong></p>
+<hr />
+</div>
+<div id="column-vectors" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Column Vectors<a href="vectors.html#column-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A Column vector can be defined in a couple of ways as well.
+First, like with row vectors, you can enter specific values but in order to delineate rows, you will use the semicolon “;” in between values.</p>
+<p><strong>Try the command below</strong></p>
+<pre><code>column = [1; 5; 10; 15];</code></pre>
+<p>Check out your workspace where you can see your newly defined row and column vectors. Double click on them to see their contents.**</p>
+<hr />
+<p>Another way to create a column vector is to transpose a row vector with the transpose function.</p>
+<p>You can do this simply by defining one vector as the transposition of another.</p>
+<p>Try the command below</p>
+<pre><code>column2 = row`;</code></pre>
+<p>The apostrophe will call the transpose function.</p>
+<p>The transpose function can also be used to turn a column vector into a row vector.</p>
+<div class="rmdquestion">
+<h4 id="question-1-create-a-column-vector-with-a-number-range-from-0-20-with-an-interval-of-2-your-answer-must-include-the-code-and-we-should-be-able-to-recognize-it-in-your-workspace">
+Question
+1: Create a column vector with a number range from 0-20 with an interval
+of 2 your answer must include the code and we should be able to
+recognize it in your workspace
+</h4>
+</div>
+<hr />
+<p>At this point your workspace should look like this:
+<img src="Lab_5/Workspace1.png" /></p>
+<hr />
+</div>
+<div id="matrices" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Matrices<a href="vectors.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>Matrix</strong> can be defined by inputting values for columns separated by semicolons to delineate new rows.</p>
+<p><strong>Try this example</strong></p>
+<pre><code>matrix = [1 2 3; 4 5 6; 7 8 9];</code></pre>
+<p><strong>Create two row vectors “rowx” and “rowy” with the same number of values</strong></p>
+<p><strong>To place one row below the other, use</strong></p>
+<pre><code> matrix1 = [rowx ; rowy];</code></pre>
+<p>You can also create a matrix by combining two column vectors.</p>
+<p><strong>Create two column vectors “column1” and “column2”</strong></p>
+<p><strong>To combine them as a matrix, use</strong></p>
+<pre><code>matrix2 = [column1, column2];</code></pre>
+<div class="rmdquestion">
+<h4 id="question-2-why-in-creating-the-previous-two-matrices-did-we-use-different-syntax-semicolon-vs-comma-when-combining-the-two-vectors">
+Question
+2: Why, in creating the previous two matrices did we use different
+syntax (semicolon vs comma) when combining the two vectors?
+</h4>
+</div>
+<hr />
+</div>
+<div id="make-a-table" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Make a table<a href="vectors.html#make-a-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="rmdwarning">
 <p>
-The <code>c()</code> command is also called a function.
-</p>
-<p>
-Functions are the commands that <code>R</code> uses to interpret an order.
-</p>
-<p>
-In the case of <code>c()</code>, it means <code>Combine Values into a Vector or List</code>
-</p>
-<p>
-The way the <code>R</code> syntax works is like this:
-</p>
-<p>
-<code>function(object)</code>
-</p>
-<p>
-So, for example, if you want to measure the length of an object you use the function <code>length</code> and the object between parenthesis:
+<strong>For this section have ready your original data frame and that
+of the other group to which you will be comparing your data</strong>
 </p>
 </div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="vectors.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(numbers)</span></code></pre></div>
-<pre><code>## [1] 5</code></pre>
 <div class="rmdquestion">
-<h4 id="question-1">
-Question 1
+<h4 id="question-3-create-three-column-vectors-that-contain-1-your-categorical-data-2-your-numerical-data-and-3-the-other-groups-numerical-data-and-combine-those-three-column-vectors-into-a-matrix">
+Question
+3: Create three column vectors that contain 1: Your categorical data, 2:
+Your numerical data and 3: The other group’s numerical data and combine
+those three column vectors into a matrix
+</h4>
+</div>
+<div class="rmdwarning">
+<p>
+<strong>FOR THIS TO WORK ALL OF YOUR VECTORS MUST HAVE THE SAME
+NUMBER OF VALUES (be of the same dimension)</strong>
+</p>
+</div>
+<hr />
+<p>Convert your matrix into a table - edit the code below to fit your data</p>
+<pre><code>CandyData = array2table(CandyArray,&quot;VariableNames&quot;,{&#39;OurCategoricalVariable&#39;,&#39;OurNumbers&#39;,&#39;TheirNumbers&#39;});
+CandyData.Numbers1 = double(CandyData.Numbers1);
+CandyData.Numbers2 = double(CandyData.Numbers2);
+CandyData.Flavors = categorical(CandyData.Flavors);</code></pre>
+</div>
+<div id="graph-it" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Graph it!<a href="vectors.html#graph-it" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Creates a grouped bar plot comparing the two types of candy</strong></p>
+<pre><code>bar(CandyData.Flavor,CandyData{:,2:3});
+legend(CandyData.Properties.VariableNames(2:3));</code></pre>
+<p><strong>End the section with a section break and run the code</strong></p>
+<hr />
+<p>You may have noticed some extra arguments in the code for creating a grouped bar graph. What do you think they are doing?
+***</p>
+<div class="rmdquestion">
+<h4 id="question-4">
+Question 4
 </h4>
 <ul>
 <li>
-Create three vectors:
-<ul>
-<li>
-One named <code>words</code> with your five favorite words
+Can this graph help you answer your research question? How?
 </li>
 <li>
-One named <code>numbers</code> with your lucky numbers
+What do your results show, based on the research question?
 </li>
 <li>
-One with three numbers and three letters in any order and name it <code>mixed</code>
-</li>
-</ul>
-</li>
-<li>
-Show the code you used to create the vectors
-</li>
-</ul>
-</div>
-<div id="classes-of-vectors" class="section level3 hasAnchor" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Classes of vectors<a href="vectors.html#classes-of-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Another important command to know if your object is a vector is the <code>class</code> command:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="vectors.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numbers)</span></code></pre></div>
-<pre><code>## [1] &quot;numeric&quot;</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="vectors.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(letters)</span></code></pre></div>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<p>The results shows that we either have <code>integers</code> or <code>characters</code>. These represent vectors of the same type: An integer vector is comprised by numbers, while a character vector is comprised by letters (or other letter-like characters). <strong>Character</strong> vectors can be identified because the elements in the vector are surrounded by quotation marks (“), while an integer is not</p>
-<div class="rmdquestion">
-<h4 id="question-2">
-Question 2
-</h4>
-<ul>
-<li>
-Which are the classes of the <code>words</code>, <code>numbers</code> and <code>mixed</code> objects?
-</li>
-</ul>
-</div>
-<p>When you read this sentence please clap real loud and call wither Prof. Dresch or me.</p>
-</div>
-<div id="expanding-vectors" class="section level3 hasAnchor" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Expanding vectors<a href="vectors.html#expanding-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you have two vectors of the same class, you can expand them by using the <code>c()</code> command again:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="vectors.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I want to create a vector of letters times 2 (So each letter twice)</span></span>
-<span id="cb33-2"><a href="vectors.html#cb33-2" aria-hidden="true" tabindex="-1"></a>double.letters <span class="ot">&lt;-</span> <span class="fu">c</span>(letters, letters)</span>
-<span id="cb33-3"><a href="vectors.html#cb33-3" aria-hidden="true" tabindex="-1"></a>double.letters</span></code></pre></div>
-<pre><code>## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="vectors.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Same with numbers</span></span>
-<span id="cb35-2"><a href="vectors.html#cb35-2" aria-hidden="true" tabindex="-1"></a>double.numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(numbers, numbers)</span>
-<span id="cb35-3"><a href="vectors.html#cb35-3" aria-hidden="true" tabindex="-1"></a>double.numbers</span></code></pre></div>
-<pre><code>##  [1] 1 2 3 4 5 1 2 3 4 5</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="vectors.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Or I want to add more numbers to my vector:</span></span>
-<span id="cb37-2"><a href="vectors.html#cb37-2" aria-hidden="true" tabindex="-1"></a>more.numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(numbers, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</span>
-<span id="cb37-3"><a href="vectors.html#cb37-3" aria-hidden="true" tabindex="-1"></a>more.numbers</span></code></pre></div>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="rmdquestion">
-<h4 id="question-3">
-Question 3
-</h4>
-<ul>
-<li>
-Increase each of your vectors by two or three more elements and add the code and the results.
-</li>
-<li>
-Create an object that combines your <code>words</code> and <code>numbers</code> vectors. Add the code.
-</li>
-<li>
-What are the classes of each of the objects you created?
+Compare the code for plotting the <code>two_candies</code> data set
+versus the code for the <code>my_data</code> data set. What
+changed?
 </li>
 </ul>
 </div>
 
-</div>
 </div>
 </div>
             </section>
@@ -479,8 +326,8 @@ What are the classes of each of the objects you created?
           </div>
         </div>
       </div>
-<a href="datasets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="basic-r-2-data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="datasets.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -534,20 +381,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

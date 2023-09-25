@@ -144,3 +144,5 @@ two-dimensional-objects
 matrices
 make-a-table
 graph-it
+review-defining-a-vectormatrix
+running-simple-matlab-functions

@@ -5,8 +5,7 @@ MATLAB can do basic arithmetic, including trigonometry and linear algebra. Read 
 
 If you ever need additional help, recall the MathWorks help site: [here](http://www.mathworks.com/help/matlab/).
 
-To get started, open MATLAB and make sure you are working in the **Command Window**:
-![MATLAB](MATLAB_open.png)
+To get started, open MATLAB, create a new Live Script and save it as "Lab4.mlx".
 
 ## MATLAB Basics for calculation:
 
@@ -35,7 +34,7 @@ To get started, open MATLAB and make sure you are working in the **Command Windo
     + For $\sqrt{-1}$, just type `i`
     
       Caution: If you assign the variable $i$ a value, it will overwrite this!
-* Putting a semi-colon (`;`) at the end of any line in MATLAB will suppress the output 
+* Putting a semi-colon (`;`) at the end of any line in MATLAB will suppress the output - this means it will complete the operation, but it won't show you the output on your screen. 
   
 
 ```{block, type='rmdquestion'}
@@ -50,20 +49,20 @@ To get started, open MATLAB and make sure you are working in the **Command Windo
 
 ## Early words of caution:
 * MATLAB is case sensitive!  If you define `b = 2` and then try to use `B`, MATLAB will tell you `B is not defined`.
-* Anytime you define a variable (i.e. `x = 4`), that is stored for later use.  Once MATLAB is closed, all variables are erased.  To clear variables without closing MATLAB, you have two options:
+* Anytime you define a variable (i.e. `x = 4`), that is stored for later use.  Once MATLAB is closed, all variables are erased.  To clear your variables at any time without closing MATLAB, you have two options:
   1) Clear an individual variable (i.e. `clear x`)
   2) Clear all variables (i.e. `clear all`)
-* To clear the command line at any point (just to tidy up your display), simply type `clc`
+* Every time you close MATLAB, your variables are cleared.  So, if you want to run commands that require variables you have already defined during a previous MATLAB session, you need to redefine them (i.e. rerun those lines of code) before you can run the new commands.
 * When dealing with any matrix or vector of values, operations are interpreted as LINEAR ALGEBRA OPERATIONS (matrix operations)!  
   + We can only add/subtract two things that have the same number of elements
   + Multiplication is interpreted as matrix multiplication.  
   + If you tell MATLAB to perform an operation that does not make sense in the Linear Algebra setting, it will give you an error message.
-  + We will see examples of this in the next section when we begin dealing with vectors and matrices.
+  + We will see examples of this in the next section when dealing with vectors and matrices.
   
 
 ## Dealing with vectors/matrices:
 
-A vector is simply a matrix with a single row or a single column – they are defined and interpreted in the same way.
+Remember that a vector is simply a matrix with a single row or a single column – they are defined and interpreted in the same way.
 
 ### REVIEW: Defining a vector/matrix:
 * Always use square brackets $\left[\dots\right]$ to define a vector/matrix
@@ -196,6 +195,8 @@ $$\begin{bmatrix}
           x(i) = x(i)^2;
   end;
   ````
+  
+  We will learn more about using for loops later in this course!
 
 ```{block, type='rmdquestion'}
 #### Question 4
@@ -215,4 +216,26 @@ $$F = \begin{bmatrix}
 4 & -4  \\
 \end{bmatrix}$$
 
+## Running a simple MATLAB function
+In your BIOL 101 lab this week, you measured the weight of either two types of maple seeds or maple leaves.  You then ran a Student's two-sample *t-test* on your data in Excel.  Now, lets use MATLAB to run that same statistical test and compare the output.
+
+The ttest2() function in MATLAB is used to run a Student's two-sample *t-test*.  
+
+Some helpful notes:
+
+* The inputs to this function are two vectors, $x$ and $y$.
+* If you run this function with a single output, it will return a test decision, $h$, for the null hypothesis.
+The null hypothesis is that the data in vectors $x$ and $y$ comes from independent random samples with equal means and equal variances. The alternative hypothesis is that the data in $x$ and $y$ comes from populations with unequal means. \
+$h=1$ if the test rejects the null hypothesis at the 5% significance level (i.e. $\alpha = 0.05%), and $h=0$ otherwise.
+* If you run this function with two outputs, it will return the test decision, $h$, along with the p-value.
+* For more information, you can always visit the [MathWorks website](http://www.mathworks.com/help/matlab/) and search for ttest2!\
+
+
+```{block, type='rmdquestion'}
+#### Question 5
+ - Create four column vectors in MATLAB that contain your data from the two types of maple seeds/leaves.  Use variable names that will help you remember which vector contains which data (i.e. W1, W2, L1, L2).
+ - Use the ttest2() function in MATLAB to run a Student's two-sample *t-test* on your data for each variable.  Make sure you are inputting the correct pair of vectors for each test.
+ - Interpret the results in terms of the null hypotheses.
+ - Do these results match those you obtained when you ran the Student's *t-test* in Excel?
+```  
 

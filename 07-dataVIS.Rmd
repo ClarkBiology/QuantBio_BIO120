@@ -1,0 +1,199 @@
+# Visualizing Data
+
+```{block, type='objectives'}
+ **The goals for today are to:**
+ 
+1: Recognize the type of data in your datasets
+
+2: Decide which plot to use to visualize your data and their relationships
+
+3: Create your plots!
+```
+
+***
+
+**Today you are going to look at three different datasets and seek to visualize them in three different ways: Line Plot, Scatter Plot and Histogram/Bar Plot**
+
+**For each dataset you must DECIDE WHICH PLOT IS APPROPRIATE BASED ON YOUR UNDERSTANDING OF THE TYPES OF VARIABLES**
+
+***
+
+## BEFORE WE START
+
+```{block, type='objectives'}
+
+**CREATE A NEW WORKING FOLDER FOR TODAY'S LAB AND NAVIGATE TO THAT FOLDER**
+
+**DOWNLOAD THE THREE FILES FROM THIS WEEK'S CANVAS MODULE AND PLACE THEM IN YOUR WORKING FOLDER**
+
+**CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY SECTION**
+
+```
+
+***
+
+## INFORMATION ABOUT YOUR PLOTS
+
+### 2D Line Plot
+
+**For one of your data sets, you will want to create a line plot.**
+
+The ``Plot`` function in matlab creates a 2D Line plot based on the X and Y data that you feed it. These data can be read as column or row vectors or indexed from a matrix or table using the corresponding syntax.
+
+Look to the [plot](https://www.mathworks.com/help/matlab/ref/plot.html) function documentation to get an idea of the syntax and arguments that you will use for the ``plot`` function. 
+
+***
+
+### Scatter Plot
+
+**For yet another of your data sets, you will determine the Scatter Plot to be appropriate**
+
+The ``Scatter`` function in Matlab takes in X and Y data and plots them as points. Like the line plot, these data can be read as column or row vectors or indexed from a matrix or table using the corresponding syntax.
+
+Look to the [Scatter](https://www.mathworks.com/help/matlab/ref/scatter.html) function documentation to get an idea of the syntax and arguments that you will use for the ``Scatter`` function.
+
+In addition to plotting your data, you may use the ``cftool`` to fit a line to your scatter plot. The ``cftool`` reads in your X and Y data and gives you options for what kind of function to fit to that data 
+
+**USE THE POLYNOMIAL WITH DEGREE 1**
+
+**After plotting your data as a scatter plot, run the command CFTOOL in the command window and fit a linear function to your data**
+
+**After creating a fit, use the option Fit->Save to workspace to save the fitted model to your workspace. You can now plot this line along with your data**
+
+***
+
+**EXAMPLE CODE FOR PLOTTING YOUR FITTED MODEL**
+
+```
+plot(fittedmodel)
+```
+
+***
+
+### Bar / Histogram Plots
+
+**For the third data set, you will want to use the Bar plot to plot averages and the Histogram plot to see differences in distributions**
+
+
+**You are already familiar with the bar function but for this particular data set you will have CALCULATE AVERAGES and aseemble them into a new table in order to plot them as bars**
+
+Read the [bar](https://www.mathworks.com/help/matlab/ref/bar.html) function documentation to get an idea of how you want to plot your bar plot
+
+**The HISTOGRAM will be used to plot distributions of different categorical variables.**
+
+Look to the [histogram](https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.histogram.html) documentation to get an idea of how to plot a histogram.
+
+**MAKE SURE TO LEARN HOW TO SPECIFY THE NUMBER OF BINS AS YOU WILL WANT TO PLOT YOUR HISTOGRAMS WITH THE SAME NUMBER OF BINS**
+
+***
+``` {block, type='rmdwarning' }
+FOR TODAY'S ACTIVITY YOU WILL NEED TO PLOT MULTIPLE DATASETS ONTO THE SAME PLOT
+
+USE THE FOLLOWING EXAMPLE CODE
+
+figure; - creates a figure
+
+hold on; - holds the figure to allow you to draw multiple plots
+
+histogram(data1,5);
+
+histogram(data2,5); - these two lines will draw two histograms on the same plot
+
+hold off; - stop drawing things on the same graph
+```
+
+
+***
+
+## DATA SET 1: Lizard Data
+
+**For this data set you will use the data file LizardData.csv**
+
+This is a dataset that was created by tracking the movement of a lizard over time.
+
+**Import your data into matlab as a table and look it over**
+
+```{block, type='rmdquestion'}
+#### Question 1:
+
+a: Just by looking at the table, what relationship can you see between the two variables?
+
+b: What kind of variables are in the data set (categorical/numerical)?
+
+c: what kind of plot will you use to visualize this data set (line/scatter/histogram/bar) and why?
+
+```
+
+
+**AFTER YOU'VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT**
+
+```{block, type='rmdquestion'}
+#### Question 2:
+
+What does your plot tell you about the data?
+```
+
+***
+
+## DATA SET 2: Dicty Colony Sizes
+
+**This data set was looking at the sizes of colonies of different strains of Dictyostelium with or without UV radiation.**
+
+**For this data you will use the file DictyColonySizes.csv**
+
+**Import your data into matlab as a table and look it over**
+
+
+```{block, type='rmdquestion'}
+#### Question 3:
+
+a: Just by looking at the table, what relationship can you see between the two variables?
+
+b: What kind of variables are in the data set (categorical/numerical)?
+
+c: what kind of plot will you use to visualize this data set (line/scatter/histogram/bar) and why?
+
+```
+
+
+**AFTER YOU'VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT**
+
+```{block, type='rmdquestion'}
+#### Question 4:
+
+What does your plot tell you about the data?
+```
+
+***
+
+## DATA SET 3: Tree Measurements
+
+**For this data set you will use the file TreeMeasures.csv**
+
+**Import your data into matlab as a table and look it over**
+
+```{block, type='rmdquestion'}
+#### Question 5:
+
+a: Just by looking at the table, what relationship can you see between the two variables?
+
+b: What kind of variables are in the data set (categorical/numerical)?
+
+c: what kind of plot will you use to visualize this data set (line/scatter/histogram/bar) and why?
+
+```
+
+
+**AFTER YOU'VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT**
+
+```{block, type='rmdquestion'}
+#### Question 6:
+
+What does your plot tell you about the data?
+```
+
+## SAVE AND SUBMIT
+
+```{block, type='objectives'}
+**SAVE YOUR MLX AND SUBMIT IT TO THE ASSIGMNENT ON CANVAS**
+```

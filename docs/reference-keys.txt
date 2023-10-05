@@ -147,3 +147,14 @@ graph-it
 review-defining-a-vectormatrix
 running-simple-matlab-functions
 running-a-simple-matlab-function
+visualizing-data
+d-line-plot
+scatter-plot
+bar-box-plots
+information-about-your-plots
+bar-histogram-plots
+data-set-1-lizard-data
+data-set-2-dicty-colony-sizes
+data-set-3-tree-measurements
+before-we-start
+save-and-submit

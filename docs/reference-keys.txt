@@ -146,3 +146,4 @@ make-a-table
 graph-it
 review-defining-a-vectormatrix
 running-simple-matlab-functions
+running-a-simple-matlab-function

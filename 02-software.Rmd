@@ -41,10 +41,6 @@ As was mentioned in the previous chapter,  we are going to use *MATLAB* for our 
 3. You will be redirected to the mathworks website through Clark University.  After you click on `Sign in to get started`, you will need to follow the prompts to login using your Clark username.
 
 
-***
-
-# Testing the software
-
 ## Testing MATLAB
 
 1. Launch MATLAB after installation

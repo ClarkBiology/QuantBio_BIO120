@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Introduction to electronic notebooks with MATLAB Livescripts | BIOL120 Excercise Guidebook Fall ’23</title>
+  <title>Chapter 8 Visualizing Data | BIOL120 Excercise Guidebook Fall ’23</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Introduction to electronic notebooks with MATLAB Livescripts | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta property="og:title" content="Chapter 8 Visualizing Data | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Introduction to electronic notebooks with MATLAB Livescripts | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta name="twitter:title" content="Chapter 8 Visualizing Data | BIOL120 Excercise Guidebook Fall ’23" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -29,15 +29,15 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-09-27" />
+<meta name="date" content="2023-10-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="software.html"/>
-<link rel="next" href="datasets.html"/>
+<link rel="prev" href="using-matlab-as-a-powerful-calculator.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -61,6 +61,10 @@ set in the _output.yml file.</p>" />
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -78,7 +82,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
@@ -136,6 +140,20 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#running-a-simple-matlab-function"><i class="fa fa-check"></i><b>7.4</b> Running a simple MATLAB function</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8</b> Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualizing-data.html"><a href="visualizing-data.html#before-we-start"><i class="fa fa-check"></i><b>8.1</b> BEFORE WE START</a></li>
+<li class="chapter" data-level="8.2" data-path="visualizing-data.html"><a href="visualizing-data.html#information-about-your-plots"><i class="fa fa-check"></i><b>8.2</b> INFORMATION ABOUT YOUR PLOTS</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizing-data.html"><a href="visualizing-data.html#d-line-plot"><i class="fa fa-check"></i><b>8.2.1</b> 2D Line Plot</a></li>
+<li class="chapter" data-level="8.2.2" data-path="visualizing-data.html"><a href="visualizing-data.html#scatter-plot"><i class="fa fa-check"></i><b>8.2.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="8.2.3" data-path="visualizing-data.html"><a href="visualizing-data.html#bar-histogram-plots"><i class="fa fa-check"></i><b>8.2.3</b> Bar / Histogram Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizing-data.html"><a href="visualizing-data.html#data-set-1-lizard-data"><i class="fa fa-check"></i><b>8.3</b> DATA SET 1: Lizard Data</a></li>
+<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html#data-set-2-dicty-colony-sizes"><i class="fa fa-check"></i><b>8.4</b> DATA SET 2: Dicty Colony Sizes</a></li>
+<li class="chapter" data-level="8.5" data-path="visualizing-data.html"><a href="visualizing-data.html#data-set-3-tree-measurements"><i class="fa fa-check"></i><b>8.5</b> DATA SET 3: Tree Measurements</a></li>
+<li class="chapter" data-level="8.6" data-path="visualizing-data.html"><a href="visualizing-data.html#save-and-submit"><i class="fa fa-check"></i><b>8.6</b> SAVE AND SUBMIT</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -156,157 +174,210 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmark" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Introduction to electronic notebooks with MATLAB Livescripts<a href="rmark.html#rmark" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="visualizing-data" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Visualizing Data<a href="visualizing-data.html#visualizing-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="objectives">
 <p>
-<strong>Objectives:</strong>
+<strong>The goals for today are to:</strong>
 </p>
-<ol style="list-style-type: decimal">
-<li>
-To create electronic notebooks for course
-</li>
-<li>
-To familiarize ourselves with the use of MATLAB livescripting and its features
-</li>
-<li>
-To create our initial livescript document
-</li>
-<li>
-To understand the importance of replicable and reproducible notebooks
-</li>
-</ol>
-</div>
-<p>The electronic lab notebooks we will use will in class will be created as <code>MATLAB livescript documents</code>.</p>
-<p>Livescripting with MATLAB allows us to create widely usable documents that will include any code we might write as well as its outputs. For more information about livescripting follow the link below:
-<a href="https://www.mathworks.com/help/matlab/matlab_prog/what-is-a-live-script-or-function.html" class="uri">https://www.mathworks.com/help/matlab/matlab_prog/what-is-a-live-script-or-function.html</a>.</p>
-<p>When you finish compiling a livescript, you can export it as an accessible document format such as .docx, .html or LATEX.</p>
-<div id="livescript-as-an-electronic-notebook" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Livescript as an Electronic Notebook<a href="rmark.html#livescript-as-an-electronic-notebook" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will use livescripting in MATLAB as it will allow us to create documents that we can modify in different computers (as long as we have MATLAB installed).</p>
-<p>We will use these documents as <em>Electronic Lab Notebooks (ELS)</em>. These ELSs will be used to write down what you have done in class, save any code you have written as well as the results produced. They will also serve as a reference for your file locations.</p>
-<p>But, before we go into the super complex part of it, lets learn the basics of livescripting with MATLAB.</p>
-<hr />
-<p><strong>Open MATLAB, navigate to your Biol120 working folder and start a NEW livescript</strong></p>
-<hr />
-</div>
-<div id="basics-of-livescripting" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Basics of Livescripting<a href="rmark.html#basics-of-livescripting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In order to use LiveScripts as Electronic Notebooks let’s familiarize ourselves with the interface and methods for editing our document.</p>
-<p><strong>When building a livescript, you will be switching between editing text and code. in the sections below, we will review the process</strong></p>
-<div id="editing-text" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Editing Text<a href="rmark.html#editing-text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Whenever you begin a new livescript, the first thing you will notice is a grey bar in your left panel. (see below)</p>
-<div class="figure">
-<img src="Lab_3/CodeBar.png" alt="" />
-<p class="caption">Code Input</p>
-</div>
-<p>This is because MATLAB defaults to editing code when a new LiveScript is made. In order to edit this document with plain text, add images, etc… we must first click the <code>Text</code> button to enter text editing mode.</p>
-<div class="figure">
-<img src="Lab_3/ClickToAddText.png" alt="" />
-<p class="caption">Text Button</p>
-</div>
-<p>In the <code>Text Panel</code> you will see text editing controls that you might be familiar with from text editors such as MSWORD.</p>
-<p><strong>Experiment with different text formats (Normal, Header, Title) and think about how you might structure a document to be comprised of a Title, Headers for specific sections and normal text.</strong></p>
-<p>You also have the usual text formatting such as <strong>BOLD</strong>, <em>ITALIC</em>, etc… as well as the ability create Bullet Lists, Numbered Lists and change the justification.</p>
-<p><strong>Experiment creating different blocks of text with the formatting controls</strong></p>
-<hr />
-</div>
-<div id="inserting-figures-hyperlinks-and-equations" class="section level3 hasAnchor" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Inserting Figures, Hyperlinks and Equations<a href="rmark.html#inserting-figures-hyperlinks-and-equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Finally, we can add figures, hyperlinks and equations using the <code>in the Markdown document</code>Insert` tab. (See below)</p>
-<div class="figure">
-<img src="Lab_3/InsertTab.png" alt="" />
-<p class="caption">Insert Tab</p>
-</div>
-<div id="figures" class="section level4 hasAnchor" number="4.2.2.1">
-<h4><span class="header-section-number">4.2.2.1</span> Figures<a href="rmark.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Using the Image button, you can browse to and insert an image of your choice. This could be a figure or image relevant to what you are doing for your current lab assignment.</p>
-<p><em>Once you’ve inserted your image you can size it to your preference</em></p>
-<p><strong>Use a combination of a text header and the <code>Image</code> button to insert an image into your livescript</strong></p>
-<p><strong>NOTE: THIS IS A PERFECT OPORTUNITY TO START THINKING OF WHERE YOU MIGHT STORE RELEVANT FILES IN YOUR WORKING FOLDER</strong></p>
-<div class="figure">
-<img src="Lab_3/ExampleFigure.png" alt="" />
-<p class="caption">Example Figure</p>
-</div>
-</div>
-<div id="hyperlinks" class="section level4 hasAnchor" number="4.2.2.2">
-<h4><span class="header-section-number">4.2.2.2</span> Hyperlinks<a href="rmark.html#hyperlinks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>To add a hyperlink to your livescript use the <code>Hyperlink</code> button and follow the instructions in the dialog box that pops up. You should format your links to have some descriptive text and then input the url</p>
-<div class="figure">
-<img src="Lab_3/HyperLinkDialogue.png" alt="" />
-<p class="caption">HyperLink Dialogue</p>
-</div>
-<p><strong>Here’s an example Hyperlink</strong></p>
-<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Totally Not A RickRoll</a></p>
-</div>
-<div id="tables-using-equations" class="section level4 hasAnchor" number="4.2.2.3">
-<h4><span class="header-section-number">4.2.2.3</span> Tables (Using Equations)<a href="rmark.html#tables-using-equations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Inserting tables is tricky and annoying with the only available solution being to create a matrix with LATEX code. Coppy the code below and use the <code>Equation</code> button to insert it as a Latex Equation (see image)</p>
-<pre><code>\matrix{
-\text{Lecture Number}       &amp;\text{Topic}   \cr
-1           &amp; \text{Introductions and what is Biology}  \cr
-2           &amp; \text{Using Livescripting to create electronic notebooks}     \cr
-3           &amp; \text{Creating dataframes} \cr
-4                   &amp; \text{Visualizing Data} \cr
-}</code></pre>
-<div class="figure">
-<img src="Lab_3/LatexMatrix.png" alt="" />
-<p class="caption">Latex Equation</p>
-</div>
-<p><strong>Later in the semester we will learn how to load in data and output tables with them.</strong></p>
-<hr />
-</div>
-</div>
-<div id="code" class="section level3 hasAnchor" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> CODE!<a href="rmark.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Along with our plain text, figures, etc…, we will be adding in sections of executable code to our electronic notebooks, allowing us to execute and log analyses of our data.</p>
-<p>In order to switch to code editing, you must press the <code>Code</code> button in the <code>Live Editor</code> tab</p>
-<div class="figure">
-<img src="Lab_3/CodeButton.png" alt="" />
-<p class="caption">Code Button</p>
-</div>
-<p>**NOTE: WHEN INSERTING CODE INTO YOUR LIVESCRIPT IT’S USEFULL TO INSERT SECTION BREAKS BEFORE AND AFTER SO THAT YOU CAN ONLY RUN SPECIFIC SETS OF CODE AT A TIME</p>
-<p>You can also use plain text to annotate your code.</p>
-<p><strong>Create two sections of code by inserting section breaks and copying the following code</strong></p>
-<pre><code>This code creates two variables and then adds their values to create a third!
-a = 3;
-b = 5;
-c = a+b;
-
-c</code></pre>
-<pre><code>This code plots a Sine Wave
-x = [0:0.1:20];
-y = sin(x);
-plot(x,y)</code></pre>
-<p>After you’ve created the sections of code, use the <code>Run Section</code> button and observe the outputs</p>
-<p><strong>You should notice that if you click on the ouput on the right panel, the corresponding section of code will be highlighted</strong></p>
-<div class="figure">
-<img src="Lab_3/HighlightedCode.png" alt="" />
-<p class="caption">Highlighted Code</p>
-</div>
-<p><strong>Annotating your code is the best way to remember what your code does and log how you were able to accomplish specific tasks with specific lines of code.</strong></p>
-<hr />
-</div>
-</div>
-<div id="livescript-exercise" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> LiveScript Exercise:<a href="rmark.html#livescript-exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="rmdquestion">
 <p>
-Create a Live Script that describes yourself in a simple manner. Use as many element of syntax as possible, like <em>bold text</em>, <strong>italics</strong>, lists, tables and even add a picture of yourself. You can make it a very simple resume, a simple CV or just a small paragraph of you and your likes.
+1: Recognize the type of data in your datasets
+</p>
+<p>
+2: Decide which plot to use to visualize your data and their
+relationships
+</p>
+<p>
+3: Create your plots!
 </p>
 </div>
 <hr />
-<p><strong>Save your example LiveScript in a folder for today’s lab session</strong></p>
+<p><strong>Today you are going to look at three different datasets and seek to visualize them in three different ways: Line Plot, Scatter Plot and Histogram/Bar Plot</strong></p>
+<p><strong>For each dataset you must DECIDE WHICH PLOT IS APPROPRIATE BASED ON YOUR UNDERSTANDING OF THE TYPES OF VARIABLES</strong></p>
+<hr />
+<div id="before-we-start" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> BEFORE WE START<a href="visualizing-data.html#before-we-start" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<p>
+<strong>CREATE A NEW WORKING FOLDER FOR TODAY’S LAB AND NAVIGATE TO
+THAT FOLDER</strong>
+</p>
+<p>
+<strong>DOWNLOAD THE THREE FILES FROM THIS WEEK’S CANVAS MODULE AND
+PLACE THEM IN YOUR WORKING FOLDER</strong>
+</p>
+<p>
+<strong>CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY
+SECTION</strong>
+</p>
+</div>
 <hr />
 </div>
-<div id="additional-information-on-livescripting" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> Additional information on LiveScripting<a href="rmark.html#additional-information-on-livescripting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><a href="https://www.mathworks.com/help/matlab/matlab_prog/what-is-a-live-script-or-function.html">What is a LiveScript</a></li>
-<li><a href="https://www.mathworks.com/help/matlab/matlab_prog/format-live-scripts.html">Formatting for Livescripts</a></li>
-<li><a href="https://www.public.asu.edu/~hhuang38/hph_matlab_basic2013_1.pdf">Simple Example MATLAB Code</a></li>
-</ul>
+<div id="information-about-your-plots" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> INFORMATION ABOUT YOUR PLOTS<a href="visualizing-data.html#information-about-your-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="d-line-plot" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> 2D Line Plot<a href="visualizing-data.html#d-line-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>For one of your data sets, you will want to create a line plot.</strong></p>
+<p>The <code>Plot</code> function in matlab creates a 2D Line plot based on the X and Y data that you feed it. These data can be read as column or row vectors or indexed from a matrix or table using the corresponding syntax.</p>
+<p>Look to the <a href="https://www.mathworks.com/help/matlab/ref/plot.html">plot</a> function documentation to get an idea of the syntax and arguments that you will use for the <code>plot</code> function.</p>
+<hr />
+</div>
+<div id="scatter-plot" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Scatter Plot<a href="visualizing-data.html#scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>For yet another of your data sets, you will determine the Scatter Plot to be appropriate</strong></p>
+<p>The <code>Scatter</code> function in Matlab takes in X and Y data and plots them as points. Like the line plot, these data can be read as column or row vectors or indexed from a matrix or table using the corresponding syntax.</p>
+<p>Look to the <a href="https://www.mathworks.com/help/matlab/ref/scatter.html">Scatter</a> function documentation to get an idea of the syntax and arguments that you will use for the <code>Scatter</code> function.</p>
+<p>In addition to plotting your data, you may use the <code>cftool</code> to fit a line to your scatter plot. The <code>cftool</code> reads in your X and Y data and gives you options for what kind of function to fit to that data</p>
+<p><strong>USE THE POLYNOMIAL WITH DEGREE 1</strong></p>
+<p><strong>After plotting your data as a scatter plot, run the command CFTOOL in the command window and fit a linear function to your data</strong></p>
+<p><strong>After creating a fit, use the option Fit-&gt;Save to workspace to save the fitted model to your workspace. You can now plot this line along with your data</strong></p>
+<hr />
+<p><strong>EXAMPLE CODE FOR PLOTTING YOUR FITTED MODEL</strong></p>
+<pre><code>plot(fittedmodel)</code></pre>
+<hr />
+</div>
+<div id="bar-histogram-plots" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Bar / Histogram Plots<a href="visualizing-data.html#bar-histogram-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>For the third data set, you will want to use the Bar plot to plot averages and the Histogram plot to see differences in distributions</strong></p>
+<p><strong>You are already familiar with the bar function but for this particular data set you will have CALCULATE AVERAGES and aseemble them into a new table in order to plot them as bars</strong></p>
+<p>Read the <a href="https://www.mathworks.com/help/matlab/ref/bar.html">bar</a> function documentation to get an idea of how you want to plot your bar plot</p>
+<p><strong>The HISTOGRAM will be used to plot distributions of different categorical variables.</strong></p>
+<p>Look to the <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.chart.primitive.histogram.html">histogram</a> documentation to get an idea of how to plot a histogram.</p>
+<p><strong>MAKE SURE TO LEARN HOW TO SPECIFY THE NUMBER OF BINS AS YOU WILL WANT TO PLOT YOUR HISTOGRAMS WITH THE SAME NUMBER OF BINS</strong></p>
+<hr />
+<div class="rmdwarning">
+<p>
+FOR TODAY’S ACTIVITY YOU WILL NEED TO PLOT MULTIPLE DATASETS ONTO THE
+SAME PLOT
+</p>
+<p>
+USE THE FOLLOWING EXAMPLE CODE
+</p>
+<p>
+figure; - creates a figure
+</p>
+<p>
+hold on; - holds the figure to allow you to draw multiple plots
+</p>
+<p>
+histogram(data1,5);
+</p>
+<p>
+histogram(data2,5); - these two lines will draw two histograms on the
+same plot
+</p>
+<p>
+hold off; - stop drawing things on the same graph
+</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="data-set-1-lizard-data" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> DATA SET 1: Lizard Data<a href="visualizing-data.html#data-set-1-lizard-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>For this data set you will use the data file LizardData.csv</strong></p>
+<p>This is a dataset that was created by tracking the movement of a lizard over time.</p>
+<p><strong>Import your data into matlab as a table and look it over</strong></p>
+<div class="rmdquestion">
+<h4 id="question-1">
+Question 1:
+</h4>
+<p>
+a: Just by looking at the table, what relationship can you see
+between the two variables?
+</p>
+<p>
+b: What kind of variables are in the data set
+(categorical/numerical)?
+</p>
+<p>
+c: what kind of plot will you use to visualize this data set
+(line/scatter/histogram/bar) and why?
+</p>
+</div>
+<p><strong>AFTER YOU’VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT</strong></p>
+<div class="rmdquestion">
+<h4 id="question-2">
+Question 2:
+</h4>
+<p>
+What does your plot tell you about the data?
+</p>
+</div>
+<hr />
+</div>
+<div id="data-set-2-dicty-colony-sizes" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> DATA SET 2: Dicty Colony Sizes<a href="visualizing-data.html#data-set-2-dicty-colony-sizes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>This data set was looking at the sizes of colonies of different strains of Dictyostelium with or without UV radiation.</strong></p>
+<p><strong>For this data you will use the file DictyColonySizes.csv</strong></p>
+<p><strong>Import your data into matlab as a table and look it over</strong></p>
+<div class="rmdquestion">
+<h4 id="question-3">
+Question 3:
+</h4>
+<p>
+a: Just by looking at the table, what relationship can you see
+between the two variables?
+</p>
+<p>
+b: What kind of variables are in the data set
+(categorical/numerical)?
+</p>
+<p>
+c: what kind of plot will you use to visualize this data set
+(line/scatter/histogram/bar) and why?
+</p>
+</div>
+<p><strong>AFTER YOU’VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT</strong></p>
+<div class="rmdquestion">
+<h4 id="question-4">
+Question 4:
+</h4>
+<p>
+What does your plot tell you about the data?
+</p>
+</div>
+<hr />
+</div>
+<div id="data-set-3-tree-measurements" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> DATA SET 3: Tree Measurements<a href="visualizing-data.html#data-set-3-tree-measurements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>For this data set you will use the file TreeMeasures.csv</strong></p>
+<p><strong>Import your data into matlab as a table and look it over</strong></p>
+<div class="rmdquestion">
+<h4 id="question-5">
+Question 5:
+</h4>
+<p>
+a: Just by looking at the table, what relationship can you see
+between the two variables?
+</p>
+<p>
+b: What kind of variables are in the data set
+(categorical/numerical)?
+</p>
+<p>
+c: what kind of plot will you use to visualize this data set
+(line/scatter/histogram/bar) and why?
+</p>
+</div>
+<p><strong>AFTER YOU’VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT</strong></p>
+<div class="rmdquestion">
+<h4 id="question-6">
+Question 6:
+</h4>
+<p>
+What does your plot tell you about the data?
+</p>
+</div>
+</div>
+<div id="save-and-submit" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> SAVE AND SUBMIT<a href="visualizing-data.html#save-and-submit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<p>
+<strong>SAVE YOUR MLX AND SUBMIT IT TO THE ASSIGMNENT ON
+CANVAS</strong>
+</p>
+</div>
 
 </div>
 </div>
@@ -315,8 +386,8 @@ Create a Live Script that describes yourself in a simple manner. Use as many ele
           </div>
         </div>
       </div>
-<a href="software.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="datasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-matlab-as-a-powerful-calculator.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -347,7 +418,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-intro_markdown.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-dataVIS.Rmd",
 "text": "Edit"
 },
 "history": {

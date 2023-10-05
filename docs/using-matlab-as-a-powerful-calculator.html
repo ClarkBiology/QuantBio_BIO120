@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-09-25" />
+<meta name="date" content="2023-10-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="vectors.html"/>
-
+<link rel="next" href="visualizing-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,6 +202,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#accessing-elements-adding-and-subtracting"><i class="fa fa-check"></i><b>7.3.2</b> Accessing Elements, Adding, and Subtracting</a></li>
 <li class="chapter" data-level="7.3.3" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#multiplying-two-vectorsmatrices"><i class="fa fa-check"></i><b>7.3.3</b> Multiplying two vectors/matrices:</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="using-matlab-as-a-powerful-calculator.html"><a href="using-matlab-as-a-powerful-calculator.html#running-a-simple-matlab-function"><i class="fa fa-check"></i><b>7.4</b> Running a simple MATLAB function</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8</b> Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualizing-data.html"><a href="visualizing-data.html#before-we-start"><i class="fa fa-check"></i><b>8.1</b> BEFORE WE START</a></li>
+<li class="chapter" data-level="8.2" data-path="visualizing-data.html"><a href="visualizing-data.html#information-about-your-plots"><i class="fa fa-check"></i><b>8.2</b> INFORMATION ABOUT YOUR PLOTS</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizing-data.html"><a href="visualizing-data.html#d-line-plot"><i class="fa fa-check"></i><b>8.2.1</b> 2D Line Plot</a></li>
+<li class="chapter" data-level="8.2.2" data-path="visualizing-data.html"><a href="visualizing-data.html#scatter-plot"><i class="fa fa-check"></i><b>8.2.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="8.2.3" data-path="visualizing-data.html"><a href="visualizing-data.html#bar-histogram-plots"><i class="fa fa-check"></i><b>8.2.3</b> Bar / Histogram Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizing-data.html"><a href="visualizing-data.html#data-set-1-lizard-data"><i class="fa fa-check"></i><b>8.3</b> DATA SET 1: Lizard Data</a></li>
+<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html#data-set-2-dicty-colony-sizes"><i class="fa fa-check"></i><b>8.4</b> DATA SET 2: Dicty Colony Sizes</a></li>
+<li class="chapter" data-level="8.5" data-path="visualizing-data.html"><a href="visualizing-data.html#data-set-3-tree-measurements"><i class="fa fa-check"></i><b>8.5</b> DATA SET 3: Tree Measurements</a></li>
+<li class="chapter" data-level="8.6" data-path="visualizing-data.html"><a href="visualizing-data.html#save-and-submit"><i class="fa fa-check"></i><b>8.6</b> SAVE AND SUBMIT</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -227,8 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Using MATLAB as a Powerful Calculator<a href="using-matlab-as-a-powerful-calculator.html#using-matlab-as-a-powerful-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>MATLAB can do basic arithmetic, including trigonometry and linear algebra. Read through the MATLAB basics and try the examples below to get used to using MATLAB commands.</p>
 <p>If you ever need additional help, recall the MathWorks help site: <a href="http://www.mathworks.com/help/matlab/">here</a>.</p>
-<p>To get started, open MATLAB and make sure you are working in the <strong>Command Window</strong>:
-<img src="MATLAB_open.png" alt="MATLAB" /></p>
+<p>To get started, open MATLAB, create a new Live Script and save it as “Lab4.mlx”.</p>
 <div id="matlab-basics-for-calculation" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> MATLAB Basics for calculation:<a href="using-matlab-as-a-powerful-calculator.html#matlab-basics-for-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
@@ -253,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>For <span class="math inline">\(\sqrt{-1}\)</span>, just type <code>i</code></p>
 <p>Caution: If you assign the variable <span class="math inline">\(i\)</span> a value, it will overwrite this!</p></li>
 </ul></li>
-<li>Putting a semi-colon (<code>;</code>) at the end of any line in MATLAB will suppress the output</li>
+<li>Putting a semi-colon (<code>;</code>) at the end of any line in MATLAB will suppress the output - this means it will complete the operation, but it won’t show you the output on your screen.</li>
 </ul>
 <div class="rmdquestion">
 <h4 id="question-1">
@@ -286,25 +300,25 @@ Let <span class="math inline"><span class="math inline">\(x = 42\)</span></span>
 <h2><span class="header-section-number">7.2</span> Early words of caution:<a href="using-matlab-as-a-powerful-calculator.html#early-words-of-caution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>MATLAB is case sensitive! If you define <code>b = 2</code> and then try to use <code>B</code>, MATLAB will tell you <code>B is not defined</code>.</li>
-<li>Anytime you define a variable (i.e. <code>x = 4</code>), that is stored for later use. Once MATLAB is closed, all variables are erased. To clear variables without closing MATLAB, you have two options:
+<li>Anytime you define a variable (i.e. <code>x = 4</code>), that is stored for later use. Once MATLAB is closed, all variables are erased. To clear your variables at any time without closing MATLAB, you have two options:
 <ol style="list-style-type: decimal">
 <li>Clear an individual variable (i.e. <code>clear x</code>)</li>
 <li>Clear all variables (i.e. <code>clear all</code>)</li>
 </ol></li>
-<li>To clear the command line at any point (just to tidy up your display), simply type <code>clc</code></li>
+<li>Every time you close MATLAB, your variables are cleared. So, if you want to run commands that require variables you have already defined during a previous MATLAB session, you need to redefine them (i.e. rerun those lines of code) before you can run the new commands.</li>
 <li>When dealing with any matrix or vector of values, operations are interpreted as LINEAR ALGEBRA OPERATIONS (matrix operations)!
 <ul>
 <li>We can only add/subtract two things that have the same number of elements</li>
 <li>Multiplication is interpreted as matrix multiplication.<br />
 </li>
 <li>If you tell MATLAB to perform an operation that does not make sense in the Linear Algebra setting, it will give you an error message.</li>
-<li>We will see examples of this in the next section when we begin dealing with vectors and matrices.</li>
+<li>We will see examples of this in the next section when dealing with vectors and matrices.</li>
 </ul></li>
 </ul>
 </div>
 <div id="dealing-with-vectorsmatrices" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Dealing with vectors/matrices:<a href="using-matlab-as-a-powerful-calculator.html#dealing-with-vectorsmatrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A vector is simply a matrix with a single row or a single column – they are defined and interpreted in the same way.</p>
+<p>Remember that a vector is simply a matrix with a single row or a single column – they are defined and interpreted in the same way.</p>
 <div id="review-defining-a-vectormatrix" class="section level3 hasAnchor" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> REVIEW: Defining a vector/matrix:<a href="using-matlab-as-a-powerful-calculator.html#review-defining-a-vectormatrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
@@ -442,7 +456,8 @@ and <span class="math inline"><span class="math inline">\(B\)</span></span>, com
 <p>OR we can use a for loop</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="using-matlab-as-a-powerful-calculator.html#cb3-1" tabindex="-1"></a>for i=1:length(x)</span>
 <span id="cb3-2"><a href="using-matlab-as-a-powerful-calculator.html#cb3-2" tabindex="-1"></a>        x(i) = x(i)^2;</span>
-<span id="cb3-3"><a href="using-matlab-as-a-powerful-calculator.html#cb3-3" tabindex="-1"></a>end;</span></code></pre></div></li>
+<span id="cb3-3"><a href="using-matlab-as-a-powerful-calculator.html#cb3-3" tabindex="-1"></a>end;</span></code></pre></div>
+<p>We will learn more about using for loops later in this course!</p></li>
 </ul>
 <div class="rmdquestion">
 <h4 id="question-4">
@@ -487,8 +502,47 @@ question.
 3 &amp; -5  \\
 4 &amp; -4  \\
 \end{bmatrix}\]</span></p>
-
 </div>
+</div>
+<div id="running-a-simple-matlab-function" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Running a simple MATLAB function<a href="using-matlab-as-a-powerful-calculator.html#running-a-simple-matlab-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In your BIOL 101 lab this week, you measured the weight of either two types of maple seeds or maple leaves. You then ran a Student’s two-sample <em>t-test</em> on your data in Excel. Now, lets use MATLAB to run that same statistical test and compare the output.</p>
+<p>The ttest2() function in MATLAB is used to run a Student’s two-sample <em>t-test</em>.</p>
+<p>Some helpful notes:</p>
+<ul>
+<li>The inputs to this function are two vectors, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</li>
+<li>If you run this function with a single output, it will return a test decision, <span class="math inline">\(h\)</span>, for the null hypothesis.
+The null hypothesis is that the data in vectors <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> comes from independent random samples with equal means and equal variances. The alternative hypothesis is that the data in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> comes from populations with unequal means.<br />
+<span class="math inline">\(h=1\)</span> if the test rejects the null hypothesis at the 5% significance level (i.e. $= 0.05%), and <span class="math inline">\(h=0\)</span> otherwise.</li>
+<li>If you run this function with two outputs, it will return the test decision, <span class="math inline">\(h\)</span>, along with the p-value.</li>
+<li>For more information, you can always visit the <a href="http://www.mathworks.com/help/matlab/">MathWorks website</a> and search for ttest2!<br />
+</li>
+</ul>
+<div class="rmdquestion">
+<h4 id="question-5">
+Question 5
+</h4>
+<ul>
+<li>
+Create four column vectors in MATLAB that contain your data from the
+two types of maple seeds/leaves. Use variable names that will help you
+remember which vector contains which data (i.e. W1, W2, L1, L2).
+</li>
+<li>
+Use the ttest2() function in MATLAB to run a Student’s two-sample
+<em>t-test</em> on your data for each variable. Make sure you are
+inputting the correct pair of vectors for each test.
+</li>
+<li>
+Interpret the results in terms of the null hypotheses.
+</li>
+<li>
+Do these results match those you obtained when you ran the Student’s
+<em>t-test</em> in Excel?
+</li>
+</ul>
+</div>
+
 </div>
 </div>
             </section>
@@ -496,8 +550,8 @@ question.
           </div>
         </div>
       </div>
-<a href="vectors.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="vectors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizing-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

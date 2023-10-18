@@ -1,0 +1,138 @@
+# Creating Functions and Plotting Tools Revisited
+
+```{block, type='objectives'}
+**Checklist**
+
+Before we begin, be sure you've prepared the following:
+
+1. Open MATLAB.
+2. Navigate to your Biol120 working folder and create a new folder for today's lab.
+3. Open a new live script and use the header text to place the title for today's lab.
+```
+
+Today's laboratory will be focused on creating our own functions and visualizing the results.  
+
+
+Before we start, however, write out the answers to these questions in your live script:
+
+```{block, type='rmdquestion'}
+#### Question 1
+- What is a function?
+- When creating a function in MATLAB with a single input and output, which is your independent variable and which is your dependent variable?
+- What is the difference between an independent variable and a parameter?
+```
+
+
+
+## functions
+
+* Creating a function
+  + `New` --$>$ `Script`
+  + `File` --$>$ `Save As..`
+  + Name your file (the .m will automatically be added) and make sure it is saved in your `Current Folder`
+    
+    Note: MATLAB `functions` are a special type of `m file`
+  + The first line of the file must tell MATLAB that this is a function.  Important parts include:
+    1) The word `function`
+    2) The function output(s) in square brackets
+    3) The name of the function (*this MUST match the file name*)
+    4) The function input(s)
+    ![fun1](fun1.png)
+    
+
+* Calling a function
+  + Go back to the `Command Window` or a Live Script that is in your Current Directory
+  + Type in the name of your function and any input(s) in parentheses
+  + When you hit enter, MATLAB will execute the function and display the output
+  ![fun1execute](fun1_run.png)
+    ```{block, type='rmdquestion'}
+#### Question 2
+  - Write a MATLAB function that converts Celcius to Farenheit, according to the function $F = \cfrac{9}{5}C+32$
+  - What is the `independent variable` and what is the `dependent variable`?
+  - Run your function to convert the following temperatures (given in $^{\circ}$C) to $^{\circ}$F.
+  
+          12$^{\circ}$ C, 26.4$^{\circ}$ C, and -6$^{\circ}$ C
+```
+
+* Writing a function with multiple inputs (multiple `independent variables` and/or `parameters`)
+  + There are 2 standard ways of doing this
+    1) have multiple inputs in a list, separated by commas
+    ![](quadfun.png)
+    2) have a 'single' input with multiple values - i.e. input a *vector* of inputs
+    ![](fun2.png)
+    Note: in this example, the output is also a vector.
+    
+* We can have multiple outputs in a list as well:
+          ![](malth.png)
+          
+  What is the advantage to outputting a vector of independent variable values and a vector of corresponding dependent variable values?
+  
+  We can use them for plotting and visualize our model!
+  
+    ```{block, type='rmdquestion'}
+#### Question 3
+Lets think about modeling drug dosage.  If the recommended adult dosage for a drug is $D$ (in mg), then to determine the appropriate dosage $c$ for a child of age $a$ (in years), pharmacists use the equation $c = 0.0417D\left(a+1\right)$.
+
+  - Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of $a$ values) and the recommended adult dosage for a specific drug, $D$.  The function should output the appropriate dosages (i.e. $c$ values) for children of ages corresponding to the vector of $a$ values.  Hint: you may want to use a `for-loop` as in fun2 above.
+  - Identify the `independent variable`, `dependent variable`, and `parameter`.
+  - The recommended adult dosage for amoxicillin is 500 mg. Use your function to determine the appropriate dosage for children ages 2 - 12 years. 
+```  
+  
+  
+## Visualizing function output / model predictions
+
+* Review of Scatter Plots
+
+  When dealing with two numerical variables (whether it is experimental data or simulated data), the best way to visualize their relationship is by using a scatter plot.  Luckily, this is very easy to do in MATLAB.
+  
+  Important things to know:
+  - The MATLAB function to use is `scatter`
+  - When using the `scatter` function, you need to make sure you input the `independent` and `dependent` variable values as vectors, in the correct order.  You also NEED THE VECTORS TO BE THE SAME SIZE!!!!  Why?  Because you are giving MATLAB the coordinates of points to plot.  If you try to scatter two vectors of different length, MATLAB will give you an error message.
+  
+  ![](scatter_command.png)
+  ![](scatter_fig.png)
+  
+* Review of Line Plots
+
+  Sometimes we want to highlight trends in the relationship between two numerical variables.  Thus, instead of a simple scatter plot, we turn to a line plot.  This is a plot that connects the data points using line segments, and is the most popular way to visualize modeling results in MATLAB.
+  
+  Important things to know:
+  - The MATLAB function to use is `plot`
+  - The inputs for this function are the same as the `scatter` function.  When using the `plot` function, you need to make sure you input the `independent` and `dependent` variable values as vectors, in the correct order.  You again NEED THE VECTORS TO BE THE SAME SIZE!!!!  
+  - Caution: 
+    a) If you try to plot two vectors of different length, MATLAB will give you an error message.
+    b) If you forget to include one variable (i.e. you only give the plot function a single vector input), it will simply plot that vector as the dependent variable values, assuming the independent variable values are 1,2,3,...
+
+  ![](plot_command.png)
+  ![](plot_fig.png)
+* Editing Figures in MATLAB
+
+  There are lots of ways to edit Figures in MATLAB.  Later in this course, we will learn how to edit figures using various commands within live scripts, functions or the Command Window.  However, you can also edit plots interactively using the toolbar or drop-down menus of any figure.
+
+  - You can add Axes Labels and a Title
+    ![](labels.png)
+  - You can edit your Font Size or other Axes Properties
+    ![](axes_props_drop.png)
+    ![](axes_props.png)
+  - You can edit the color or width of the line by double clicking the line.
+  
+    Note: In a scatter plot, you can edits the `Markers` (i.e. circles corresponding to your data) by double clicking on any one of them.
+    ![](line_edit.png)
+  - You can save your beautiful figure in many different formats with a simple `File` --$>$ `Save As..`
+  
+    Note: If you want to be able to open it and continue editing it, save it as a .fig file.  If you wish to send your figure to a friend or include it in a powerpoint presentation, save is as a .jpeg or .png file.
+    ![](pretty_fig.png)
+  
+    ```{block, type='rmdquestion'}
+#### Question 4
+Using either a scatter plot or line plot, visualize your results from Question 3.
+
+Make sure your plot has your Axes labeled (with units) and includes a Title.
+```  
+
+    ```{block, type='rmdquestion'}
+#### Question 5
+Within your live script for today's lab, run your function from Question 2 and generate a figure (either a scatter plot or line plot) showing the relationship between temperatures measured in Celsius vs. Farenheit.  This graph should include a range of temperatures appropriate for someone trying to convert daily temperatures in Massachusetts over a typical calendar year.
+
+Make sure your plot has your Axes labeled (with units) and includes a Title.
+```  

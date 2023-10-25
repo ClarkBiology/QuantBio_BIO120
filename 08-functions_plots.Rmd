@@ -24,7 +24,7 @@ Before we start, however, write out the answers to these questions in your live 
 
 
 
-## functions
+## Functions
 
 * Creating a function
   + `New` --$>$ `Script`
@@ -41,9 +41,10 @@ Before we start, however, write out the answers to these questions in your live 
     
 
 * Calling a function
-  + Go back to the `Command Window` or a Live Script that is in your Current Directory
+  + Go back to your Live Script (that is in your Current Directory) 
+    Note: Functions can also be run from the `Command Window` as long as they are saved in your Current Directory
   + Type in the name of your function and any input(s) in parentheses
-  + When you hit enter, MATLAB will execute the function and display the output
+  + When you run this code, MATLAB will execute the function and display the output
   ![fun1execute](fun1_run.png)
     ```{block, type='rmdquestion'}
 #### Question 2
@@ -73,7 +74,7 @@ Before we start, however, write out the answers to these questions in your live 
 #### Question 3
 Lets think about modeling drug dosage.  If the recommended adult dosage for a drug is $D$ (in mg), then to determine the appropriate dosage $c$ for a child of age $a$ (in years), pharmacists use the equation $c = 0.0417D\left(a+1\right)$.
 
-  - Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of $a$ values) and the recommended adult dosage for a specific drug, $D$.  The function should output the appropriate dosages (i.e. $c$ values) for children of ages corresponding to the vector of $a$ values.  Hint: you may want to use a `for-loop` as in fun2 above.
+  - Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of $a$ values) and the recommended adult dosage for a specific drug, $D$.  The function should output the appropriate dosages (i.e. $c$ values) for children of ages corresponding to the vector of $a$ values.  Hint: you may want to use a `for-loop` as in fun2 above, but you don't have to (you can also use vector algebra - just remember to use a `.').
   - Identify the `independent variable`, `dependent variable`, and `parameter`.
   - The recommended adult dosage for amoxicillin is 500 mg. Use your function to determine the appropriate dosage for children ages 2 - 12 years. 
 ```  
@@ -85,7 +86,7 @@ Lets think about modeling drug dosage.  If the recommended adult dosage for a dr
 
   When dealing with two numerical variables (whether it is experimental data or simulated data), the best way to visualize their relationship is by using a scatter plot.  Luckily, this is very easy to do in MATLAB.
   
-  Important things to know:
+  Important things to remember:
   - The MATLAB function to use is `scatter`
   - When using the `scatter` function, you need to make sure you input the `independent` and `dependent` variable values as vectors, in the correct order.  You also NEED THE VECTORS TO BE THE SAME SIZE!!!!  Why?  Because you are giving MATLAB the coordinates of points to plot.  If you try to scatter two vectors of different length, MATLAB will give you an error message.
   
@@ -96,7 +97,7 @@ Lets think about modeling drug dosage.  If the recommended adult dosage for a dr
 
   Sometimes we want to highlight trends in the relationship between two numerical variables.  Thus, instead of a simple scatter plot, we turn to a line plot.  This is a plot that connects the data points using line segments, and is the most popular way to visualize modeling results in MATLAB.
   
-  Important things to know:
+  Important things to remember:
   - The MATLAB function to use is `plot`
   - The inputs for this function are the same as the `scatter` function.  When using the `plot` function, you need to make sure you input the `independent` and `dependent` variable values as vectors, in the correct order.  You again NEED THE VECTORS TO BE THE SAME SIZE!!!!  
   - Caution: 
@@ -105,9 +106,12 @@ Lets think about modeling drug dosage.  If the recommended adult dosage for a dr
 
   ![](plot_command.png)
   ![](plot_fig.png)
-* Editing Figures in MATLAB
+
+## Editing Figures in MATLAB
 
   There are lots of ways to edit Figures in MATLAB.  Later in this course, we will learn how to edit figures using various commands within live scripts, functions or the Command Window.  However, you can also edit plots interactively using the toolbar or drop-down menus of any figure.
+IMPORTANT FOR LIVE SCRIPTERS: If you are creating figures using a live script, before you can edit figures directly using the toolbar or drop-down menus, you need to "Open in figure window" (you can do this by clicking the button in the right-hand corner of your figure)
+   ![](openfig.png)
 
   - You can add Axes Labels and a Title
     ![](labels.png)
@@ -136,3 +140,9 @@ Within your live script for today's lab, run your function from Question 2 and g
 
 Make sure your plot has your Axes labeled (with units) and includes a Title.
 ```  
+
+```{block, type='objectives'}
+**Submission**
+
+Don't forget to submit your live script file (with all of the questions answered - via text or code) and any beautiful figures you have created (and labeled) on Canvas!
+```

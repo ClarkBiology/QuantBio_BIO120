@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-10-18" />
+<meta name="date" content="2023-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,8 +152,9 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="9" data-path="creating-functions-and-plotting-tools-revisited.html"><a href="creating-functions-and-plotting-tools-revisited.html"><i class="fa fa-check"></i><b>9</b> Creating Functions and Plotting Tools Revisited</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="creating-functions-and-plotting-tools-revisited.html"><a href="creating-functions-and-plotting-tools-revisited.html#functions"><i class="fa fa-check"></i><b>9.1</b> functions</a></li>
+<li class="chapter" data-level="9.1" data-path="creating-functions-and-plotting-tools-revisited.html"><a href="creating-functions-and-plotting-tools-revisited.html#functions"><i class="fa fa-check"></i><b>9.1</b> Functions</a></li>
 <li class="chapter" data-level="9.2" data-path="creating-functions-and-plotting-tools-revisited.html"><a href="creating-functions-and-plotting-tools-revisited.html#visualizing-function-output-model-predictions"><i class="fa fa-check"></i><b>9.2</b> Visualizing function output / model predictions</a></li>
+<li class="chapter" data-level="9.3" data-path="creating-functions-and-plotting-tools-revisited.html"><a href="creating-functions-and-plotting-tools-revisited.html#editing-figures-in-matlab"><i class="fa fa-check"></i><b>9.3</b> Editing Figures in MATLAB</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -215,7 +216,7 @@ What is the difference between an independent variable and a parameter?
 </ul>
 </div>
 <div id="functions" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> functions<a href="creating-functions-and-plotting-tools-revisited.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">9.1</span> Functions<a href="creating-functions-and-plotting-tools-revisited.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Creating a function</p>
 <ul>
@@ -234,9 +235,10 @@ What is the difference between an independent variable and a parameter?
 </ul></li>
 <li><p>Calling a function</p>
 <ul>
-<li>Go back to the <code>Command Window</code> or a Live Script that is in your Current Directory</li>
+<li>Go back to your Live Script (that is in your Current Directory)
+Note: Functions can also be run from the <code>Command Window</code> as long as they are saved in your Current Directory</li>
 <li>Type in the name of your function and any input(s) in parentheses</li>
-<li>When you hit enter, MATLAB will execute the function and display the output
+<li>When you run this code, MATLAB will execute the function and display the output
 <img src="fun1_run.png" alt="fun1execute" />
 <div class="rmdquestion">
 <h4 id="question-2">
@@ -288,7 +290,7 @@ Lets think about modeling drug dosage. If the recommended adult dosage for a dru
 </p>
 <ul>
 <li>
-Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values) and the recommended adult dosage for a specific drug, <span class="math inline"><span class="math inline">\(D\)</span></span>. The function should output the appropriate dosages (i.e. <span class="math inline"><span class="math inline">\(c\)</span></span> values) for children of ages corresponding to the vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values. Hint: you may want to use a <code>for-loop</code> as in fun2 above.
+Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values) and the recommended adult dosage for a specific drug, <span class="math inline"><span class="math inline">\(D\)</span></span>. The function should output the appropriate dosages (i.e. <span class="math inline"><span class="math inline">\(c\)</span></span> values) for children of ages corresponding to the vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values. Hint: you may want to use a <code>for-loop</code> as in fun2 above, but you don’t have to (you can also use vector algebra - just remember to use a `.’).
 </li>
 <li>
 Identify the <code>independent variable</code>, <code>dependent variable</code>, and <code>parameter</code>.
@@ -305,7 +307,7 @@ The recommended adult dosage for amoxicillin is 500 mg. Use your function to det
 <ul>
 <li><p>Review of Scatter Plots</p>
 <p>When dealing with two numerical variables (whether it is experimental data or simulated data), the best way to visualize their relationship is by using a scatter plot. Luckily, this is very easy to do in MATLAB.</p>
-<p>Important things to know:</p>
+<p>Important things to remember:</p>
 <ul>
 <li>The MATLAB function to use is <code>scatter</code></li>
 <li>When using the <code>scatter</code> function, you need to make sure you input the <code>independent</code> and <code>dependent</code> variable values as vectors, in the correct order. You also NEED THE VECTORS TO BE THE SAME SIZE!!!! Why? Because you are giving MATLAB the coordinates of points to plot. If you try to scatter two vectors of different length, MATLAB will give you an error message.</li>
@@ -314,7 +316,7 @@ The recommended adult dosage for amoxicillin is 500 mg. Use your function to det
 <img src="scatter_fig.png" /></p></li>
 <li><p>Review of Line Plots</p>
 <p>Sometimes we want to highlight trends in the relationship between two numerical variables. Thus, instead of a simple scatter plot, we turn to a line plot. This is a plot that connects the data points using line segments, and is the most popular way to visualize modeling results in MATLAB.</p>
-<p>Important things to know:</p>
+<p>Important things to remember:</p>
 <ul>
 <li>The MATLAB function to use is <code>plot</code></li>
 <li>The inputs for this function are the same as the <code>scatter</code> function. When using the <code>plot</code> function, you need to make sure you input the <code>independent</code> and <code>dependent</code> variable values as vectors, in the correct order. You again NEED THE VECTORS TO BE THE SAME SIZE!!!!<br />
@@ -327,8 +329,13 @@ The recommended adult dosage for amoxicillin is 500 mg. Use your function to det
 </ul>
 <p><img src="plot_command.png" />
 <img src="plot_fig.png" /></p></li>
-<li><p>Editing Figures in MATLAB</p>
-<p>There are lots of ways to edit Figures in MATLAB. Later in this course, we will learn how to edit figures using various commands within live scripts, functions or the Command Window. However, you can also edit plots interactively using the toolbar or drop-down menus of any figure.</p>
+</ul>
+</div>
+<div id="editing-figures-in-matlab" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Editing Figures in MATLAB<a href="creating-functions-and-plotting-tools-revisited.html#editing-figures-in-matlab" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are lots of ways to edit Figures in MATLAB. Later in this course, we will learn how to edit figures using various commands within live scripts, functions or the Command Window. However, you can also edit plots interactively using the toolbar or drop-down menus of any figure.
+IMPORTANT FOR LIVE SCRIPTERS: If you are creating figures using a live script, before you can edit figures directly using the toolbar or drop-down menus, you need to “Open in figure window” (you can do this by clicking the button in the right-hand corner of your figure)
+<img src="openfig.png" /></p>
 <ul>
 <li><p>You can add Axes Labels and a Title
 <img src="labels.png" /></p></li>
@@ -363,8 +370,15 @@ Within your live script for today’s lab, run your function from Question 2 and
 Make sure your plot has your Axes labeled (with units) and includes a Title.
 </p>
 </div></li>
-</ul></li>
 </ul>
+<div class="objectives">
+<p>
+<strong>Submission</strong>
+</p>
+<p>
+Don’t forget to submit your live script file (with all of the questions answered - via text or code) and any beautiful figures you have created (and labeled) on Canvas!
+</p>
+</div>
 
 </div>
 </div>

@@ -158,3 +158,6 @@ data-set-2-dicty-colony-sizes
 data-set-3-tree-measurements
 before-we-start
 save-and-submit
+creating-functions-and-plotting-tools-revisited
+visualizing-function-output-model-predictions
+editing-figures-in-matlab

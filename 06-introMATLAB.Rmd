@@ -226,7 +226,7 @@ Some helpful notes:
 * The inputs to this function are two vectors, $x$ and $y$.
 * If you run this function with a single output, it will return a test decision, $h$, for the null hypothesis.
 The null hypothesis is that the data in vectors $x$ and $y$ comes from independent random samples with equal means and equal variances. The alternative hypothesis is that the data in $x$ and $y$ comes from populations with unequal means. \
-$h=1$ if the test rejects the null hypothesis at the 5% significance level (i.e. $\alpha = 0.05%), and $h=0$ otherwise.
+$h=1$ if the test rejects the null hypothesis at the 5% significance level (i.e. $\alpha = 0.05%$), and $h=0$ otherwise.
 * If you run this function with two outputs, it will return the test decision, $h$, along with the p-value.
 * For more information, you can always visit the [MathWorks website](http://www.mathworks.com/help/matlab/) and search for ttest2!\
 

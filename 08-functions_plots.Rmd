@@ -144,5 +144,5 @@ Make sure your plot has your Axes labeled (with units) and includes a Title.
 ```{block, type='objectives'}
 **Submission**
 
-Don't forget to submit your live script file (with all of the questions answered - via text or code) and any beautiful figures you have created (and labeled) on Canvas!
+Don't forget to submit your live script file (with all of the questions answered - via text or code), any function files (m files) you have used in answering the questions, and any beautiful figures you have created (and labeled) on Canvas!
 ```

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Creating Functions and Plotting Tools Revisited | BIOL120 Excercise Guidebook Fall ’23</title>
+  <title>Chapter 10 Using for loops and Vector Manipulation | BIOL120 Excercise Guidebook Fall ’23</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Creating Functions and Plotting Tools Revisited | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta property="og:title" content="Chapter 10 Using for loops and Vector Manipulation | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Creating Functions and Plotting Tools Revisited | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta name="twitter:title" content="Chapter 10 Using for loops and Vector Manipulation | BIOL120 Excercise Guidebook Fall ’23" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualizing-data.html"/>
-<link rel="next" href="using-for-loops-and-vector-manipulation.html"/>
+<link rel="prev" href="creating-functions-and-plotting-tools-revisited.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -185,8 +185,8 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="creating-functions-and-plotting-tools-revisited" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Creating Functions and Plotting Tools Revisited<a href="creating-functions-and-plotting-tools-revisited.html#creating-functions-and-plotting-tools-revisited" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="using-for-loops-and-vector-manipulation" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Using for loops and Vector Manipulation<a href="using-for-loops-and-vector-manipulation.html#using-for-loops-and-vector-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="objectives">
 <p>
 <strong>Checklist</strong>
@@ -206,186 +206,200 @@ Open a new live script and use the header text to place the title for today’s 
 </li>
 </ol>
 </div>
-<p>Today’s laboratory will be focused on creating our own functions and visualizing the results.</p>
+<p>Today’s laboratory will be focused on using for loops effectively and manipulating vectors/matrices.</p>
 <p>Before we start, however, write out the answers to these questions in your live script:</p>
 <div class="rmdquestion">
 <h4 id="question-1">
 Question 1
 </h4>
-<ul>
-<li>
-What is a function?
-</li>
-<li>
-When creating a function in MATLAB with a single input and output, which is your independent variable and which is your dependent variable?
-</li>
-<li>
-What is the difference between an independent variable and a parameter?
-</li>
-</ul>
+<p>
+State at least two scenarios where you would use a for loop.
+</p>
 </div>
-<div id="functions" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Functions<a href="creating-functions-and-plotting-tools-revisited.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="for-loops" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> for loops<a href="using-for-loops-and-vector-manipulation.html#for-loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Creating a function</p>
+<li>Using a for loop
 <ul>
-<li><p><code>New</code> –<span class="math inline">\(&gt;\)</span> <code>Script</code></p></li>
-<li><p><code>File</code> –<span class="math inline">\(&gt;\)</span> <code>Save As..</code></p></li>
-<li><p>Name your file (the .m will automatically be added) and make sure it is saved in your <code>Current Folder</code></p>
-<p>Note: MATLAB <code>functions</code> are a special type of <code>m file</code></p></li>
-<li><p>The first line of the file must tell MATLAB that this is a function. Important parts include:</p>
+<li><p>In your livescript:
+for i=1:(number of times)\
+     (stuff to do)\
+end</p></li>
+<li><p>Important parts include:</p>
 <ol style="list-style-type: decimal">
-<li>The word <code>function</code></li>
-<li>The function output(s) in square brackets</li>
-<li>The name of the function (<em>this MUST match the file name</em>)</li>
-<li>The function input(s)
-<img src="fun1.png" alt="fun1" /></li>
+<li>The word <code>for</code></li>
+<li>The variable to loop through (<code>i=</code>)</li>
+<li>The values that variable takes on while MATLAB works through the for loop (<code>1:5</code>)</li>
+<li>What you want to happen during each iteration (<code>x(i)</code>)</li>
+<li>The word <code>end</code> to signal that the for loop is over.
+<img src="forloop1.png" alt="forloop1" /></li>
 </ol></li>
 </ul></li>
-<li><p>Calling a function</p>
+</ul>
+</div>
+<div id="vector-length" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Vector length<a href="using-for-loops-and-vector-manipulation.html#vector-length" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>Go back to your Live Script (that is in your Current Directory)
-Note: Functions can also be run from the <code>Command Window</code> as long as they are saved in your Current Directory</li>
-<li>Type in the name of your function and any input(s) in parentheses</li>
-<li>When you run this code, MATLAB will execute the function and display the output
-<img src="fun1_run.png" alt="fun1execute" />
+<li>Using the length command
+<ul>
+<li>Sometimes it is convenient to loop through an entire vector. Why?
+<ol style="list-style-type: decimal">
+<li>You may want to access/print every element in a vector</li>
+<li>You may want to create a corresponding value for each element in a vector</li>
+</ol></li>
+<li>MATLAB has a command to tell you how many elements are in a vector (i.e. how long a vector is). This is the <code>length()</code> function.</li>
+<li>To run the length function, all you need to do is give it a vector as input.
+<img src="length.png" alt="length" />
 <div class="rmdquestion">
 <h4 id="question-2">
 Question 2
 </h4>
 <ul>
 <li>
-<p>
-Write a MATLAB function that converts Celcius to Farenheit, according to the function <span class="math inline"><span class="math inline">\(F = \cfrac{9}{5}C+32\)</span></span>
-</p>
+Create a vector, <span class="math inline"><span class="math inline">\(v\)</span></span>, with all of the numbers from <span class="math inline"><span class="math inline">\(2\)</span></span> to <span class="math inline"><span class="math inline">\(47\)</span></span>, using increments of <span class="math inline"><span class="math inline">\(0.3\)</span></span>.
 </li>
 <li>
-<p>
-What is the <code>independent variable</code> and what is the <code>dependent variable</code>?
-</p>
+Using the <code>length</code> command, determine how many elements are in the vector <span class="math inline"><span class="math inline">\(v\)</span></span>.
 </li>
 <li>
-<p>
-Run your function to convert the following temperatures (given in <span class="math inline"><span class="math inline">\(^{\circ}\)</span></span>C) to <span class="math inline"><span class="math inline">\(^{\circ}\)</span></span>F.
-</p>
-<p>
-12<span class="math inline"><span class="math inline">\(^{\circ}\)</span></span> C, 26.4<span class="math inline"><span class="math inline">\(^{\circ}\)</span></span> C, and -6<span class="math inline"><span class="math inline">\(^{\circ}\)</span></span> C
-</p>
+Go back to your midsemester project, where you created vectors with data that you plotted (either using a bar chart, scatter plot, or line plot). Take one of those vectors of data and use the <code>length</code> command to determine its length. Note: be clear to put comments/text into your livescript to tell us what the data is that is included in this vector.
 </li>
 </ul>
 </div></li>
 </ul></li>
-<li><p>Writing a function with multiple inputs (multiple <code>independent variables</code> and/or <code>parameters</code>)</p>
+<li>Using a for loop to do some algebra
 <ul>
-<li>There are 2 standard ways of doing this
+<li><p>As we saw in class, you can use a for loop to do simple algebra (i.e. sum all of the numbers from 1 to 100). Some things to note:</p>
 <ol style="list-style-type: decimal">
-<li>have multiple inputs in a list, separated by commas
-<img src="quadfun.png" /></li>
-<li>have a ‘single’ input with multiple values - i.e. input a <em>vector</em> of inputs
-<img src="fun2.png" />
-Note: in this example, the output is also a vector.</li>
+<li>you had to start the <code>sum</code> at 0 since 0 is the additive identity (any number added to 0 gives you that number back)</li>
+<li>you added to the <code>sum</code> variable iteratively inside the for loop</li>
 </ol></li>
-</ul></li>
-<li><p>We can have multiple outputs in a list as well:
-<img src="malth.png" /></p>
-<p>What is the advantage to outputting a vector of independent variable values and a vector of corresponding dependent variable values?</p>
-<p>We can use them for plotting and visualize our model!</p>
+<li><p>Similarly, we can add all of the elements of a vector, <span class="math inline">\(v\)</span>.
+<img src="sum.png" alt="sum" /></p>
 <div class="rmdquestion">
 <h4 id="question-3">
 Question 3
 </h4>
-<p>
-Lets think about modeling drug dosage. If the recommended adult dosage for a drug is <span class="math inline"><span class="math inline">\(D\)</span></span> (in mg), then to determine the appropriate dosage <span class="math inline"><span class="math inline">\(c\)</span></span> for a child of age <span class="math inline"><span class="math inline">\(a\)</span></span> (in years), pharmacists use the equation <span class="math inline"><span class="math inline">\(c = 0.0417D\left(a+1\right)\)</span></span>.
-</p>
 <ul>
 <li>
-Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values) and the recommended adult dosage for a specific drug, <span class="math inline"><span class="math inline">\(D\)</span></span>. The function should output the appropriate dosages (i.e. <span class="math inline"><span class="math inline">\(c\)</span></span> values) for children of ages corresponding to the vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values. Hint: you may want to use a <code>for-loop</code> as in fun2 above, but you don’t have to (you can also use vector algebra - just remember to use a `.’).
+Create a vector, <span class="math inline"><span class="math inline">\(w\)</span></span>, with all of the numbers from <span class="math inline"><span class="math inline">\(1\)</span></span> to <span class="math inline"><span class="math inline">\(2\)</span></span>, using increments of <span class="math inline"><span class="math inline">\(0.1\)</span></span>.
 </li>
 <li>
-Identify the <code>independent variable</code>, <code>dependent variable</code>, and <code>parameter</code>.
-</li>
-<li>
-The recommended adult dosage for amoxicillin is 500 mg. Use your function to determine the appropriate dosage for children ages 2 - 12 years.
+Use a for loop to compute the product of all of the elements of w. Hint: You don’t want to start your product at 0 - you want to start it at the <em>multiplicative identity</em>.
 </li>
 </ul>
 </div></li>
+</ul></li>
 </ul>
 </div>
-<div id="visualizing-function-output-model-predictions" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Visualizing function output / model predictions<a href="creating-functions-and-plotting-tools-revisited.html#visualizing-function-output-model-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="vector-manipulation-functions-and-for-loops" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Vector manipulation: functions and for loops<a href="using-for-loops-and-vector-manipulation.html#vector-manipulation-functions-and-for-loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Review of Scatter Plots</p>
-<p>When dealing with two numerical variables (whether it is experimental data or simulated data), the best way to visualize their relationship is by using a scatter plot. Luckily, this is very easy to do in MATLAB.</p>
-<p>Important things to remember:</p>
+<li><p>Writing a function with vector input(s) and output</p>
 <ul>
-<li>The MATLAB function to use is <code>scatter</code></li>
-<li>When using the <code>scatter</code> function, you need to make sure you input the <code>independent</code> and <code>dependent</code> variable values as vectors, in the correct order. You also NEED THE VECTORS TO BE THE SAME SIZE!!!! Why? Because you are giving MATLAB the coordinates of points to plot. If you try to scatter two vectors of different length, MATLAB will give you an error message.</li>
-</ul>
-<p><img src="scatter_command.png" />
-<img src="scatter_fig.png" /></p></li>
-<li><p>Review of Line Plots</p>
-<p>Sometimes we want to highlight trends in the relationship between two numerical variables. Thus, instead of a simple scatter plot, we turn to a line plot. This is a plot that connects the data points using line segments, and is the most popular way to visualize modeling results in MATLAB.</p>
-<p>Important things to remember:</p>
-<ul>
-<li>The MATLAB function to use is <code>plot</code></li>
-<li>The inputs for this function are the same as the <code>scatter</code> function. When using the <code>plot</code> function, you need to make sure you input the <code>independent</code> and <code>dependent</code> variable values as vectors, in the correct order. You again NEED THE VECTORS TO BE THE SAME SIZE!!!!<br />
-</li>
-<li>Caution:
-<ol style="list-style-type: lower-alpha">
-<li>If you try to plot two vectors of different length, MATLAB will give you an error message.</li>
-<li>If you forget to include one variable (i.e. you only give the plot function a single vector input), it will simply plot that vector as the dependent variable values, assuming the independent variable values are 1,2,3,…</li>
-</ol></li>
-</ul>
-<p><img src="plot_command.png" />
-<img src="plot_fig.png" /></p></li>
-</ul>
-</div>
-<div id="editing-figures-in-matlab" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Editing Figures in MATLAB<a href="creating-functions-and-plotting-tools-revisited.html#editing-figures-in-matlab" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are lots of ways to edit Figures in MATLAB. Later in this course, we will learn how to edit figures using various commands within live scripts, functions or the Command Window. However, you can also edit plots interactively using the toolbar or drop-down menus of any figure.
-IMPORTANT FOR LIVE SCRIPTERS: If you are creating figures using a live script, before you can edit figures directly using the toolbar or drop-down menus, you need to “Open in figure window” (you can do this by clicking the button in the right-hand corner of your figure)
-<img src="openfig.png" /></p>
-<ul>
-<li><p>You can add Axes Labels and a Title
-<img src="labels.png" /></p></li>
-<li><p>You can edit your Font Size or other Axes Properties
-<img src="axes_props_drop.png" />
-<img src="axes_props.png" /></p></li>
-<li><p>You can edit the color or width of the line by double clicking the line.</p>
-<p>Note: In a scatter plot, you can edits the <code>Markers</code> (i.e. circles corresponding to your data) by double clicking on any one of them.
-<img src="line_edit.png" /></p></li>
-<li><p>You can save your beautiful figure in many different formats with a simple <code>File</code> –<span class="math inline">\(&gt;\)</span> <code>Save As..</code></p>
-<p>Note: If you want to be able to open it and continue editing it, save it as a .fig file. If you wish to send your figure to a friend or include it in a powerpoint presentation, save is as a .jpeg or .png file.
-<img src="pretty_fig.png" /></p>
+<li><p>Recall from Chapter 9: we can have a ‘single’ input with multiple values - i.e. input a <em>vector</em> of inputs
+<img src="fun2.png" />
+Note: in this example, the output is also a vector.</p></li>
+<li><p>We can also do this with a vector of inputs for our independent variable and parameters as other inputs as well.
+<img src="fun_vp.png" /></p>
 <div class="rmdquestion">
 <h4 id="question-4">
 Question 4
 </h4>
-<p>
-Using either a scatter plot or line plot, visualize your results from Question 3.
-</p>
-<p>
-Make sure your plot has your Axes labeled (with units) and includes a Title.
-</p>
+<ul>
+<li>
+Create a function for a linear model. This function should take as input a vector of <span class="math inline"><span class="math inline">\(x\)</span></span>-values, and 2 parameters (one for the slope and one for the y-intercept) and output a corresponding vector of <span class="math inline"><span class="math inline">\(y\)</span></span>-values.
+</li>
+<li>
+Run your function with at least <span class="math inline"><span class="math inline">\(3\)</span></span> sets of different parameter values (i.e. choose different slopes and intercepts each time) and an <span class="math inline"><span class="math inline">\(x\)</span></span> vector with values ranging from <span class="math inline"><span class="math inline">\(0\)</span></span> to <span class="math inline"><span class="math inline">\(10\)</span></span>.
+</li>
+</ul>
+</div></li>
+</ul></li>
+</ul>
 </div>
+<div id="nested-double-for-loops" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Nested (double) for loops<a href="using-for-loops-and-vector-manipulation.html#nested-double-for-loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Using a nested for loop to access/modify/create a matrix
+<ul>
+<li><p>In your livescript:
+for i=1:(number of rows)\
+     for j=1:(number of columns)
+          (stuff to do)\
+     end
+end</p></li>
+<li><p>Important parts include:</p>
+<ol style="list-style-type: decimal">
+<li>The word <code>for</code>, the variable to loop through (<code>i=</code> and <code>j=</code>), and the values that variable takes on while MATLAB works through the for loop, for EACH of the two for loops.\
+Note: it is IMPORTANT that you use two DIFFERENT variables for the two loops.</li>
+<li>What you want to happen during each iteration inside both loops.</li>
+<li>The word <code>end</code> to signal that the for loop is over for each of the loops.
+<img src="doubleforloop1.png" alt="doubleforloop1" /></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+<div id="matrix-dimension" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Matrix dimension<a href="using-for-loops-and-vector-manipulation.html#matrix-dimension" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Using the size command
+<ul>
+<li><p>MATLAB has a command to tell you the dimensions of a matrix (i.e. the number of rows and columns). This is the <code>size()</code> function.</p></li>
+<li><p>To run the size function, all you need to do is give it a matrix as input.
+<img src="size.png" alt="size" /></p>
 <div class="rmdquestion">
 <h4 id="question-5">
 Question 5
 </h4>
-<p>
-Within your live script for today’s lab, run your function from Question 2 and generate a figure (either a scatter plot or line plot) showing the relationship between temperatures measured in Celsius vs. Farenheit. This graph should include a range of temperatures appropriate for someone trying to convert daily temperatures in Massachusetts over a typical calendar year.
-</p>
-<p>
-Make sure your plot has your Axes labeled (with units) and includes a Title.
-</p>
+<ul>
+<li>
+Create the following matrix: <span class="math display"><span class="math display">\[M = \begin{bmatrix} 
+0 \ \ \ \ \  \cfrac{7\pi}{6} \ \ \ \ \pi  \\ 
+\cfrac{\pi}{6} \ \ \ \  \cfrac{5\pi}{4} \ \ \ \ 2\pi  \\
+\cfrac{\pi}{4} \ \ \ \  \cfrac{4\pi}{3}  \ \ \ \ 3\pi \\
+\cfrac{\pi}{3} \ \ \ \  \cfrac{3\pi}{2}  \ \ \ \ 4\pi \\
+\end{bmatrix}\]</span></span>
+</li>
+<li>
+Using the <code>size</code> command, determine the dimensions of the matrix <span class="math inline"><span class="math inline">\(M\)</span></span>.
+</li>
+</ul>
 </div></li>
+</ul></li>
+</ul>
+</div>
+<div id="matrix-manipulation-functions-and-nested-for-loops" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Matrix manipulation: functions and nested for loops<a href="using-for-loops-and-vector-manipulation.html#matrix-manipulation-functions-and-nested-for-loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Writing a function with matrix input(s) and output
+<ul>
+<li><p>Another way to have a ‘single’ input with multiple values is to input a <em>matrix</em> of inputs
+<img src="funM1.png" />
+Note: in this example, the output is also a matrix.</p></li>
+<li><p>We can also do this with a matrix of inputs for our independent variable and parameters as other inputs as well.
+<img src="fun_Mp.png" /></p>
+<div class="rmdquestion">
+<h4 id="question-6">
+Question 6
+</h4>
+<ul>
+<li>
+Create a function that transforms data from one matrix to another using the <code>sin</code> function and a constant vertical shift. The function you create should take as input a matrix of values for the independent variable, and 1 parameter (the value corresponding to the vertical shift). The output of this function should be a corresponding matrix, with each entry equal to the sine of the corresponding entry plus the vertical shift. Note: if <span class="math inline"><span class="math inline">\(x\)</span></span> is the entry in the original matrix and <span class="math inline"><span class="math inline">\(b\)</span></span> is the shift parameter, the corresponding entry, <span class="math inline"><span class="math inline">\(y\)</span></span> in the new matrix should be: <span class="math display"><span class="math display">\[y = sin(x)+b\]</span></span>
+</li>
+<li>
+Run your function using the matrix <span class="math inline"><span class="math inline">\(M\)</span></span> you created in Question 5 as the matrix of values for the independent variable and at least 2 different vertical shifts (<span class="math inline"><span class="math inline">\(b\)</span></span> values).
+</li>
+</ul>
+</div></li>
+</ul></li>
 </ul>
 <div class="objectives">
 <p>
 <strong>Submission</strong>
 </p>
 <p>
-Don’t forget to submit your live script file (with all of the questions answered - via text or code), any function files (m files) you have used in answering the questions, and any beautiful figures you have created (and labeled) on Canvas!
+Don’t forget to submit your live script file (with all of the questions answered - via text or code) and any function files (m files) you have used in answering the questions on Canvas!
 </p>
 </div>
 
@@ -396,8 +410,8 @@ Don’t forget to submit your live script file (with all of the questions answer
           </div>
         </div>
       </div>
-<a href="visualizing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="using-for-loops-and-vector-manipulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="creating-functions-and-plotting-tools-revisited.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -428,7 +442,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-functions_plots.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09-forLoopsVectors.Rmd",
 "text": "Edit"
 },
 "history": {

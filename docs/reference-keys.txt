@@ -161,3 +161,14 @@ save-and-submit
 creating-functions-and-plotting-tools-revisited
 visualizing-function-output-model-predictions
 editing-figures-in-matlab
+using-for-loops-and-vector-manipulation
+for-loops
+visualizing-function-output-model-predictions-1
+editing-figures-in-matlab-1
+nested-double-for-loops
+vector-length
+vector-manipulation-functions-and-for-loops
+the-dimensions-of-a-matrix
+matrix-manipulation-functions-and-nested-for-loops
+the-size-of-a-matrix
+matrix-dimension

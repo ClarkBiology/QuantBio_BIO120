@@ -26,8 +26,11 @@ State at least two scenarios where you would use a for loop.
 
 * Using a for loop
   + In your livescript:
-  for i=1:(number of times)\\
-\ \ \ \ \ (stuff to do)\\
+  
+for i=1:(number of times)
+  
+  (stuff to do)
+
 end
 
   
@@ -87,10 +90,15 @@ end
 ## Nested (double) for loops
 * Using a nested for loop to access/modify/create a matrix
   + In your livescript:
-  for i=1:(number of rows)\\
-\ \ \ \ \ for j=1:(number of columns)
-\ \ \ \ \ \ \ \ \ \ (stuff to do)\\
-\ \ \ \ \ end
+  
+for i=1:(number of rows)
+
+  for j=1:(number of columns)
+  
+     (stuff to do)
+  
+  end
+  
 end
 
  

@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-11-01" />
+<meta name="date" content="2023-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -221,11 +221,14 @@ State at least two scenarios where you would use a for loop.
 <ul>
 <li>Using a for loop
 <ul>
-<li><p>In your livescript:
-for i=1:(number of times)\
-     (stuff to do)\
-end</p></li>
-<li><p>Important parts include:</p>
+<li>In your livescript:</li>
+</ul></li>
+</ul>
+<p>for i=1:(number of times)</p>
+<p>(stuff to do)</p>
+<p>end</p>
+<ul>
+<li>Important parts include:
 <ol style="list-style-type: decimal">
 <li>The word <code>for</code></li>
 <li>The variable to loop through (<code>i=</code>)</li>
@@ -234,7 +237,6 @@ end</p></li>
 <li>The word <code>end</code> to signal that the for loop is over.
 <img src="forloop1.png" alt="forloop1" /></li>
 </ol></li>
-</ul></li>
 </ul>
 </div>
 <div id="vector-length" class="section level2 hasAnchor" number="10.2">
@@ -323,13 +325,16 @@ Run your function with at least <span class="math inline"><span class="math inli
 <ul>
 <li>Using a nested for loop to access/modify/create a matrix
 <ul>
-<li><p>In your livescript:
-for i=1:(number of rows)\
-     for j=1:(number of columns)
-          (stuff to do)\
-     end
-end</p></li>
-<li><p>Important parts include:</p>
+<li>In your livescript:</li>
+</ul></li>
+</ul>
+<p>for i=1:(number of rows)</p>
+<p>for j=1:(number of columns)</p>
+<pre><code> (stuff to do)</code></pre>
+<p>end</p>
+<p>end</p>
+<ul>
+<li>Important parts include:
 <ol style="list-style-type: decimal">
 <li>The word <code>for</code>, the variable to loop through (<code>i=</code> and <code>j=</code>), and the values that variable takes on while MATLAB works through the for loop, for EACH of the two for loops.\
 Note: it is IMPORTANT that you use two DIFFERENT variables for the two loops.</li>
@@ -337,7 +342,6 @@ Note: it is IMPORTANT that you use two DIFFERENT variables for the two loops.</l
 <li>The word <code>end</code> to signal that the for loop is over for each of the loops.
 <img src="doubleforloop1.png" alt="doubleforloop1" /></li>
 </ol></li>
-</ul></li>
 </ul>
 </div>
 <div id="matrix-dimension" class="section level2 hasAnchor" number="10.5">

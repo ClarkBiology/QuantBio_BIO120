@@ -1,0 +1,202 @@
+# SubSetting Data
+
+```{block, type='objectives'}
+ **The goals for today are to:**
+ 
+1: Extract information about your data that will allow you to build your **output structure**: How many **TrackIDs**? How many **Frames**?
+
+2: Create and populate your **output structure**
+
+3: Calculate **average intensity** over your dataset!
+
+4: **Plot** your data!
+```
+
+***
+
+**Today you are going to look at two large sets of timeseries data produced by tracking MS2-GFP signals in hundreds of nuclei in the developing *Drosophila* embryo** 
+
+**For each dataset you must subset by Track_ID so that you can build an output matrix that has the timeseries data of MEAN_INTENSITY over time for all nuclei that were tracked. You will then calculate the average intensities for the entire embryo and plot the resulting timeseries.**
+
+***
+
+## BEFORE WE START
+
+```{block, type='objectives'}
+
+**CREATE A NEW WORKING FOLDER FOR TODAY'S LAB AND NAVIGATE TO THAT FOLDER**
+
+**DOWNLOAD THE TWO FILES FROM THIS WEEK'S CANVAS MODULE AND PLACE THEM IN YOUR WORKING FOLDER**
+
+**CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY SECTION**
+
+**Import the data from the two CSVs as TABLES**
+
+```
+
+***
+
+## Know Your Data
+
+### First Dimension - Track IDs
+
+**In order to create an output matrix to which you will output all of your subsetted data, you first need to determine its dimensions. One of these, the number of rows, is going to be made up of Track IDs**
+
+The ``unique`` function in matlab will find all of the unique entries within a defined vector.
+
+Look to the [unique](https://www.mathworks.com/help/matlab/ref/unique.html) function documentation to get an idea of the syntax and arguments that you will use for the ``unique`` function.
+
+Use the ``unique`` function to **define two vectors** that will contain all of the **unique TRACK_IDs** from both of your tables (WT2Spots and MUT2Spots).  **Remember to place the code into its own section and annotate!**
+
+After you've created the two vectors, determine the **number of unique track ids for each dataset**
+
+***
+
+```{block, type='rmdquestion'}
+#### Question 1:
+
+What are the number of unique TRACK IDs in your two datasets?
+
+```
+
+***
+
+### Second Dimension - Frames
+
+**The second dimension that you need to determine is the maximum number of frames for which a nucleus was tracked**
+
+This step is going to be a bit more complicated so I'm going to give you some code and you will need to fill in the blanks.
+
+The objective of the code below is to
+
+1: Iterate through the data set enough times to cover **all of the unique Track Ids**
+
+2: Find each **mean intensity value** for each **unique track id** and place those values into a **new vector**
+
+3: Determine the **number of frames** (which is the same as the number of mean intensity values) for each track ID and store those values in a **new vector**
+
+Wherever you see [], you must fill in the blank with the correct value/variable
+
+```
+for i = 1:[]
+    WTsub = WT2Spots(WT2Spots.TRACK_ID == [](i,1),:).MEAN_INTENSITY;
+    WTframes(i) = length(WTsub);
+end
+```
+
+Once you have done this for WT2Spots, do it also for MUT2Spots **BE SURE TO NAME THE VARIABLES ACCORDINGLY**
+
+***
+
+```{block, type='rmdquestion'}
+#### Question 2:
+
+You have just created 2 vectors: WTframes and MUTframes
+
+What do they contain?
+
+```
+
+***
+
+**Finally, use the ``max`` function to find the maximum number of MEAN_INTENSITY values for each dataset**
+
+***
+```{block, type='rmdquestion'}
+#### Question 3:
+
+Based on what you've done in the previous two sections, what will the dimensions of your two output matrices be? How many rows, how many columns?
+
+```
+
+***
+
+## Create Your Output Matrices
+
+**Now that you understand the dimensions that your output matrix needs to be, you will create a matrix that is filled with NaN values into which you will fill your subsetted data**
+
+Use the code below to create an output matrix for WT2Spots and MUT2Spots
+
+
+Place into the code below the following three variables:
+
+1. The name of the matrix
+
+2. The number of rows
+
+3. The number of columns
+
+
+```
+[] = NaN([],[])
+```
+
+***
+
+## Fill Your Output Matrices
+
+**Here you will use code that was very similar to the step where you figured out the number of mean intensity values.**
+
+The objective of the code below is to
+
+1: Iterate through the data set enough times to cover **all of the unique Track Ids**
+
+2: Find each **mean intensity value** for each **unique track id** and place those values into a **new vector**
+
+3: Place the **values from the new vector** into the corresponding position in the **output matrix**.
+
+Wherever you see [], you must fill in the blank with the correct value/variable
+
+
+
+```
+for i = 1:[]
+    WTsub = WT2Spots(WT2Spots.TRACK_ID == [](i,1),:).MEAN_INTENSITY;
+    [](i,1:length(WTsub)) = WTsub;
+end
+```
+***
+
+What you have just created is called a ``Ragged Matrix``. Where you have time series of different lengths all piled into one matrix, there will be cells that have to be left blank.  **The NaN values will be important for calculating averages without placing 0 values where no data exists.**
+
+**Now that you've created your output matrices, open them up and have a look a the data.**
+
+```{block, type='rmdquestion'}
+#### Question 4:
+
+What do your output matrices contain?
+
+```
+
+***
+
+## Calculate the MEANS
+
+In order to calculate the **mean values across all Track IDs for all timepoints**, we want to take the ``colmean`` for the matrix, which takes the **average of each column in the matrix**, creating a **row vector** with all of the mean values.
+
+The objective of the code below is to calculate the colmean for your output matrix. Fill in the [] and calculate the means for your output matrices for WT1Spots and MUT1Spots 
+
+```
+[] = mean([],"omitnan");
+```
+
+***
+
+## Make the Graphs
+
+**PLOT YOUR MEANS**
+
+```{block, type='rmdquestion'}
+#### Question 5:
+
+Looking at the graphs that you've plotted, how would you say the WTSpots and MUTSpots compare?
+
+```
+
+***
+
+## SAVE AND SUBMIT
+
+```{block, type='objectives'}
+**SAVE YOUR MLX AND EXPORT AS A WORD DOCUMENT AND SUBMIT BOTH TO THE ASSIGMNENT ON CANVAS**
+```

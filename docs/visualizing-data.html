@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Visualizing Data | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-11-01" />
+<meta name="date" content="2023-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,6 +61,10 @@ set in the _output.yml file.</p>" />
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -78,7 +82,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
@@ -165,6 +169,20 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="10.5" data-path="using-for-loops-and-vector-manipulation.html"><a href="using-for-loops-and-vector-manipulation.html#matrix-dimension"><i class="fa fa-check"></i><b>10.5</b> Matrix dimension</a></li>
 <li class="chapter" data-level="10.6" data-path="using-for-loops-and-vector-manipulation.html"><a href="using-for-loops-and-vector-manipulation.html#matrix-manipulation-functions-and-nested-for-loops"><i class="fa fa-check"></i><b>10.6</b> Matrix manipulation: functions and nested for loops</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="subsetting-data.html"><a href="subsetting-data.html"><i class="fa fa-check"></i><b>11</b> SubSetting Data</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="subsetting-data.html"><a href="subsetting-data.html#before-we-start-1"><i class="fa fa-check"></i><b>11.1</b> BEFORE WE START</a></li>
+<li class="chapter" data-level="11.2" data-path="subsetting-data.html"><a href="subsetting-data.html#know-your-data"><i class="fa fa-check"></i><b>11.2</b> Know Your Data</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="subsetting-data.html"><a href="subsetting-data.html#first-dimension---track-ids"><i class="fa fa-check"></i><b>11.2.1</b> First Dimension - Track IDs</a></li>
+<li class="chapter" data-level="11.2.2" data-path="subsetting-data.html"><a href="subsetting-data.html#second-dimension---frames"><i class="fa fa-check"></i><b>11.2.2</b> Second Dimension - Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="subsetting-data.html"><a href="subsetting-data.html#create-your-output-matrices"><i class="fa fa-check"></i><b>11.3</b> Create Your Output Matrices</a></li>
+<li class="chapter" data-level="11.4" data-path="subsetting-data.html"><a href="subsetting-data.html#fill-your-output-matrices"><i class="fa fa-check"></i><b>11.4</b> Fill Your Output Matrices</a></li>
+<li class="chapter" data-level="11.5" data-path="subsetting-data.html"><a href="subsetting-data.html#calculate-the-means"><i class="fa fa-check"></i><b>11.5</b> Calculate the MEANS</a></li>
+<li class="chapter" data-level="11.6" data-path="subsetting-data.html"><a href="subsetting-data.html#make-the-graphs"><i class="fa fa-check"></i><b>11.6</b> Make the Graphs</a></li>
+<li class="chapter" data-level="11.7" data-path="subsetting-data.html"><a href="subsetting-data.html#save-and-submit-1"><i class="fa fa-check"></i><b>11.7</b> SAVE AND SUBMIT</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -195,7 +213,8 @@ set in the _output.yml file.</p>" />
 1: Recognize the type of data in your datasets
 </p>
 <p>
-2: Decide which plot to use to visualize your data and their relationships
+2: Decide which plot to use to visualize your data and their
+relationships
 </p>
 <p>
 3: Create your plots!
@@ -209,13 +228,16 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">8.1</span> BEFORE WE START<a href="visualizing-data.html#before-we-start" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="objectives">
 <p>
-<strong>CREATE A NEW WORKING FOLDER FOR TODAY’S LAB AND NAVIGATE TO THAT FOLDER</strong>
+<strong>CREATE A NEW WORKING FOLDER FOR TODAY’S LAB AND NAVIGATE TO
+THAT FOLDER</strong>
 </p>
 <p>
-<strong>DOWNLOAD THE THREE FILES FROM THIS WEEK’S CANVAS MODULE AND PLACE THEM IN YOUR WORKING FOLDER</strong>
+<strong>DOWNLOAD THE THREE FILES FROM THIS WEEK’S CANVAS MODULE AND
+PLACE THEM IN YOUR WORKING FOLDER</strong>
 </p>
 <p>
-<strong>CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY SECTION</strong>
+<strong>CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY
+SECTION</strong>
 </p>
 </div>
 <hr />
@@ -254,7 +276,8 @@ set in the _output.yml file.</p>" />
 <hr />
 <div class="rmdwarning">
 <p>
-FOR TODAY’S ACTIVITY YOU WILL NEED TO PLOT MULTIPLE DATASETS ONTO THE SAME PLOT
+FOR TODAY’S ACTIVITY YOU WILL NEED TO PLOT MULTIPLE DATASETS ONTO THE
+SAME PLOT
 </p>
 <p>
 USE THE FOLLOWING EXAMPLE CODE
@@ -269,7 +292,8 @@ hold on; - holds the figure to allow you to draw multiple plots
 histogram(data1,5);
 </p>
 <p>
-histogram(data2,5); - these two lines will draw two histograms on the same plot
+histogram(data2,5); - these two lines will draw two histograms on the
+same plot
 </p>
 <p>
 hold off; - stop drawing things on the same graph
@@ -288,13 +312,16 @@ hold off; - stop drawing things on the same graph
 Question 1:
 </h4>
 <p>
-a: Just by looking at the table, what relationship can you see between the two variables?
+a: Just by looking at the table, what relationship can you see
+between the two variables?
 </p>
 <p>
-b: What kind of variables are in the data set (categorical/numerical)?
+b: What kind of variables are in the data set
+(categorical/numerical)?
 </p>
 <p>
-c: what kind of plot will you use to visualize this data set (line/scatter/histogram/bar) and why?
+c: what kind of plot will you use to visualize this data set
+(line/scatter/histogram/bar) and why?
 </p>
 </div>
 <p><strong>AFTER YOU’VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT</strong></p>
@@ -318,13 +345,16 @@ What does your plot tell you about the data?
 Question 3:
 </h4>
 <p>
-a: Just by looking at the table, what relationship can you see between the two variables?
+a: Just by looking at the table, what relationship can you see
+between the two variables?
 </p>
 <p>
-b: What kind of variables are in the data set (categorical/numerical)?
+b: What kind of variables are in the data set
+(categorical/numerical)?
 </p>
 <p>
-c: what kind of plot will you use to visualize this data set (line/scatter/histogram/bar) and why?
+c: what kind of plot will you use to visualize this data set
+(line/scatter/histogram/bar) and why?
 </p>
 </div>
 <p><strong>AFTER YOU’VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT</strong></p>
@@ -347,13 +377,16 @@ What does your plot tell you about the data?
 Question 5:
 </h4>
 <p>
-a: Just by looking at the table, what relationship can you see between the two variables?
+a: Just by looking at the table, what relationship can you see
+between the two variables?
 </p>
 <p>
-b: What kind of variables are in the data set (categorical/numerical)?
+b: What kind of variables are in the data set
+(categorical/numerical)?
 </p>
 <p>
-c: what kind of plot will you use to visualize this data set (line/scatter/histogram/bar) and why?
+c: what kind of plot will you use to visualize this data set
+(line/scatter/histogram/bar) and why?
 </p>
 </div>
 <p><strong>AFTER YOU’VE ANSWERED THE ABOVE QUESTIONS MAKE YOUR CHOSEN PLOT</strong></p>
@@ -370,7 +403,8 @@ What does your plot tell you about the data?
 <h2><span class="header-section-number">8.6</span> SAVE AND SUBMIT<a href="visualizing-data.html#save-and-submit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="objectives">
 <p>
-<strong>SAVE YOUR MLX AND SUBMIT IT TO THE ASSIGMNENT ON CANVAS</strong>
+<strong>SAVE YOUR MLX AND SUBMIT IT TO THE ASSIGMNENT ON
+CANVAS</strong>
 </p>
 </div>
 

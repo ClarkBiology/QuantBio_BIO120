@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | BIOL120 Excercise Guidebook Fall ’23</title>
+  <title>Chapter 11 SubSetting Data | BIOL120 Excercise Guidebook Fall ’23</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta property="og:title" content="Chapter 11 SubSetting Data | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta name="twitter:title" content="Chapter 11 SubSetting Data | BIOL120 Excercise Guidebook Fall ’23" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,7 +36,7 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="using-for-loops-and-vector-manipulation.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -203,18 +203,191 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="subsetting-data" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> SubSetting Data<a href="subsetting-data.html#subsetting-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objectives">
+<p>
+<strong>The goals for today are to:</strong>
+</p>
+<p>
+1: Extract information about your data that will allow you to build
+your <strong>output structure</strong>: How many
+<strong>TrackIDs</strong>? How many <strong>Frames</strong>?
+</p>
+<p>
+2: Create and populate your <strong>output structure</strong>
+</p>
+<p>
+3: Calculate <strong>average intensity</strong> over your
+dataset!
+</p>
+<p>
+4: <strong>Plot</strong> your data!
+</p>
+</div>
+<hr />
+<p><strong>Today you are going to look at two large sets of timeseries data produced by tracking MS2-GFP signals in hundreds of nuclei in the developing <em>Drosophila</em> embryo</strong></p>
+<p><strong>For each dataset you must subset by Track_ID so that you can build an output matrix that has the timeseries data of MEAN_INTENSITY over time for all nuclei that were tracked. You will then calculate the average intensities for the entire embryo and plot the resulting timeseries.</strong></p>
+<hr />
+<div id="before-we-start-1" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> BEFORE WE START<a href="subsetting-data.html#before-we-start-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<p>
+<strong>CREATE A NEW WORKING FOLDER FOR TODAY’S LAB AND NAVIGATE TO
+THAT FOLDER</strong>
+</p>
+<p>
+<strong>DOWNLOAD THE TWO FILES FROM THIS WEEK’S CANVAS MODULE AND
+PLACE THEM IN YOUR WORKING FOLDER</strong>
+</p>
+<p>
+<strong>CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY
+SECTION</strong>
+</p>
+<p>
+<strong>Import the data from the two CSVs as TABLES</strong>
+</p>
+</div>
+<hr />
+</div>
+<div id="know-your-data" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Know Your Data<a href="subsetting-data.html#know-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="first-dimension---track-ids" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> First Dimension - Track IDs<a href="subsetting-data.html#first-dimension---track-ids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>In order to create an output matrix to which you will output all of your subsetted data, you first need to determine its dimensions. One of these, the number of rows, is going to be made up of Track IDs</strong></p>
+<p>The <code>unique</code> function in matlab will find all of the unique entries within a defined vector.</p>
+<p>Look to the <a href="https://www.mathworks.com/help/matlab/ref/unique.html">unique</a> function documentation to get an idea of the syntax and arguments that you will use for the <code>unique</code> function.</p>
+<p>Use the <code>unique</code> function to <strong>define two vectors</strong> that will contain all of the <strong>unique TRACK_IDs</strong> from both of your tables (WT2Spots and MUT2Spots). <strong>Remember to place the code into its own section and annotate!</strong></p>
+<p>After you’ve created the two vectors, determine the <strong>number of unique track ids for each dataset</strong></p>
+<hr />
+<div class="rmdquestion">
+<h4 id="question-1">
+Question 1:
+</h4>
+<p>
+What are the number of unique TRACK IDs in your two datasets?
+</p>
+</div>
+<hr />
+</div>
+<div id="second-dimension---frames" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Second Dimension - Frames<a href="subsetting-data.html#second-dimension---frames" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>The second dimension that you need to determine is the maximum number of frames for which a nucleus was tracked</strong></p>
+<p>This step is going to be a bit more complicated so I’m going to give you some code and you will need to fill in the blanks.</p>
+<p>The objective of the code below is to</p>
+<p>1: Iterate through the data set enough times to cover <strong>all of the unique Track Ids</strong></p>
+<p>2: Find each <strong>mean intensity value</strong> for each <strong>unique track id</strong> and place those values into a <strong>new vector</strong></p>
+<p>3: Determine the <strong>number of frames</strong> (which is the same as the number of mean intensity values) for each track ID and store those values in a <strong>new vector</strong></p>
+<p>Wherever you see [], you must fill in the blank with the correct value/variable</p>
+<pre><code>for i = 1:[]
+    WTsub = WT2Spots(WT2Spots.TRACK_ID == [](i,1),:).MEAN_INTENSITY;
+    WTframes(i) = length(WTsub);
+end</code></pre>
+<p>Once you have done this for WT2Spots, do it also for MUT2Spots <strong>BE SURE TO NAME THE VARIABLES ACCORDINGLY</strong></p>
+<hr />
+<div class="rmdquestion">
+<h4 id="question-2">
+Question 2:
+</h4>
+<p>
+You have just created 2 vectors: WTframes and MUTframes
+</p>
+<p>
+What do they contain?
+</p>
+</div>
+<hr />
+<p><strong>Finally, use the <code>max</code> function to find the maximum number of MEAN_INTENSITY values for each dataset</strong></p>
+<hr />
+<div class="rmdquestion">
+<h4 id="question-3">
+Question 3:
+</h4>
+<p>
+Based on what you’ve done in the previous two sections, what will the
+dimensions of your two output matrices be? How many rows, how many
+columns?
+</p>
+</div>
+<hr />
+</div>
+</div>
+<div id="create-your-output-matrices" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Create Your Output Matrices<a href="subsetting-data.html#create-your-output-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Now that you understand the dimensions that your output matrix needs to be, you will create a matrix that is filled with NaN values into which you will fill your subsetted data</strong></p>
+<p>Use the code below to create an output matrix for WT2Spots and MUT2Spots</p>
+<p>Place into the code below the following three variables:</p>
+<ol style="list-style-type: decimal">
+<li><p>The name of the matrix</p></li>
+<li><p>The number of rows</p></li>
+<li><p>The number of columns</p></li>
+</ol>
+<pre><code>[] = NaN([],[])</code></pre>
+<hr />
+</div>
+<div id="fill-your-output-matrices" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Fill Your Output Matrices<a href="subsetting-data.html#fill-your-output-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Here you will use code that was very similar to the step where you figured out the number of mean intensity values.</strong></p>
+<p>The objective of the code below is to</p>
+<p>1: Iterate through the data set enough times to cover <strong>all of the unique Track Ids</strong></p>
+<p>2: Find each <strong>mean intensity value</strong> for each <strong>unique track id</strong> and place those values into a <strong>new vector</strong></p>
+<p>3: Place the <strong>values from the new vector</strong> into the corresponding position in the <strong>output matrix</strong>.</p>
+<p>Wherever you see [], you must fill in the blank with the correct value/variable</p>
+<pre><code>for i = 1:[]
+    WTsub = WT2Spots(WT2Spots.TRACK_ID == [](i,1),:).MEAN_INTENSITY;
+    [](i,1:length(WTsub)) = WTsub;
+end</code></pre>
+<hr />
+<p>What you have just created is called a <code>Ragged Matrix</code>. Where you have time series of different lengths all piled into one matrix, there will be cells that have to be left blank. <strong>The NaN values will be important for calculating averages without placing 0 values where no data exists.</strong></p>
+<p><strong>Now that you’ve created your output matrices, open them up and have a look a the data.</strong></p>
+<div class="rmdquestion">
+<h4 id="question-4">
+Question 4:
+</h4>
+<p>
+What do your output matrices contain?
+</p>
+</div>
+<hr />
+</div>
+<div id="calculate-the-means" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Calculate the MEANS<a href="subsetting-data.html#calculate-the-means" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In order to calculate the <strong>mean values across all Track IDs for all timepoints</strong>, we want to take the <code>colmean</code> for the matrix, which takes the <strong>average of each column in the matrix</strong>, creating a <strong>row vector</strong> with all of the mean values.</p>
+<p>The objective of the code below is to calculate the colmean for your output matrix. Fill in the [] and calculate the means for your output matrices for WT1Spots and MUT1Spots</p>
+<pre><code>[] = mean([],&quot;omitnan&quot;);</code></pre>
+<hr />
+</div>
+<div id="make-the-graphs" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Make the Graphs<a href="subsetting-data.html#make-the-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>PLOT YOUR MEANS</strong></p>
+<div class="rmdquestion">
+<h4 id="question-5">
+Question 5:
+</h4>
+<p>
+Looking at the graphs that you’ve plotted, how would you say the
+WTSpots and MUTSpots compare?
+</p>
+</div>
+<hr />
+</div>
+<div id="save-and-submit-1" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> SAVE AND SUBMIT<a href="subsetting-data.html#save-and-submit-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<p>
+<strong>SAVE YOUR MLX AND EXPORT AS A WORD DOCUMENT AND SUBMIT BOTH
+TO THE ASSIGMNENT ON CANVAS</strong>
+</p>
+</div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
+<a href="using-for-loops-and-vector-manipulation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -246,7 +419,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/%s",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/10-SubSetting.Rmd",
 "text": "Edit"
 },
 "history": {

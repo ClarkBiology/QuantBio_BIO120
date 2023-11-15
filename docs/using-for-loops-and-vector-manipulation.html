@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Using for loops and Vector Manipulation | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-11-09" />
+<meta name="date" content="2023-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,10 +61,6 @@ set in the _output.yml file.</p>" />
 
 
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -82,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
@@ -183,6 +179,13 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="11.6" data-path="subsetting-data.html"><a href="subsetting-data.html#make-the-graphs"><i class="fa fa-check"></i><b>11.6</b> Make the Graphs</a></li>
 <li class="chapter" data-level="11.7" data-path="subsetting-data.html"><a href="subsetting-data.html#save-and-submit-1"><i class="fa fa-check"></i><b>11.7</b> SAVE AND SUBMIT</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html"><i class="fa fa-check"></i><b>12</b> Mathematical Models and Experimental Data</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#importing-numerical-data"><i class="fa fa-check"></i><b>12.1</b> Importing Numerical Data</a></li>
+<li class="chapter" data-level="12.2" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-a-model-function"><i class="fa fa-check"></i><b>12.2</b> Creating a Model Function</a></li>
+<li class="chapter" data-level="12.3" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-an-objective-error-function"><i class="fa fa-check"></i><b>12.3</b> Creating an Objective / Error Function</a></li>
+<li class="chapter" data-level="12.4" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#preparing-to-fit-your-model"><i class="fa fa-check"></i><b>12.4</b> Preparing to Fit your Model</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -217,12 +220,10 @@ Before we begin, be sure you’ve prepared the following:
 Open MATLAB.
 </li>
 <li>
-Navigate to your Biol120 working folder and create a new folder for
-today’s lab.
+Navigate to your Biol120 working folder and create a new folder for today’s lab.
 </li>
 <li>
-Open a new live script and use the header text to place the title
-for today’s lab.
+Open a new live script and use the header text to place the title for today’s lab.
 </li>
 </ol>
 </div>
@@ -278,20 +279,13 @@ Question 2
 </h4>
 <ul>
 <li>
-Create a vector, <span class="math inline"><span class="math inline">\(v\)</span></span>, with all of
-the numbers from <span class="math inline"><span class="math inline">\(2\)</span></span> to <span class="math inline"><span class="math inline">\(47\)</span></span>, using increments of <span class="math inline"><span class="math inline">\(0.3\)</span></span>.
+Create a vector, <span class="math inline"><span class="math inline">\(v\)</span></span>, with all of the numbers from <span class="math inline"><span class="math inline">\(2\)</span></span> to <span class="math inline"><span class="math inline">\(47\)</span></span>, using increments of <span class="math inline"><span class="math inline">\(0.3\)</span></span>.
 </li>
 <li>
-Using the <code>length</code> command, determine how many elements
-are in the vector <span class="math inline"><span class="math inline">\(v\)</span></span>.
+Using the <code>length</code> command, determine how many elements are in the vector <span class="math inline"><span class="math inline">\(v\)</span></span>.
 </li>
 <li>
-Go back to your midsemester project, where you created vectors with
-data that you plotted (either using a bar chart, scatter plot, or line
-plot). Take one of those vectors of data and use the <code>length</code>
-command to determine its length. Note: be clear to put comments/text
-into your livescript to tell us what the data is that is included in
-this vector.
+Go back to your midsemester project, where you created vectors with data that you plotted (either using a bar chart, scatter plot, or line plot). Take one of those vectors of data and use the <code>length</code> command to determine its length. Note: be clear to put comments/text into your livescript to tell us what the data is that is included in this vector.
 </li>
 </ul>
 </div></li>
@@ -311,13 +305,10 @@ Question 3
 </h4>
 <ul>
 <li>
-Create a vector, <span class="math inline"><span class="math inline">\(w\)</span></span>, with all of
-the numbers from <span class="math inline"><span class="math inline">\(1\)</span></span> to <span class="math inline"><span class="math inline">\(2\)</span></span>, using increments of <span class="math inline"><span class="math inline">\(0.1\)</span></span>.
+Create a vector, <span class="math inline"><span class="math inline">\(w\)</span></span>, with all of the numbers from <span class="math inline"><span class="math inline">\(1\)</span></span> to <span class="math inline"><span class="math inline">\(2\)</span></span>, using increments of <span class="math inline"><span class="math inline">\(0.1\)</span></span>.
 </li>
 <li>
-Use a for loop to compute the product of all of the elements of w.
-Hint: You don’t want to start your product at 0 - you want to start it
-at the <em>multiplicative identity</em>.
+Use a for loop to compute the product of all of the elements of w. Hint: You don’t want to start your product at 0 - you want to start it at the <em>multiplicative identity</em>.
 </li>
 </ul>
 </div></li>
@@ -340,14 +331,10 @@ Question 4
 </h4>
 <ul>
 <li>
-Create a function for a linear model. This function should take as
-input a vector of <span class="math inline"><span class="math inline">\(x\)</span></span>-values, and 2
-parameters (one for the slope and one for the y-intercept) and output a
-corresponding vector of <span class="math inline"><span class="math inline">\(y\)</span></span>-values.
+Create a function for a linear model. This function should take as input a vector of <span class="math inline"><span class="math inline">\(x\)</span></span>-values, and 2 parameters (one for the slope and one for the y-intercept) and output a corresponding vector of <span class="math inline"><span class="math inline">\(y\)</span></span>-values.
 </li>
 <li>
-Run your function with at least <span class="math inline"><span class="math inline">\(3\)</span></span> sets of different parameter values
-(i.e. choose different slopes and intercepts each time) and an <span class="math inline"><span class="math inline">\(x\)</span></span> vector with values ranging from <span class="math inline"><span class="math inline">\(0\)</span></span> to <span class="math inline"><span class="math inline">\(10\)</span></span>.
+Run your function with at least <span class="math inline"><span class="math inline">\(3\)</span></span> sets of different parameter values (i.e. choose different slopes and intercepts each time) and an <span class="math inline"><span class="math inline">\(x\)</span></span> vector with values ranging from <span class="math inline"><span class="math inline">\(0\)</span></span> to <span class="math inline"><span class="math inline">\(10\)</span></span>.
 </li>
 </ul>
 </div></li>
@@ -392,17 +379,15 @@ Question 5
 </h4>
 <ul>
 <li>
-Create the following matrix: <span class="math display"><span class="math display">\[M =
-\begin{bmatrix}
-0 \ \ \ \ \  \cfrac{7\pi}{6} \ \ \ \ \pi  \\
+Create the following matrix: <span class="math display"><span class="math display">\[M = \begin{bmatrix} 
+0 \ \ \ \ \  \cfrac{7\pi}{6} \ \ \ \ \pi  \\ 
 \cfrac{\pi}{6} \ \ \ \  \cfrac{5\pi}{4} \ \ \ \ 2\pi  \\
 \cfrac{\pi}{4} \ \ \ \  \cfrac{4\pi}{3}  \ \ \ \ 3\pi \\
 \cfrac{\pi}{3} \ \ \ \  \cfrac{3\pi}{2}  \ \ \ \ 4\pi \\
 \end{bmatrix}\]</span></span>
 </li>
 <li>
-Using the <code>size</code> command, determine the dimensions of the
-matrix <span class="math inline"><span class="math inline">\(M\)</span></span>.
+Using the <code>size</code> command, determine the dimensions of the matrix <span class="math inline"><span class="math inline">\(M\)</span></span>.
 </li>
 </ul>
 </div></li>
@@ -425,22 +410,10 @@ Question 6
 </h4>
 <ul>
 <li>
-Create a function that transforms data from one matrix to another
-using the <code>sin</code> function and a constant vertical shift. The
-function you create should take as input a matrix of values for the
-independent variable, and 1 parameter (the value corresponding to the
-vertical shift). The output of this function should be a corresponding
-matrix, with each entry equal to the sine of the corresponding entry
-plus the vertical shift. Note: if <span class="math inline"><span class="math inline">\(x\)</span></span> is the entry in the original matrix and
-<span class="math inline"><span class="math inline">\(b\)</span></span> is the shift parameter, the
-corresponding entry, <span class="math inline"><span class="math inline">\(y\)</span></span> in the new
-matrix should be: <span class="math display"><span class="math display">\[y =
-sin(x)+b\]</span></span>
+Create a function that transforms data from one matrix to another using the <code>sin</code> function and a constant vertical shift. The function you create should take as input a matrix of values for the independent variable, and 1 parameter (the value corresponding to the vertical shift). The output of this function should be a corresponding matrix, with each entry equal to the sine of the corresponding entry plus the vertical shift. Note: if <span class="math inline"><span class="math inline">\(x\)</span></span> is the entry in the original matrix and <span class="math inline"><span class="math inline">\(b\)</span></span> is the shift parameter, the corresponding entry, <span class="math inline"><span class="math inline">\(y\)</span></span> in the new matrix should be: <span class="math display"><span class="math display">\[y = sin(x)+b\]</span></span>
 </li>
 <li>
-Run your function using the matrix <span class="math inline"><span class="math inline">\(M\)</span></span> you created in Question 5 as the matrix
-of values for the independent variable and at least 2 different vertical
-shifts (<span class="math inline"><span class="math inline">\(b\)</span></span> values).
+Run your function using the matrix <span class="math inline"><span class="math inline">\(M\)</span></span> you created in Question 5 as the matrix of values for the independent variable and at least 2 different vertical shifts (<span class="math inline"><span class="math inline">\(b\)</span></span> values).
 </li>
 </ul>
 </div></li>
@@ -451,9 +424,7 @@ shifts (<span class="math inline"><span class="math inline">\(b\)</span></span> 
 <strong>Submission</strong>
 </p>
 <p>
-Don’t forget to submit your live script file (with all of the
-questions answered - via text or code) and any function files (m files)
-you have used in answering the questions on Canvas!
+Don’t forget to submit your live script file (with all of the questions answered - via text or code) and any function files (m files) you have used in answering the questions on Canvas!
 </p>
 </div>
 

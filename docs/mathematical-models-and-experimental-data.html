@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Creating Functions and Plotting Tools Revisited | BIOL120 Excercise Guidebook Fall ’23</title>
+  <title>Chapter 12 Mathematical Models and Experimental Data | BIOL120 Excercise Guidebook Fall ’23</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Creating Functions and Plotting Tools Revisited | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta property="og:title" content="Chapter 12 Mathematical Models and Experimental Data | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Creating Functions and Plotting Tools Revisited | BIOL120 Excercise Guidebook Fall ’23" />
+  <meta name="twitter:title" content="Chapter 12 Mathematical Models and Experimental Data | BIOL120 Excercise Guidebook Fall ’23" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualizing-data.html"/>
-<link rel="next" href="using-for-loops-and-vector-manipulation.html"/>
+<link rel="prev" href="subsetting-data.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,8 +206,8 @@ set in the _output.yml file.</p>" />
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="creating-functions-and-plotting-tools-revisited" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Creating Functions and Plotting Tools Revisited<a href="creating-functions-and-plotting-tools-revisited.html#creating-functions-and-plotting-tools-revisited" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="mathematical-models-and-experimental-data" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Mathematical Models and Experimental Data<a href="mathematical-models-and-experimental-data.html#mathematical-models-and-experimental-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="objectives">
 <p>
 <strong>Checklist</strong>
@@ -227,186 +227,155 @@ Open a new live script and use the header text to place the title for today’s 
 </li>
 </ol>
 </div>
-<p>Today’s laboratory will be focused on creating our own functions and visualizing the results.</p>
-<p>Before we start, however, write out the answers to these questions in your live script:</p>
+<p><br />
+<br />
+Today’s laboratory will be focused on creating a mathematical model to use on real experimental data.</p>
+<div id="importing-numerical-data" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Importing Numerical Data<a href="mathematical-models-and-experimental-data.html#importing-numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Using dlmread</p>
+<ul>
+<li><p>The data must be in a delimited format (i.e. a matrix of values, with entries separated by spaces, tabs, or commas).</p></li>
+<li><p>The data file must be in your <code>Current Folder</code> (the same place your live script is saved).</p></li>
+<li><p>When using <code>dlmread()</code>, the filename needs to be in single quotation marks.</p></li>
+<li><p>Save your data to a new variable when you read it into MATLAB (i.e. <code>D = dlmread('mydata.txt')</code>).</p>
+<p>Example:</p>
+<p>First we make sure the data file is in our <code>Current Folder</code>, use <code>dlmread()</code> to read it and save it to a new variable, D.<br />
+Note: We can then check that our data is indeed contained in the matrix D.</p>
+<p><img src="import_GT.png" /></p>
+<p>If we want to visualize our dataset before moving on to model fitting, we can use the <code>plot()</code> command.</p>
+<p>Note: In this example, the first column of data contains the independent variable (% AP) and the second column of data contains the dependent variable (normalized GT mRNA concentration).
+<img src="GT_figure.png" /></p></li>
+</ul>
 <div class="rmdquestion">
 <h4 id="question-1">
-Question 1
+<p>Question 1</p>
 </h4>
+<p>
+<p>Download the <em>dicty</em> average growth data generated in the Larochelle Lab from the course Canvas site.</p>
+</p>
+<p>
+<p>Save this file in your <code>Current Folder</code>.</p>
+</p>
+<p>
+<p>Use the <code>dlmread()</code> command to read in the data and save it as a matrix (you can call this matrix whatever you want - i.e. I used D in the example above).</p>
+</p>
+<p>
+<p>Use a scatter plot to visualize the data.<br /></p>
 <ul>
-<li>
-What is a function?
-</li>
-<li>
-When creating a function in MATLAB with a single input and output, which is your independent variable and which is your dependent variable?
-</li>
-<li>
-What is the difference between an independent variable and a parameter?
-</li>
+<li>The first column is time (in hours), the second column is the corresponding population of AX4 cells (in thous. cells / mL), and the third column is the corresponding population of DnmA Knock Out cells (in thous. cells / mL).<br />
+Hint: To visualize both populations on the same figure, scatter one, then<br />
+<code>hold on</code> and scatter the other.<br /></li>
+<li>Include a title and don’t forget to label your axes.<br /></li>
+<li>You can also add a legend using the drop down menu: <code>Insert -&gt; Legend</code>.
+</p>
+</div></li>
+</ul></li>
 </ul>
 </div>
-<div id="functions" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Functions<a href="creating-functions-and-plotting-tools-revisited.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>Creating a function</p>
-<ul>
-<li><p><code>New</code> –<span class="math inline">\(&gt;\)</span> <code>Script</code></p></li>
-<li><p><code>File</code> –<span class="math inline">\(&gt;\)</span> <code>Save As..</code></p></li>
-<li><p>Name your file (the .m will automatically be added) and make sure it is saved in your <code>Current Folder</code></p>
-<p>Note: MATLAB <code>functions</code> are a special type of <code>m file</code></p></li>
-<li><p>The first line of the file must tell MATLAB that this is a function. Important parts include:</p>
+<div id="creating-a-model-function" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Creating a Model Function<a href="mathematical-models-and-experimental-data.html#creating-a-model-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Looking at your data, you now want to create a mathematical model to fit to your data. We have seen two different models for population growth in class. You may choose to fit one of these functions to the <em>dicty</em> average growth data or you may choose to create a new function based on something you have learned in another class or textbook. Whatever model you choose, it will be important that you answer each of the following:</p>
 <ol style="list-style-type: decimal">
-<li>The word <code>function</code></li>
-<li>The function output(s) in square brackets</li>
-<li>The name of the function (<em>this MUST match the file name</em>)</li>
-<li>The function input(s)
-<img src="fun1.png" alt="fun1" /></li>
-</ol></li>
-</ul></li>
-<li><p>Calling a function</p>
-<ul>
-<li>Go back to your Live Script (that is in your Current Directory)
-Note: Functions can also be run from the <code>Command Window</code> as long as they are saved in your Current Directory</li>
-<li>Type in the name of your function and any input(s) in parentheses</li>
-<li>When you run this code, MATLAB will execute the function and display the output
-<img src="fun1_run.png" alt="fun1execute" />
+<li><p>Do you have a good reason for choosing your model? It could be as simple as “my data seems to follow the shape of the curve generated by this model”.</p></li>
+<li><p>What are the underlying model assumptions? i.e. The population has the ability to grow without bound.</p></li>
+<li><p>What are the independent variable(s), parameter(s), and dependent variable(s)? This is where it is important to think about both the model (which will dictate parameter(s)) and the data (which will dictate how you choose independent vs dependent variables).</p></li>
+<li><p>Does the model do what I want it to do? Before moving on to the next section of this chapter or thinking about fitting your model to data, make sure the function you wrote does what you want it to do! You can check that it runs, gives the output in the format you expect, and even create some figures to see how the curve changes as you plug in different parameter values.</p></li>
+</ol>
 <div class="rmdquestion">
 <h4 id="question-2">
 Question 2
 </h4>
-<ul>
-<li>
 <p>
-Write a MATLAB function that converts Celcius to Farenheit, according to the function <span class="math inline"><span class="math inline">\(F = \cfrac{9}{5}C+32\)</span></span>
-</p>
-</li>
-<li>
-<p>
-What is the <code>independent variable</code> and what is the <code>dependent variable</code>?
-</p>
-</li>
-<li>
-<p>
-Run your function to convert the following temperatures (given in <span class="math inline"><span class="math inline">\(^{\circ}\)</span></span>C) to <span class="math inline"><span class="math inline">\(^{\circ}\)</span></span>F.
+Create a model in MATLAB that you will use for the <em>dicty</em> growth data.
 </p>
 <p>
-12<span class="math inline"><span class="math inline">\(^{\circ}\)</span></span> C, 26.4<span class="math inline"><span class="math inline">\(^{\circ}\)</span></span> C, and -6<span class="math inline"><span class="math inline">\(^{\circ}\)</span></span> C
+Note: You will want to create a single MATLAB function to use on both data sets. The model parameters are what should change the shape of your curve. We will later use this function to fit the correct parameter values in order to obtain one set of parameter values for the AX4 cells and another set for the DnmA KO cells.
 </p>
-</li>
-</ul>
-</div></li>
-</ul></li>
-<li><p>Writing a function with multiple inputs (multiple <code>independent variables</code> and/or <code>parameters</code>)</p>
-<ul>
-<li>There are 2 standard ways of doing this
+<p>
+After creating your model function, answer each of the 4 questions above.
+</p>
+</div>
+</div>
+<div id="creating-an-objective-error-function" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Creating an Objective / Error Function<a href="mathematical-models-and-experimental-data.html#creating-an-objective-error-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For Model Fitting, we also need an Objective Function (which we will minimize). The most popular Objective Function is the Error Function calculated by taking the Sum of Square Errors (SSE):
+<span class="math display">\[SSE = \sum_{i=1}^n \left(y_i - m_i\right)^2\]</span>
+Luckily, MATLAB has a function that sums square terms of a vector for us, <code>sumsqr()</code>.</p>
+<p>Examples:</p>
 <ol style="list-style-type: decimal">
-<li>have multiple inputs in a list, separated by commas
-<img src="quadfun.png" /></li>
-<li>have a ‘single’ input with multiple values - i.e. input a <em>vector</em> of inputs
-<img src="fun2.png" />
-Note: in this example, the output is also a vector.</li>
-</ol></li>
-</ul></li>
-<li><p>We can have multiple outputs in a list as well:
-<img src="malth.png" /></p>
-<p>What is the advantage to outputting a vector of independent variable values and a vector of corresponding dependent variable values?</p>
-<p>We can use them for plotting and visualize our model!</p>
+<li></li>
+</ol>
+<p><img src="sumsqr1.png" />
+Note: <span class="math inline">\(1^2+2^2+3^2+4^2 = 30\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li></li>
+</ol>
+<p><img src="sumsqr2.png" />
+Note: <span class="math inline">\(\left(1-1.4\right)^2+\left(2-1.7\right)^2+\left(3-2.9\right)^2+\left(4-4.2\right)^2 = 0.3\)</span></p>
+<p>To create an Objective Function, the function needs to take the model parameter(s) and experimental data as input. The output should always be a <em>single number</em>, the SSE.</p>
+<p>Example:</p>
+<p>Lets assume we have some experimental data of the position of a frog as it jumps. We upload the data in to MATLAB and use a scatter plot to visualize.
+<img src="frog_jump.png" />
+Just looking at the data’s shape, we suggest using a quadratic model to fit this data. (This also fits what we have learned about projectile motion in Intro Physics.)</p>
+<p>Next, we write the model function:
+<img src="funpar.png" />
+Now we need to write our Objective Function to calculate the error between the model and experimental data. The Objective Function should take as input: our parameter(s) as a <em>single vector</em> and our experimental data. It should output a <em>single value</em>, the SSE.
+<img src="quad_error.png" />
+Before moving on, we should run the Objective Function (with any parameter values we choose for now) just to make sure it runs and outputs a single number with no errors.
+<img src="try_SSE.png" /></p>
 <div class="rmdquestion">
 <h4 id="question-3">
 Question 3
 </h4>
 <p>
-Lets think about modeling drug dosage. If the recommended adult dosage for a drug is <span class="math inline"><span class="math inline">\(D\)</span></span> (in mg), then to determine the appropriate dosage <span class="math inline"><span class="math inline">\(c\)</span></span> for a child of age <span class="math inline"><span class="math inline">\(a\)</span></span> (in years), pharmacists use the equation <span class="math inline"><span class="math inline">\(c = 0.0417D\left(a+1\right)\)</span></span>.
+Create an objective function in the following way:
 </p>
 <ul>
 <li>
-Write a MATLAB function that takes as inputs a range of ages (i.e. a vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values) and the recommended adult dosage for a specific drug, <span class="math inline"><span class="math inline">\(D\)</span></span>. The function should output the appropriate dosages (i.e. <span class="math inline"><span class="math inline">\(c\)</span></span> values) for children of ages corresponding to the vector of <span class="math inline"><span class="math inline">\(a\)</span></span> values. Hint: you may want to use a <code>for-loop</code> as in fun2 above, but you don’t have to (you can also use vector algebra - just remember to use a `.’).
+The input should be the model parameter(s) as a single vector and the experimental data (as two vectors, values for the dependent variable and independent variable).
 </li>
 <li>
-Identify the <code>independent variable</code>, <code>dependent variable</code>, and <code>parameter</code>.
+The function should run the model you created in Question 2 with the parameter(s) given and vector of dependent variable values.
 </li>
 <li>
-The recommended adult dosage for amoxicillin is 500 mg. Use your function to determine the appropriate dosage for children ages 2 - 12 years.
+The function should then calculate the SSE between the model output and the experimental data.
+</li>
+<li>
+The output should be the SSE value.
 </li>
 </ul>
-</div></li>
-</ul>
 </div>
-<div id="visualizing-function-output-model-predictions" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Visualizing function output / model predictions<a href="creating-functions-and-plotting-tools-revisited.html#visualizing-function-output-model-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>Review of Scatter Plots</p>
-<p>When dealing with two numerical variables (whether it is experimental data or simulated data), the best way to visualize their relationship is by using a scatter plot. Luckily, this is very easy to do in MATLAB.</p>
-<p>Important things to remember:</p>
-<ul>
-<li>The MATLAB function to use is <code>scatter</code></li>
-<li>When using the <code>scatter</code> function, you need to make sure you input the <code>independent</code> and <code>dependent</code> variable values as vectors, in the correct order. You also NEED THE VECTORS TO BE THE SAME SIZE!!!! Why? Because you are giving MATLAB the coordinates of points to plot. If you try to scatter two vectors of different length, MATLAB will give you an error message.</li>
-</ul>
-<p><img src="scatter_command.png" />
-<img src="scatter_fig.png" /></p></li>
-<li><p>Review of Line Plots</p>
-<p>Sometimes we want to highlight trends in the relationship between two numerical variables. Thus, instead of a simple scatter plot, we turn to a line plot. This is a plot that connects the data points using line segments, and is the most popular way to visualize modeling results in MATLAB.</p>
-<p>Important things to remember:</p>
-<ul>
-<li>The MATLAB function to use is <code>plot</code></li>
-<li>The inputs for this function are the same as the <code>scatter</code> function. When using the <code>plot</code> function, you need to make sure you input the <code>independent</code> and <code>dependent</code> variable values as vectors, in the correct order. You again NEED THE VECTORS TO BE THE SAME SIZE!!!!<br />
-</li>
-<li>Caution:
-<ol style="list-style-type: lower-alpha">
-<li>If you try to plot two vectors of different length, MATLAB will give you an error message.</li>
-<li>If you forget to include one variable (i.e. you only give the plot function a single vector input), it will simply plot that vector as the dependent variable values, assuming the independent variable values are 1,2,3,…</li>
-</ol></li>
-</ul>
-<p><img src="plot_command.png" />
-<img src="plot_fig.png" /></p></li>
-</ul>
 </div>
-<div id="editing-figures-in-matlab" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Editing Figures in MATLAB<a href="creating-functions-and-plotting-tools-revisited.html#editing-figures-in-matlab" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are lots of ways to edit Figures in MATLAB. Later in this course, we will learn how to edit figures using various commands within live scripts, functions or the Command Window. However, you can also edit plots interactively using the toolbar or drop-down menus of any figure.
-IMPORTANT FOR LIVE SCRIPTERS: If you are creating figures using a live script, before you can edit figures directly using the toolbar or drop-down menus, you need to “Open in figure window” (you can do this by clicking the button in the right-hand corner of your figure)
-<img src="openfig.png" /></p>
-<ul>
-<li><p>You can add Axes Labels and a Title
-<img src="labels.png" /></p></li>
-<li><p>You can edit your Font Size or other Axes Properties
-<img src="axes_props_drop.png" />
-<img src="axes_props.png" /></p></li>
-<li><p>You can edit the color or width of the line by double clicking the line.</p>
-<p>Note: In a scatter plot, you can edits the <code>Markers</code> (i.e. circles corresponding to your data) by double clicking on any one of them.
-<img src="line_edit.png" /></p></li>
-<li><p>You can save your beautiful figure in many different formats with a simple <code>File</code> –<span class="math inline">\(&gt;\)</span> <code>Save As..</code></p>
-<p>Note: If you want to be able to open it and continue editing it, save it as a .fig file. If you wish to send your figure to a friend or include it in a powerpoint presentation, save is as a .jpeg or .png file.
-<img src="pretty_fig.png" /></p>
+<div id="preparing-to-fit-your-model" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> Preparing to Fit your Model<a href="mathematical-models-and-experimental-data.html#preparing-to-fit-your-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have experimental data, a mathematical model, and an objective funciton: now what?</p>
+<p>Now we need to find the parameter values that minimize that objective function.</p>
+<p>There are many ways to do this. In this section we will learn how to implement a local method of parameter estimation in MATLAB. Local methods take an initial guess for the parameter values and search nearby using techniques from Calculus or Geometry. In MATLAB, the most common function to use is <code>fminsearch()</code>. This function uses the Nelder-Mead simplex algorithm, but you don’t have to worry about that for this course. Just focus on how to run it.</p>
+<p> <br />
+For the remainder of this lab, we will make sure we are comfortable with the objective function we have created, and will work on finding a good initial guess for the parameter values.</p>
 <div class="rmdquestion">
 <h4 id="question-4">
 Question 4
 </h4>
 <p>
-Using either a scatter plot or line plot, visualize your results from Question 3.
+Using your objective function, try running it for BOTH the AX4 and WT data with a variety of different parameter values.
 </p>
-<p>
-Make sure your plot has your Axes labeled (with units) and includes a Title.
-</p>
-</div>
-<div class="rmdquestion">
-<h4 id="question-5">
-Question 5
-</h4>
-<p>
-Within your live script for today’s lab, run your function from Question 2 and generate a figure (either a scatter plot or line plot) showing the relationship between temperatures measured in Celsius vs. Farenheit. This graph should include a range of temperatures appropriate for someone trying to convert daily temperatures in Massachusetts over a typical calendar year.
-</p>
-<p>
-Make sure your plot has your Axes labeled (with units) and includes a Title.
-</p>
-</div></li>
+<ul>
+<li>
+Remember that the input should be the model parameter(s) as a single vector and the experimental data (as two vectors, values for the dependent variable and independent variable). You can choose any parameter value(s) you want, but remember that we are trying to find a set of parameters that will MINIMIZE our SSE value.
+</li>
+<li>
+For each of the two data sets, state what the BEST parameter values you tried were and the resulting SSE. We will use these as a starting point for our model fitting in Chapter 13.
+</li>
 </ul>
+</div>
 <div class="objectives">
 <p>
 <strong>Submission</strong>
 </p>
 <p>
-Don’t forget to submit your live script file (with all of the questions answered - via text or code), any function files (m files) you have used in answering the questions, and any beautiful figures you have created (and labeled) on Canvas!
+Don’t forget to submit your live script file (with all of the questions answered - via text or code) and any m files or functions that you wrote in MATLAB to help answer these questions. If it is easier, you can also upload your figures separately.
 </p>
 </div>
 
@@ -417,8 +386,8 @@ Don’t forget to submit your live script file (with all of the questions answer
           </div>
         </div>
       </div>
-<a href="visualizing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="using-for-loops-and-vector-manipulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="subsetting-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -449,7 +418,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-functions_plots.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/11-ModelFitting.Rmd",
 "text": "Edit"
 },
 "history": {

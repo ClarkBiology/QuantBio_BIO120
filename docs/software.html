@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Setting up software and working folders | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-11-09" />
+<meta name="date" content="2023-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,10 +61,6 @@ set in the _output.yml file.</p>" />
 
 
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -82,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
@@ -183,6 +179,13 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="11.6" data-path="subsetting-data.html"><a href="subsetting-data.html#make-the-graphs"><i class="fa fa-check"></i><b>11.6</b> Make the Graphs</a></li>
 <li class="chapter" data-level="11.7" data-path="subsetting-data.html"><a href="subsetting-data.html#save-and-submit-1"><i class="fa fa-check"></i><b>11.7</b> SAVE AND SUBMIT</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html"><i class="fa fa-check"></i><b>12</b> Mathematical Models and Experimental Data</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#importing-numerical-data"><i class="fa fa-check"></i><b>12.1</b> Importing Numerical Data</a></li>
+<li class="chapter" data-level="12.2" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-a-model-function"><i class="fa fa-check"></i><b>12.2</b> Creating a Model Function</a></li>
+<li class="chapter" data-level="12.3" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-an-objective-error-function"><i class="fa fa-check"></i><b>12.3</b> Creating an Objective / Error Function</a></li>
+<li class="chapter" data-level="12.4" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#preparing-to-fit-your-model"><i class="fa fa-check"></i><b>12.4</b> Preparing to Fit your Model</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -217,14 +220,12 @@ To familiarize ourselves with our computer’s file system
 </li>
 <li>
 <p>
-To set up working folders for organizing important files (data,
-scripts, etc…)
+To set up working folders for organizing important files (data, scripts, etc…)
 </p>
 </li>
 <li>
 <p>
-To familiarize ourselves with the main software used in
-class
+To familiarize ourselves with the main software used in class
 </p>
 </li>
 <li>
@@ -234,8 +235,7 @@ To install programs used for basic quantitative biology
 </li>
 <li>
 <p>
-To perform basic tests of functionality of these
-programs
+To perform basic tests of functionality of these programs
 </p>
 </li>
 </ol>
@@ -267,18 +267,18 @@ programs
 <li><p>Launch MATLAB after installation</p></li>
 <li><p>You should see a window like this:</p></li>
 </ol>
-<div class="float">
-<img src="Lab0/MatlabScreen.png" alt="Matlab Panels" />
-<div class="figcaption">Matlab Panels</div>
+<div class="figure">
+<img src="Lab0/MatlabScreen.png" alt="" />
+<p class="caption">Matlab Panels</p>
 </div>
 <p>You should have two panes open.</p>
 <p>The one on the left has two tabs that read <code>Current Folder</code> and <code>Workspace</code>. <code>Current Folder</code> refers to the folder in which you are currently working. <code>Workspace</code> is where you will find the variables and data structures that you will create and import into matlab as we work.</p>
 <p>On the right you have the <em>Command Window</em> pane. This is where you can enter single commands to be run by MATLAB (we will get into these in later labs).</p>
 <p>Above these two panels, is the file directory you are currently working in. Use the <code>Browse to folder</code> button to navigate to the Biol 120 working folder you created earler.</p>
 <p>Much of our documentation and code building will be done with MATLAB live scripts. In the top left corner of the window, you should find the <code>New Live Script</code> button. Pressing this button will create a new set of panels.</p>
-<div class="float">
-<img src="Lab0/LiveScriptPanel.png" alt="LiveScript Panels" />
-<div class="figcaption">LiveScript Panels</div>
+<div class="figure">
+<img src="Lab0/LiveScriptPanel.png" alt="" />
+<p class="caption">LiveScript Panels</p>
 </div>
 <p>In the newly created <code>Live Editor</code> panel, you will see you are working on a new untitled livescript <code>untitled.mlx</code>.</p>
 <p>Your <code>Live Editor</code> panel will be split into to panes.</p>

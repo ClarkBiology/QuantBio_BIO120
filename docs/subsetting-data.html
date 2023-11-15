@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 SubSetting Data | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-11-09" />
+<meta name="date" content="2023-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="using-for-loops-and-vector-manipulation.html"/>
-
+<link rel="next" href="mathematical-models-and-experimental-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -61,10 +61,6 @@ set in the _output.yml file.</p>" />
 
 
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -82,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
@@ -183,6 +179,13 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="11.6" data-path="subsetting-data.html"><a href="subsetting-data.html#make-the-graphs"><i class="fa fa-check"></i><b>11.6</b> Make the Graphs</a></li>
 <li class="chapter" data-level="11.7" data-path="subsetting-data.html"><a href="subsetting-data.html#save-and-submit-1"><i class="fa fa-check"></i><b>11.7</b> SAVE AND SUBMIT</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html"><i class="fa fa-check"></i><b>12</b> Mathematical Models and Experimental Data</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#importing-numerical-data"><i class="fa fa-check"></i><b>12.1</b> Importing Numerical Data</a></li>
+<li class="chapter" data-level="12.2" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-a-model-function"><i class="fa fa-check"></i><b>12.2</b> Creating a Model Function</a></li>
+<li class="chapter" data-level="12.3" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-an-objective-error-function"><i class="fa fa-check"></i><b>12.3</b> Creating an Objective / Error Function</a></li>
+<li class="chapter" data-level="12.4" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#preparing-to-fit-your-model"><i class="fa fa-check"></i><b>12.4</b> Preparing to Fit your Model</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -210,16 +213,13 @@ set in the _output.yml file.</p>" />
 <strong>The goals for today are to:</strong>
 </p>
 <p>
-1: Extract information about your data that will allow you to build
-your <strong>output structure</strong>: How many
-<strong>TrackIDs</strong>? How many <strong>Frames</strong>?
+1: Extract information about your data that will allow you to build your <strong>output structure</strong>: How many <strong>TrackIDs</strong>? How many <strong>Frames</strong>?
 </p>
 <p>
 2: Create and populate your <strong>output structure</strong>
 </p>
 <p>
-3: Calculate <strong>average intensity</strong> over your
-dataset!
+3: Calculate <strong>average intensity</strong> over your dataset!
 </p>
 <p>
 4: <strong>Plot</strong> your data!
@@ -233,16 +233,13 @@ dataset!
 <h2><span class="header-section-number">11.1</span> BEFORE WE START<a href="subsetting-data.html#before-we-start-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="objectives">
 <p>
-<strong>CREATE A NEW WORKING FOLDER FOR TODAY’S LAB AND NAVIGATE TO
-THAT FOLDER</strong>
+<strong>CREATE A NEW WORKING FOLDER FOR TODAY’S LAB AND NAVIGATE TO THAT FOLDER</strong>
 </p>
 <p>
-<strong>DOWNLOAD THE TWO FILES FROM THIS WEEK’S CANVAS MODULE AND
-PLACE THEM IN YOUR WORKING FOLDER</strong>
+<strong>DOWNLOAD THE TWO FILES FROM THIS WEEK’S CANVAS MODULE AND PLACE THEM IN YOUR WORKING FOLDER</strong>
 </p>
 <p>
-<strong>CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY
-SECTION</strong>
+<strong>CREATE A NEW LIVESCRIPT WITH A TITLE, SUMMARY SECTION</strong>
 </p>
 <p>
 <strong>Import the data from the two CSVs as TABLES</strong>
@@ -304,9 +301,7 @@ What do they contain?
 Question 3:
 </h4>
 <p>
-Based on what you’ve done in the previous two sections, what will the
-dimensions of your two output matrices be? How many rows, how many
-columns?
+Based on what you’ve done in the previous two sections, what will the dimensions of your two output matrices be? How many rows, how many columns?
 </p>
 </div>
 <hr />
@@ -365,8 +360,7 @@ What do your output matrices contain?
 Question 5:
 </h4>
 <p>
-Looking at the graphs that you’ve plotted, how would you say the
-WTSpots and MUTSpots compare?
+Looking at the graphs that you’ve plotted, how would you say the WTSpots and MUTSpots compare?
 </p>
 </div>
 <hr />
@@ -375,8 +369,7 @@ WTSpots and MUTSpots compare?
 <h2><span class="header-section-number">11.7</span> SAVE AND SUBMIT<a href="subsetting-data.html#save-and-submit-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="objectives">
 <p>
-<strong>SAVE YOUR MLX AND EXPORT AS A WORD DOCUMENT AND SUBMIT BOTH
-TO THE ASSIGMNENT ON CANVAS</strong>
+<strong>SAVE YOUR MLX AND EXPORT AS A WORD DOCUMENT AND SUBMIT BOTH TO THE ASSIGMNENT ON CANVAS</strong>
 </p>
 </div>
 
@@ -387,8 +380,8 @@ TO THE ASSIGMNENT ON CANVAS</strong>
           </div>
         </div>
       </div>
-<a href="using-for-loops-and-vector-manipulation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="using-for-loops-and-vector-manipulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mathematical-models-and-experimental-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

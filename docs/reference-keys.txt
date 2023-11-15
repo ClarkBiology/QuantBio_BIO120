@@ -190,3 +190,13 @@ fill-your-output-matrices
 calculate-the-means
 make-the-graphs
 second-dimension---frames
+getting-ready-to-fit-your-model
+model-fitting-a.k.a.-parameter-estimation-1
+importing-numerical-data-1
+creating-a-model-function-1
+creating-an-objective-error-function-1
+question-5-3
+interpreting-results-from-model-fitting
+preparing-to-fit-your-model
+model-fitting-aka-parameter-estimation-and-interpretation
+mathematical-models-and-experimental-data

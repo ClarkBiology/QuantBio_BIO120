@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Introduction to electronic notebooks with MATLAB Livescripts | BIOL120 Excercise Guidebook Fall ’23" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Professors Jackie Dresch and Nareg Djabrayan" />
 
 
-<meta name="date" content="2023-11-09" />
+<meta name="date" content="2023-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,10 +61,6 @@ set in the _output.yml file.</p>" />
 
 
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -82,7 +78,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">Quantitative Biology (BIOL120)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional-information-about-the-professor"><i class="fa fa-check"></i>Additional information about the professor</a></li>
 </ul></li>
@@ -183,6 +179,13 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="11.6" data-path="subsetting-data.html"><a href="subsetting-data.html#make-the-graphs"><i class="fa fa-check"></i><b>11.6</b> Make the Graphs</a></li>
 <li class="chapter" data-level="11.7" data-path="subsetting-data.html"><a href="subsetting-data.html#save-and-submit-1"><i class="fa fa-check"></i><b>11.7</b> SAVE AND SUBMIT</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html"><i class="fa fa-check"></i><b>12</b> Mathematical Models and Experimental Data</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#importing-numerical-data"><i class="fa fa-check"></i><b>12.1</b> Importing Numerical Data</a></li>
+<li class="chapter" data-level="12.2" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-a-model-function"><i class="fa fa-check"></i><b>12.2</b> Creating a Model Function</a></li>
+<li class="chapter" data-level="12.3" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#creating-an-objective-error-function"><i class="fa fa-check"></i><b>12.3</b> Creating an Objective / Error Function</a></li>
+<li class="chapter" data-level="12.4" data-path="mathematical-models-and-experimental-data.html"><a href="mathematical-models-and-experimental-data.html#preparing-to-fit-your-model"><i class="fa fa-check"></i><b>12.4</b> Preparing to Fit your Model</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -214,15 +217,13 @@ set in the _output.yml file.</p>" />
 To create electronic notebooks for course
 </li>
 <li>
-To familiarize ourselves with the use of MATLAB livescripting and
-its features
+To familiarize ourselves with the use of MATLAB livescripting and its features
 </li>
 <li>
 To create our initial livescript document
 </li>
 <li>
-To understand the importance of replicable and reproducible
-notebooks
+To understand the importance of replicable and reproducible notebooks
 </li>
 </ol>
 </div>
@@ -246,14 +247,14 @@ notebooks
 <div id="editing-text" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Editing Text<a href="rmark.html#editing-text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Whenever you begin a new livescript, the first thing you will notice is a grey bar in your left panel. (see below)</p>
-<div class="float">
-<img src="Lab_3/CodeBar.png" alt="Code Input" />
-<div class="figcaption">Code Input</div>
+<div class="figure">
+<img src="Lab_3/CodeBar.png" alt="" />
+<p class="caption">Code Input</p>
 </div>
 <p>This is because MATLAB defaults to editing code when a new LiveScript is made. In order to edit this document with plain text, add images, etc… we must first click the <code>Text</code> button to enter text editing mode.</p>
-<div class="float">
-<img src="Lab_3/ClickToAddText.png" alt="Text Button" />
-<div class="figcaption">Text Button</div>
+<div class="figure">
+<img src="Lab_3/ClickToAddText.png" alt="" />
+<p class="caption">Text Button</p>
 </div>
 <p>In the <code>Text Panel</code> you will see text editing controls that you might be familiar with from text editors such as MSWORD.</p>
 <p><strong>Experiment with different text formats (Normal, Header, Title) and think about how you might structure a document to be comprised of a Title, Headers for specific sections and normal text.</strong></p>
@@ -264,9 +265,9 @@ notebooks
 <div id="inserting-figures-hyperlinks-and-equations" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Inserting Figures, Hyperlinks and Equations<a href="rmark.html#inserting-figures-hyperlinks-and-equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Finally, we can add figures, hyperlinks and equations using the <code>in the Markdown document</code>Insert` tab. (See below)</p>
-<div class="float">
-<img src="Lab_3/InsertTab.png" alt="Insert Tab" />
-<div class="figcaption">Insert Tab</div>
+<div class="figure">
+<img src="Lab_3/InsertTab.png" alt="" />
+<p class="caption">Insert Tab</p>
 </div>
 <div id="figures" class="section level4 hasAnchor" number="4.2.2.1">
 <h4><span class="header-section-number">4.2.2.1</span> Figures<a href="rmark.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -274,17 +275,17 @@ notebooks
 <p><em>Once you’ve inserted your image you can size it to your preference</em></p>
 <p><strong>Use a combination of a text header and the <code>Image</code> button to insert an image into your livescript</strong></p>
 <p><strong>NOTE: THIS IS A PERFECT OPORTUNITY TO START THINKING OF WHERE YOU MIGHT STORE RELEVANT FILES IN YOUR WORKING FOLDER</strong></p>
-<div class="float">
-<img src="Lab_3/ExampleFigure.png" alt="Example Figure" />
-<div class="figcaption">Example Figure</div>
+<div class="figure">
+<img src="Lab_3/ExampleFigure.png" alt="" />
+<p class="caption">Example Figure</p>
 </div>
 </div>
 <div id="hyperlinks" class="section level4 hasAnchor" number="4.2.2.2">
 <h4><span class="header-section-number">4.2.2.2</span> Hyperlinks<a href="rmark.html#hyperlinks" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To add a hyperlink to your livescript use the <code>Hyperlink</code> button and follow the instructions in the dialog box that pops up. You should format your links to have some descriptive text and then input the url</p>
-<div class="float">
-<img src="Lab_3/HyperLinkDialogue.png" alt="HyperLink Dialogue" />
-<div class="figcaption">HyperLink Dialogue</div>
+<div class="figure">
+<img src="Lab_3/HyperLinkDialogue.png" alt="" />
+<p class="caption">HyperLink Dialogue</p>
 </div>
 <p><strong>Here’s an example Hyperlink</strong></p>
 <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Totally Not A RickRoll</a></p>
@@ -299,9 +300,9 @@ notebooks
 3           &amp; \text{Creating dataframes} \cr
 4                   &amp; \text{Visualizing Data} \cr
 }</code></pre>
-<div class="float">
-<img src="Lab_3/LatexMatrix.png" alt="Latex Equation" />
-<div class="figcaption">Latex Equation</div>
+<div class="figure">
+<img src="Lab_3/LatexMatrix.png" alt="" />
+<p class="caption">Latex Equation</p>
 </div>
 <p><strong>Later in the semester we will learn how to load in data and output tables with them.</strong></p>
 <hr />
@@ -311,9 +312,9 @@ notebooks
 <h3><span class="header-section-number">4.2.3</span> CODE!<a href="rmark.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Along with our plain text, figures, etc…, we will be adding in sections of executable code to our electronic notebooks, allowing us to execute and log analyses of our data.</p>
 <p>In order to switch to code editing, you must press the <code>Code</code> button in the <code>Live Editor</code> tab</p>
-<div class="float">
-<img src="Lab_3/CodeButton.png" alt="Code Button" />
-<div class="figcaption">Code Button</div>
+<div class="figure">
+<img src="Lab_3/CodeButton.png" alt="" />
+<p class="caption">Code Button</p>
 </div>
 <p>**NOTE: WHEN INSERTING CODE INTO YOUR LIVESCRIPT IT’S USEFULL TO INSERT SECTION BREAKS BEFORE AND AFTER SO THAT YOU CAN ONLY RUN SPECIFIC SETS OF CODE AT A TIME</p>
 <p>You can also use plain text to annotate your code.</p>
@@ -330,9 +331,9 @@ y = sin(x);
 plot(x,y)</code></pre>
 <p>After you’ve created the sections of code, use the <code>Run Section</code> button and observe the outputs</p>
 <p><strong>You should notice that if you click on the ouput on the right panel, the corresponding section of code will be highlighted</strong></p>
-<div class="float">
-<img src="Lab_3/HighlightedCode.png" alt="Highlighted Code" />
-<div class="figcaption">Highlighted Code</div>
+<div class="figure">
+<img src="Lab_3/HighlightedCode.png" alt="" />
+<p class="caption">Highlighted Code</p>
 </div>
 <p><strong>Annotating your code is the best way to remember what your code does and log how you were able to accomplish specific tasks with specific lines of code.</strong></p>
 <hr />
@@ -342,11 +343,7 @@ plot(x,y)</code></pre>
 <h2><span class="header-section-number">4.3</span> LiveScript Exercise:<a href="rmark.html#livescript-exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="rmdquestion">
 <p>
-Create a Live Script that describes yourself in a simple manner. Use
-as many element of syntax as possible, like <em>bold text</em>,
-<strong>italics</strong>, lists, tables and even add a picture of
-yourself. You can make it a very simple resume, a simple CV or just a
-small paragraph of you and your likes.
+Create a Live Script that describes yourself in a simple manner. Use as many element of syntax as possible, like <em>bold text</em>, <strong>italics</strong>, lists, tables and even add a picture of yourself. You can make it a very simple resume, a simple CV or just a small paragraph of you and your likes.
 </p>
 </div>
 <hr />

@@ -1,0 +1,133 @@
+# Model Fitting (AKA: Parameter Estimation) and Interpretation
+
+  
+```{block, type='objectives'}
+**Checklist**
+
+Before we begin, be sure you've prepared the following:
+
+1. Open MATLAB.
+2. Navigate to your Biol120 working folder and either create a new folder for today's lab or use the same folder as the last lab (Lab 9, Chapter 12).  If you use the same folder, the data, your model function and your objective function should already be in the right place!
+3. Open a new live script and use the header text to place the title for today's lab.
+```
+
+
+  
+  
+## Fitting your Model to your Data
+
+We have experimental data, a mathematical model, and an objective funciton: now what?
+
+Now we need to find the parameter values that minimize that objective function.
+
+There are many ways to do this.  In this section we will learn how to implement a local method of parameter estimation in MATLAB.  Local methods take an initial guess for the parameter values and search nearby using techniques from Calculus or Geometry.  In MATLAB, the most common function to use is `fminsearch()`.  This function uses the Nelder-Mead simplex algorithm, but you don't have to worry about that for this course.  Just focus on how to run it.
+
+### Running fminsearch()
+
+The `fminsearch()` function has many different options available when running it.  Since our Objective function takes multiple inputs and we only want to fit the parameter value(s), will run it using the following commands / syntax:
+
+`[x,fval] = fminsearch(@(p)function_name(p,t,y...),p_0);`
+
+Notes:    
+
+* `p_0` is your initial guess for the parameter value(s).  This needs to be a vector and parameters need to be given in the SAME order as they are input into your function (i.e. the same as `p`)
+    
+* `x` is a vector of parameter values that best fit your data
+    
+* `fval` is the SSE between your data and the model when `x` is used for the parameters in your model
+  
+Example:
+![](run_fminsearch.png)
+
+```{block, type='rmdquestion'}
+#### Question 1
+  Run `fminsearch()` using the *dicty* growth data and your Objective Function from Chapter 12 to find the parameter values. 
+
+Note:
+
+  + You will have to do this TWICE since we have two data sets, the AX4 cells and the DnmA KO cells.
+  + The growth data is different for these two data sets, so you should get two DIFFERENT sets of parameters.
+  + Although this can all be done in the Command Window, you will want to run this in your livescript so you can edit, add comments, and save your commands.
+```
+
+## Visualizing the Modeling Results
+
+Once you have the optimal parameter values, you will want to see how good your fit looks with your data.  You will do this in 3 steps:
+
+1) `scatter()` the experimental data (independent vs. dependent variables).  Don't forget to `hold on` to the figure.
+2) Run the model with the parameter values that gave you the best fit.  You can either use the vector of independent variable values from your experimental data or create your own vector (just make sure it includes a range of independent variable values that include those given in your data set).
+3) `plot()` the model results and label your figure.
+
+Example:
+![](visualize_fit.png)
+![](modelFit.png)
+
+```{block, type='rmdquestion'}
+#### Question 2
+  Create a visualization for your model fits to the *dicty* growth data.
+  
+  You can do this either:
+  
+  1) using two figures, one for the AX4 cells and one for the DnmA KO cells.  
+  
+  OR
+  
+  2) using a single figure with both sets of experimental data and both model fits.  
+  
+  Make sure to include axes labels and a Legend!
+```
+
+
+## Quantitative Measurements of Model Predictions
+
+How good are these predictions?  We can all judge the predictions on a qualitative level, but we would like to put some quantitative measures of `goodness of fit' onto our modeling results. 
+
+### Sum of Square Error
+
+Recall:  The most popular Objective Function is the Sum of Square Errors (SSE):
+$$SSE = \sum_{i=1}^n \left(y_i - m_i\right)^2$$
+This should be exactly what you used during your model fitting.  So, reporting the error value, $SSE$ is as easy as stating the function value obtained using fminsearch().
+
+### Pearson Correlation
+
+An alternative measure, also commonly used as an objective function (to maximimize) for model fitting is the Pearson Correlation Coefficient.
+
+Pearson's linear correlation coefficient is the most commonly used linear correlation coefficient. The correlation coefficient is referred to as ($\rho$):
+$$\rho = \cfrac{\displaystyle\sum_{i=1}^n \left(y_i - \bar{y}\right)\left(m_i-\bar{m}\right)}{\sqrt{\displaystyle\sum_{i=1}^n\left(y_i - \bar{y}\right)^2\displaystyle\sum_{i=1}^n\left(m_i - \bar{m}\right)^2}}$$
+
+where your data is in vector $y$, your corresponding model prediction is in vector $m$, $\bar{y}$ is the mean of the values in vector $y$ and $\bar{m}$ is the mean of the values in vector $m$.
+
+Values of the correlation coefficient can range from –1 to +1. A value of –1 indicates perfect negative correlation (the worst value you could get for a model prediction!), while a value of +1 indicates perfect positive correlation. A value of 0 indicates no correlation between data and the model predictions.
+
+The corr() function in MATLAB is used to find the Pearson Correlation between two vectors.  
+
+Some helpful notes:
+
+* The inputs to this function are two COLUMN vectors, $y$ and $m$.
+
+    Note: If you input two row vectors, it will return a matrix of NaN since it is trying to compare each pair of values instead of the entire vectors.
+* If you run this function with a single output, it will return the correlation coefficient, $\rho$.
+* Similar to the *t-test* function we used: If you run this function with two outputs, it will return the correlation coefficient, $\rho$, along with the corresponding $p$-value for testing the hypothesis of no correlation against the alternative hypothesis of a nonzero correlation.
+* For more information, you can always visit the [MathWorks website](http://www.mathworks.com/help/matlab/) and search for ttest2!\
+
+```{block, type='rmdquestion'}
+#### Question 3
+  Report your results.  For each data set, this should include:
+  
+  1) The name of the model (and/or model formula) for the model you chose to fit as well as the parameters that resulted in the best fit (these should be the values found in Question 1 and used to create your plot(s) in Question 2)
+  
+  and
+  
+  2) quantitative measures of the quality of your fits (this should include the $SSE$, Pearson correlation coefficient and corresponding $p$-value) along with an explanation / interpretation of these (i.e. do you consider these good model fits?).
+```
+
+
+
+```{block, type='rmdquestion'}
+#### Question 4
+  Compare the two sets of parameters.  Interpret what this result may tell us about DNMA in *dicty*.  You may state some hypotheses and/or possible follow-up experiments, but be careful not to over-interpret your modeling results.
+```
+
+
+
+

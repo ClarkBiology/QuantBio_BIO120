@@ -200,3 +200,7 @@ interpreting-results-from-model-fitting
 preparing-to-fit-your-model
 model-fitting-aka-parameter-estimation-and-interpretation
 mathematical-models-and-experimental-data
+visualizing-the-modeling-results
+quantitative-measurements-of-model-predictions
+sum-of-square-error
+pearson-correlation

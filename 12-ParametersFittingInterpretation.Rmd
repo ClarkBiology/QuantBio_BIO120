@@ -108,7 +108,7 @@ Some helpful notes:
     Note: If you input two row vectors, it will return a matrix of NaN since it is trying to compare each pair of values instead of the entire vectors.
 * If you run this function with a single output, it will return the correlation coefficient, $\rho$.
 * Similar to the *t-test* function we used: If you run this function with two outputs, it will return the correlation coefficient, $\rho$, along with the corresponding $p$-value for testing the hypothesis of no correlation against the alternative hypothesis of a nonzero correlation.
-* For more information, you can always visit the [MathWorks website](http://www.mathworks.com/help/matlab/) and search for ttest2!\
+* For more information, you can always visit the [MathWorks website](http://www.mathworks.com/help/matlab/) and search for corr!\
 
 ```{block, type='rmdquestion'}
 #### Question 3
